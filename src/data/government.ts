@@ -178,6 +178,26 @@ export const governmentOfferings: GovernmentOffering[] = [
     ],
     compliance: ["Provincial FOIPPA/FIPPA", "Federal Privacy Act", "PIPEDA", "Protected B Capable", "Call Recording Legislation", "Accessibility Standards"],
     icon: "Headphones"
+  },
+  {
+    id: "iot",
+    agency: "Smart Infrastructure & IoT",
+    title: "Smart City & IoT Intelligence",
+    description: "AI-powered intelligence for connected government infrastructure and IoT networks. Monitor and analyze data from smart sensors, traffic systems, environmental monitors, building systems, and municipal IoT devices. Real-time processing of massive sensor networks with complete data sovereignty and on-premises deployment for federal, provincial, and municipal smart city initiatives.",
+    features: [
+      "Real-time monitoring and analysis of municipal sensor networks",
+      "Smart traffic management and intelligent transportation systems",
+      "Environmental and air quality monitoring intelligence",
+      "Smart building and facility management automation",
+      "Water and utilities infrastructure monitoring",
+      "Public safety IoT integration (cameras, sensors, alerts)",
+      "Edge computing deployment for low-latency processing",
+      "Predictive maintenance for critical infrastructure",
+      "Anomaly detection and automated alerting",
+      "Integration with existing SCADA and control systems"
+    ],
+    compliance: ["Provincial FOIPPA/FIPPA", "Federal Privacy Act", "Infrastructure Security Standards", "Protected B Capable", "Critical Infrastructure Protection"],
+    icon: "Radio"
   }
 ]
 

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { governmentOfferings } from '@/data/government'
-import { Building, Building2, Heart, Scale, Users, Bus, Shield, GraduationCap, AlertTriangle, TreePine, MapPin, Headphones, Linkedin, Link2, MessageCircle, Check } from 'lucide-react'
+import { Building, Building2, Heart, Scale, Users, Bus, Shield, GraduationCap, AlertTriangle, TreePine, MapPin, Headphones, Radio, Linkedin, Link2, MessageCircle, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/button'
 import Chatbot from '@/components/ui/chatbot'
@@ -22,6 +22,7 @@ const iconMap: Record<string, any> = {
   TreePine,
   MapPin,
   Headphones,
+  Radio,
 }
 
 export default function Government() {
