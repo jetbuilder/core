@@ -1,0 +1,409 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Check, Zap, TrendingDown, Package, Target, Brain, X } from "lucide-react";
+import Button from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { pricingPlans, pricingSupport, pricingAddons, pricingComparison } from "@/data/pricing";
+
+export default function Pricing() {
+  return (
+    <section id="pricing" className="py-20 bg-gunmetal-950">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Transparent Pricing for Enterprise AI
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-3">
+            Cloud-hosted or on-premises deployment options with complete data sovereignty
+          </p>
+          <p className="text-lg text-tactical-400 font-semibold max-w-2xl mx-auto">
+            Start with managed cloud hosting or deploy on your own infrastructure. Custom Small Language Models (SLMs) trained for your industry.
+          </p>
+        </motion.div>
+
+        {/* Pricing Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16 max-w-[1600px] mx-auto">
+          {pricingPlans.map((plan, index) => (
+            <motion.div
+              key={plan.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card
+                className={`p-6 h-full flex flex-col relative bg-gunmetal-900 ${
+                  plan.highlight
+                    ? "border-2 border-tactical-500 shadow-xl scale-105"
+                    : "border-2 border-gunmetal-700"
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-1 text-sm font-semibold rounded-bl-lg rounded-tr-lg">
+                    Popular
+                  </div>
+                )}
+                {plan.badge && !plan.popular && (
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-tactical-600 to-tactical-700 text-white px-4 py-1 text-sm font-semibold rounded-bl-lg rounded-tr-lg">
+                    {plan.badge}
+                  </div>
+                )}
+
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold mb-2 text-white">{plan.name}</h3>
+                  <div className="mb-2">
+                    <span className="text-3xl font-bold text-tactical-400">{plan.price}</span>
+                    <span className="text-gray-400 ml-1 text-sm">/ {plan.period}</span>
+                  </div>
+                  <p className="text-gray-300 text-sm">{plan.description}</p>
+                </div>
+
+                <div className="flex-grow mb-4">
+                  <ul className="space-y-2">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a href={plan.ctaLink} className="w-full">
+                  <Button
+                    className={
+                      plan.highlight
+                        ? "w-full bg-gradient-to-r from-tactical-600 to-tactical-700 hover:from-tactical-700 hover:to-tactical-800 text-white"
+                        : "w-full border-tactical-600 text-tactical-400 hover:bg-tactical-900"
+                    }
+                    variant={plan.highlight ? "default" : "outline"}
+                    size="lg"
+                  >
+                    {plan.cta}
+                  </Button>
+                </a>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* JetBuilder Support Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+        >
+          <Card className="p-8 bg-gradient-to-r from-tactical-900 to-gunmetal-800 border-tactical-700">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-gradient-to-r from-tactical-600 to-tactical-700 rounded-lg">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-2xl font-bold mb-3 text-white">
+                  {pricingSupport.title}
+                </h3>
+                <p className="text-gray-300 mb-4 text-lg">
+                  {pricingSupport.description}
+                </p>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {pricingSupport.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Additional Options */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto mt-16"
+        >
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold mb-2 text-white">{pricingAddons.title}</h3>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {pricingAddons.options.map((option, idx) => (
+              <Card key={idx} className="p-6 bg-gunmetal-900 border-2 border-gunmetal-700 hover:border-tactical-500 transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-tactical-900 rounded">
+                    <Package className="w-5 h-5 text-tactical-400" />
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className="text-lg font-bold mb-1 text-white">{option.name}</h4>
+                    <p className="text-tactical-400 font-semibold mb-2">{option.price}</p>
+                    <p className="text-gray-300 text-sm">{option.description}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* SLM vs LLM Advantage Explanation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto mt-20 mb-16"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold mb-3 text-white">{pricingComparison.slmAdvantage.title}</h3>
+            <p className="text-xl text-tactical-400 font-semibold">{pricingComparison.slmAdvantage.subtitle}</p>
+          </div>
+
+          {/* Problems with LLMs */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {pricingComparison.slmAdvantage.points.map((point, idx) => (
+              <Card key={idx} className="p-6 bg-red-950/40 border-2 border-red-800">
+                <div className="flex items-start gap-3 mb-4">
+                  <X className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                  <h4 className="text-lg font-bold text-red-300">{point.problem}</h4>
+                </div>
+                <p className="text-sm text-gray-300 mb-3">{point.explanation}</p>
+                <div className="bg-red-900/60 p-3 rounded">
+                  <p className="text-xs font-bold text-red-200">{point.cost}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* JetBuilder Solution */}
+          <Card className="p-8 bg-gradient-to-br from-tactical-900 to-gunmetal-800 border-2 border-tactical-500 mb-12">
+            <div className="flex items-center gap-3 mb-6">
+              <Target className="w-8 h-8 text-tactical-400" />
+              <h4 className="text-2xl font-bold text-white">{pricingComparison.slmAdvantage.solution.title}</h4>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {pricingComparison.slmAdvantage.solution.benefits.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h5 className="font-bold text-white mb-2">{item.benefit}</h5>
+                    <p className="text-sm text-gray-300">{item.explanation}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          {/* Side by Side Comparison */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <Card className="p-6 bg-gunmetal-900 border-2 border-red-800">
+              <h4 className="text-xl font-bold mb-4 text-white">{pricingComparison.slmAdvantage.comparison.llm.title}</h4>
+              <ul className="space-y-3">
+                {pricingComparison.slmAdvantage.comparison.llm.characteristics.map((char, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                    <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    {char}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-tactical-900 to-gunmetal-800 border-2 border-tactical-500">
+              <h4 className="text-xl font-bold mb-4 text-white">{pricingComparison.slmAdvantage.comparison.slm.title}</h4>
+              <ul className="space-y-3">
+                {pricingComparison.slmAdvantage.comparison.slm.characteristics.map((char, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    {char}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+
+          {/* Analogy */}
+          <Card className="p-6 bg-gunmetal-900 border-2 border-tactical-400">
+            <div className="flex items-start gap-4">
+              <Brain className="w-8 h-8 text-tactical-400 flex-shrink-0" />
+              <div>
+                <p className="text-lg text-gray-300 italic leading-relaxed">
+                  "{pricingComparison.slmAdvantage.analogy}"
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Comprehensive TCO Comparison */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto mt-20"
+        >
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold mb-3 text-white">{pricingComparison.title}</h3>
+            <p className="text-xl text-gray-300 mb-2">{pricingComparison.subtitle}</p>
+            <p className="text-2xl font-bold text-tactical-400">{pricingComparison.description}</p>
+          </div>
+
+          {/* Cost Breakdown Comparison */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Cloud Costs */}
+            <Card className="p-8 border-2 border-red-800 bg-red-950/40">
+              <div className="flex items-center justify-between mb-6">
+                <h4 className="text-2xl font-bold text-white">{pricingComparison.cloudCosts.title}</h4>
+                <div className="text-right">
+                  <div className="text-sm text-gray-400">Year 1 Total</div>
+                  <div className="text-3xl font-bold text-red-400">{pricingComparison.cloudCosts.yearOneTotal}</div>
+                </div>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                {pricingComparison.cloudCosts.yearlyBreakdown.map((item, idx) => (
+                  <div key={idx} className="border-b border-red-900 pb-3">
+                    <div className="flex justify-between items-start mb-1">
+                      <span className="font-semibold text-white">{item.category}</span>
+                      <span className="font-bold text-red-400">{item.cost}</span>
+                    </div>
+                    <p className="text-sm text-gray-300">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-red-900/60 p-4 rounded-lg mb-4">
+                <div className="text-sm font-semibold text-gray-300 mb-2">3-Year Total Cost</div>
+                <div className="text-4xl font-bold text-red-300">{pricingComparison.cloudCosts.threeYearTotal}</div>
+              </div>
+
+              <div className="bg-gunmetal-900 p-4 rounded-lg">
+                <div className="text-sm font-bold text-white mb-2">Hidden Risks & Limitations:</div>
+                <ul className="space-y-1">
+                  {pricingComparison.cloudCosts.hiddenRisks.map((risk, idx) => (
+                    <li key={idx} className="text-sm text-gray-300 flex items-start">
+                      <span className="text-red-400 mr-2 font-bold">✗</span>
+                      {risk}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Card>
+
+            {/* JetBuilder Costs */}
+            <Card className="p-8 border-2 border-tactical-500 bg-gradient-to-br from-tactical-900 to-gunmetal-800 relative">
+              <div className="absolute top-4 right-4 bg-gradient-to-r from-tactical-600 to-tactical-700 text-white px-4 py-2 rounded-full font-bold text-sm">
+                BEST VALUE
+              </div>
+              
+              <div className="flex items-center justify-between mb-6">
+                <h4 className="text-2xl font-bold text-white">{pricingComparison.jetbuilderCosts.title}</h4>
+                <div className="text-right">
+                  <div className="text-sm text-gray-400">Year 1 Total</div>
+                  <div className="text-3xl font-bold text-tactical-400">{pricingComparison.jetbuilderCosts.yearOneTotal}</div>
+                </div>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                {pricingComparison.jetbuilderCosts.yearlyBreakdown.map((item, idx) => (
+                  <div key={idx} className="border-b border-tactical-700 pb-3">
+                    <div className="flex justify-between items-start mb-1">
+                      <span className="font-semibold text-white">{item.category}</span>
+                      <span className={`font-bold ${item.cost === '$0' ? 'text-green-400' : 'text-tactical-400'}`}>
+                        {item.cost}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-300">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-tactical-950/60 p-4 rounded-lg mb-2">
+                <div className="text-sm font-semibold text-gray-300 mb-2">3-Year Total Cost</div>
+                <div className="text-4xl font-bold text-tactical-300">{pricingComparison.jetbuilderCosts.threeYearTotal}</div>
+              </div>
+
+              <div className="bg-green-950/60 p-4 rounded-lg mb-4">
+                <div className="text-sm font-semibold text-gray-300 mb-2">With 3-Year Commitment (15% discount)</div>
+                <div className="text-4xl font-bold text-green-400">{pricingComparison.jetbuilderCosts.threeYearDiscount}</div>
+              </div>
+
+              <div className="bg-gunmetal-900 p-4 rounded-lg">
+                <div className="text-sm font-bold text-white mb-2">Included Advantages:</div>
+                <ul className="space-y-1">
+                  {pricingComparison.jetbuilderCosts.advantages.map((adv, idx) => (
+                    <li key={idx} className="text-sm text-gray-300 flex items-start">
+                      <span className="text-green-400 mr-2 font-bold">✓</span>
+                      {adv}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Card>
+          </div>
+
+          {/* Savings Highlight */}
+          <Card className="p-10 bg-gradient-to-r from-green-600 to-tactical-600 text-white text-center">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold mb-6">Total Savings with JetBuilder</h3>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <div className="text-sm opacity-90 mb-2">Year 1 Savings</div>
+                  <div className="text-5xl font-bold mb-2">{pricingComparison.savingsCalculation.yearOne.savings}</div>
+                  <div className="text-xl opacity-90">({pricingComparison.savingsCalculation.yearOne.savingsPercent} lower cost)</div>
+                </div>
+                
+                <div>
+                  <div className="text-sm opacity-90 mb-2">3-Year Savings (with discount)</div>
+                  <div className="text-5xl font-bold mb-2">{pricingComparison.savingsCalculation.threeYear.savingsWithDiscount}</div>
+                  <div className="text-xl opacity-90">({pricingComparison.savingsCalculation.threeYear.savingsPercentWithDiscount} lower cost)</div>
+                </div>
+              </div>
+
+              <div className="bg-white/20 backdrop-blur rounded-lg p-6 max-w-2xl mx-auto">
+                <div className="text-2xl font-bold mb-3">ROI Payback Period</div>
+                <div className="text-5xl font-bold mb-2">{pricingComparison.savingsCalculation.roi.paybackPeriod}</div>
+                <div className="text-lg opacity-90">{pricingComparison.savingsCalculation.roi.description}</div>
+              </div>
+
+              <div className="mt-8 text-xl font-semibold">
+                JetBuilder delivers nearly 2x better value over 3 years - with complete data sovereignty, custom SLMs, and zero hidden costs.
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mt-12"
+        >
+          <p className="text-gray-300 mb-4">
+            Not sure which option is right for you?
+          </p>
+          <Button size="lg" variant="outline" className="border-tactical-600 text-tactical-400 hover:bg-tactical-900" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
+            Schedule a Consultation
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+

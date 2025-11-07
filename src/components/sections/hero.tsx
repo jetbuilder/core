@@ -1,0 +1,375 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { ArrowRight, PlayCircle, Shield, Zap, Globe, Database, Lock, TrendingUp } from 'lucide-react'
+import Button from '@/components/ui/button'
+import { motion } from 'framer-motion'
+import Chatbot from '@/components/ui/chatbot'
+import AISearch from '@/components/ui/ai-search'
+
+export default function Hero() {
+  const [isChatOpen, setIsChatOpen] = useState(false)
+  const [chatTopic, setChatTopic] = useState<string>('')
+  const [languageCount, setLanguageCount] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLanguageCount(prev => (prev < 55 ? prev + 1 : 55))
+    }, 30)
+    return () => clearInterval(interval)
+  }, [])
+
+  const handleRequestBriefing = () => {
+    setChatTopic('Sovereign AI Platform Briefing')
+    setIsChatOpen(true)
+  }
+
+  const handleViewDemo = () => {
+    setChatTopic('Platform Demo Request')
+    setIsChatOpen(true)
+  }
+
+  const stats = [
+    { value: `${languageCount}+`, label: 'Languages', icon: Globe },
+    { value: '100%', label: 'Private', icon: Lock },
+    { value: 'Minimal', label: 'Cloud APIs', icon: Shield },
+    { value: 'Fast', label: 'ROI', icon: TrendingUp }
+  ]
+
+  return (
+    <section className="relative bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950 overflow-hidden">
+      <div className="container px-4 py-8 sm:py-12 md:py-16">
+        {/* Hero Grid Layout */}
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center mb-8 sm:mb-12 md:mb-16">
+          {/* Left Column - Main Content */}
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
+          {/* Main Heading */}
+          <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center space-x-1.5 sm:space-x-2 bg-tactical-900 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-sm mb-3 sm:mb-4 border border-tactical-700">
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-tactical-400" />
+                <span className="text-xs font-bold text-tactical-400 uppercase tracking-wide sm:tracking-wider">Powered by JetBuilder</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight uppercase tracking-tight">
+                <span className="text-tactical-400">Sovereign AI</span> Platform
+              </h1>
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-tactical-300 font-bold mb-2 sm:mb-3 uppercase tracking-wide leading-snug">
+                Customer Data-Trained Small Language Models On-Premises
+              </p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 font-medium mb-4 sm:mb-6 leading-relaxed">
+                Complete Data Sovereignty with Custom SLMs Trained on Your Corporate Data - Deploy AI on Your Infrastructure with Zero Cloud Dependency
+            </p>
+          </motion.div>
+
+            {/* AI Search */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-4 sm:mb-6 md:mb-8"
+            >
+              <AISearch />
+            </motion.div>
+
+            {/* Key Benefits */}
+            <motion.div
+              className="space-y-2.5 sm:space-y-3 md:space-y-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              <div className="flex items-start space-x-2 sm:space-x-3">
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
+                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Custom Small Language Models</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Trained on your data, deployed on-premises.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2 sm:space-x-3">
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
+                  <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Data Sovereignty Controls</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Minimal public APIs. Your infrastructure.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2 sm:space-x-3">
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
+                  <Database className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Multi-Modal Intelligence</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Documents, voice, video, databases unified.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2 sm:space-x-3">
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
+                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Business Process Intelligence</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Automate workflows and extract insights.</p>
+                </div>
+              </div>
+            </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2.5 sm:gap-3 md:gap-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              <Button size="lg" className="group text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto" onClick={handleRequestBriefing}>
+              Request Briefing
+                <ArrowRight className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+              <Button size="lg" variant="outline" className="group text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto" onClick={handleViewDemo}>
+              <PlayCircle className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5" />
+              View Demo
+            </Button>
+          </motion.div>
+
+          {/* Trust Indicators */}
+          <motion.div
+              className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide sm:tracking-wider font-semibold leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+            >
+              Trusted by insurance, banking, telecom & financial services across North America
+            </motion.div>
+          </div>
+
+          {/* Right Column - Stats & Visual */}
+          <div className="space-y-6">
+            {/* Animated Stats Grid */}
+            <motion.div
+              className="grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {stats.map((stat, index) => {
+                const Icon = stat.icon
+                return (
+                  <motion.div
+                    key={stat.label}
+                    className="bg-gunmetal-800/80 border-2 border-tactical-700 rounded-lg p-6 hover:border-tactical-600 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <Icon className="w-8 h-8 text-tactical-400 mb-3" />
+                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-sm text-gray-400 uppercase tracking-wide">{stat.label}</div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+
+            {/* Visual Element - Dashboard Preview */}
+            <motion.div
+              className="bg-gunmetal-800/50 border-2 border-tactical-700 rounded-lg p-6 relative overflow-hidden"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-tactical-900 rounded-full mix-blend-overlay filter blur-2xl opacity-50"></div>
+              <h3 className="text-lg font-bold text-tactical-400 mb-4 uppercase tracking-wide">Deployment Environments</h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-3 bg-gunmetal-900/60 rounded border border-tactical-700/50">
+                  <span className="text-white font-semibold">FedRAMP Authorized</span>
+                  <span className="text-tactical-400 text-xs font-bold uppercase">Supported</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-gunmetal-900/60 rounded border border-tactical-700/50">
+                  <span className="text-white font-semibold">FIPS 140-2 Certified</span>
+                  <span className="text-tactical-400 text-xs font-bold uppercase">Supported</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-gunmetal-900/60 rounded border border-tactical-700/50">
+                  <span className="text-white font-semibold">Air-Gapped Systems</span>
+                  <span className="text-tactical-400 text-xs font-bold uppercase">Supported</span>
+            </div>
+            </div>
+          </motion.div>
+          </div>
+        </div>
+
+        {/* Target Industries */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <p className="text-sm text-gray-400 uppercase tracking-wider mb-3">Built For</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Government', 'Defense', 'Law Enforcement', 'Healthcare', 'Finance', 'Telecommunications'].map((industry) => (
+              <div
+                key={industry}
+                className="px-4 py-2 bg-gunmetal-800/80 border border-tactical-700 rounded-sm text-sm font-semibold text-tactical-300 hover:border-tactical-600 transition-colors"
+              >
+                {industry}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Agentic AI Capabilities Section */}
+        <motion.div
+          className="max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide">
+              Agentic AI Capabilities on <span className="text-tactical-400">Your Infrastructure</span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Deploy autonomous AI agents to extract intelligence from voice, audio, text, and unstructured data at massive scale—on-premises deployment options with data sovereignty controls across 55+ languages.
+            </p>
+          </div>
+
+          {/* Major Capabilities Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <motion.div 
+              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
+                <Zap className="w-6 h-6 text-tactical-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Autonomous Processing</h3>
+              <p className="text-gray-400">Self-directed agents that analyze, extract, and synthesize intelligence without human intervention</p>
+            </motion.div>
+            
+            <motion.div 
+              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
+                <Database className="w-6 h-6 text-tactical-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Multi-Modal Analysis</h3>
+              <p className="text-gray-400">Process voice, audio, text, images, and documents simultaneously for comprehensive insights</p>
+            </motion.div>
+            
+            <motion.div 
+              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-tactical-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Real-Time Intelligence</h3>
+              <p className="text-gray-400">Continuous monitoring and instant alerting on critical events and pattern detection</p>
+            </motion.div>
+            
+            <motion.div 
+              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
+                <Lock className="w-6 h-6 text-tactical-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Private Deployment</h3>
+              <p className="text-gray-400">On-premises or air-gapped deployment options with data sovereignty controls</p>
+            </motion.div>
+            
+            <motion.div 
+              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
+                <Globe className="w-6 h-6 text-tactical-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Workflow Orchestration</h3>
+              <p className="text-gray-400">Multi-agent coordination for complex analytical tasks across distributed data sources</p>
+            </motion.div>
+            
+            <motion.div 
+              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-tactical-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Adaptive Learning</h3>
+              <p className="text-gray-400">Continuously improving models that adapt to your organization's unique patterns and requirements</p>
+            </motion.div>
+          </div>
+
+          {/* Critical Infrastructure Benefits */}
+          <motion.div
+            className="p-8 bg-gradient-to-br from-tactical-900/40 to-gunmetal-800/40 border-2 border-tactical-500 rounded-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <h3 className="text-2xl font-bold text-tactical-300 mb-6 uppercase tracking-wide text-center">Why Organizations Choose Sovereign AI Platform</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
+                  <Lock className="w-5 h-5 text-tactical-400" />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-1">Minimal Public APIs</h4>
+                  <p className="text-gray-400 text-sm">Speech-to-Text, Text-to-Speech, and processing logic designed to run on your infrastructure with minimal external dependencies</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
+                  <Database className="w-5 h-5 text-tactical-400" />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-1">Customer Data-Trained Small Language Models</h4>
+                  <p className="text-gray-400 text-sm">Domain-specific SLMs trained on your corporate and customer data, deployed entirely on-premises with full ownership</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-tactical-400" />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-1">Model Ownership Options</h4>
+                  <p className="text-gray-400 text-sm">Model weights, biases, and training data can be deployed on your infrastructure with ownership controls</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-tactical-400" />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-1">Domain-Specific Accuracy</h4>
+                  <p className="text-gray-400 text-sm">Our custom SLMs are trained for domain-specific accuracy tailored to your operations</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Background Decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-96 h-96 bg-tactical-900 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gunmetal-800 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Chatbot */}
+      <Chatbot 
+        isOpen={isChatOpen} 
+        onClose={() => setIsChatOpen(false)} 
+        topic={chatTopic}
+      />
+    </section>
+  )
+}
+

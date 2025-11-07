@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 bg-white antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight;
+  }
+  
+  .heading-sm {
+    @apply text-xl sm:text-2xl font-semibold;
+  }
+
+  /* Search highlight animation */
+  .search-highlight {
+    animation: highlight-pulse 3s ease-in-out;
+  }
+
+  @keyframes highlight-pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    25% {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.4);
+    }
+    75% {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.4);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+  }
+}
+
