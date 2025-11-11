@@ -20,12 +20,12 @@ export default function Home() {
       <Product />
       <Solutions />
       <UseCases />
-      <Enterprise />
+      {/* <Enterprise />
       <Government />
       <Security />
       <Pricing />
       <Developers />
-      <Resources />
+      <Resources /> */}
     </>
   )
 }

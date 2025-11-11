@@ -205,9 +205,9 @@ export default function UseCasesPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-white text-tactical-600 hover:bg-gray-100 font-bold uppercase group" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
-              Schedule Consultation
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+                Schedule Consultation
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
             <a href="/">
               <Button
                 size="lg"

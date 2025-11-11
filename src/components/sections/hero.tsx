@@ -64,6 +64,32 @@ export default function Hero() {
             </p>
           </motion.div>
 
+          {/* Value Proposition Highlight */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-r from-tactical-900/40 to-tactical-800/40 border-2 border-tactical-600/50 rounded-lg p-4 sm:p-5 md:p-6 backdrop-blur-sm"
+          >
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-tactical-400" />
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white uppercase tracking-wide">
+                  Transform Your Operations
+                </h3>
+              </div>
+              <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed">
+                <span className="text-tactical-400 font-bold">JetBuilder</span> helps onboard existing slow and manual processes into 
+                <span className="text-tactical-300 font-semibold"> agentic-accelerated infrastructure</span> and make your processes 
+                <span className="text-tactical-400 font-bold text-lg sm:text-xl md:text-2xl"> 100X faster</span>.
+              </p>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                <span className="font-semibold text-white">SaaS providers</span> can add new AI capabilities without reinventing entire infrastructure—
+                plug into your existing systems and scale instantly.
+              </p>
+            </div>
+          </motion.div>
+
             {/* AI Search */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
