@@ -190,100 +190,100 @@ export default function Chatbot({ isOpen, onClose, topic }: ChatbotProps) {
           transition={{ duration: 0.3 }}
           className="fixed bottom-4 right-4 z-50 w-full max-w-md mx-4 sm:mx-0"
         >
-          <div className="bg-gunmetal-950 border-2 border-tactical-600 rounded-lg shadow-2xl overflow-hidden">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-tactical-900 to-tactical-800 p-4 flex items-center justify-between">
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm shadow-2xl overflow-hidden font-mono">
+            {/* Header - IDE Style */}
+            <div className="bg-vscode-bg border-b border-vscode-border p-3 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-tactical-700 rounded-sm flex items-center justify-center">
-                  <Bot className="w-6 h-6 text-white" />
+                <div className="w-8 h-8 bg-vscode-sidebar border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-vscode-type" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold uppercase tracking-wide">Sovereign AI Assistant</h3>
-                  <p className="text-xs text-gray-300">Powered by JetBuilder</p>
+                  <h3 className="text-vscode-function font-bold tracking-wide text-sm">jetbuilder.assistant()</h3>
+                  <p className="text-xs text-vscode-comment">// ai-powered-chat</p>
                 </div>
               </div>
               <button
                 onClick={onClose}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-vscode-variable hover:text-vscode-type transition-colors"
                 aria-label="Close chat"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Messages */}
-            <div className="h-96 overflow-y-auto p-4 bg-gunmetal-900 space-y-4">
+            {/* Messages - IDE Style */}
+            <div className="h-96 overflow-y-auto p-3 bg-vscode-bg space-y-3">
               {messages.map((message) => (
                 <div key={message.id}>
                   <div
                     className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
-                      className={`max-w-[80%] rounded-lg p-3 ${
+                      className={`max-w-[80%] rounded-sm p-2.5 ${
                         message.sender === 'user'
-                          ? 'bg-tactical-700 text-white'
-                          : 'bg-gunmetal-800 text-gray-200 border border-gunmetal-700'
+                          ? 'bg-vscode-keyword text-white'
+                          : 'bg-vscode-sidebar text-vscode-variable border border-vscode-border'
                       }`}
                     >
-                      <p className="text-sm">{message.text}</p>
-                      <p className="text-xs opacity-70 mt-1">
+                      <p className="text-xs leading-relaxed">{message.text}</p>
+                      <p className="text-xs text-vscode-comment opacity-70 mt-1">
                         {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </p>
                     </div>
                   </div>
                   
-                  {/* Contact Form */}
+                  {/* Contact Form - IDE Style */}
                   {message.isForm && showForm && (
-                    <div className="mt-4 bg-gunmetal-800 border-2 border-tactical-600 rounded-lg p-4">
-                      <h4 className="text-white font-bold uppercase tracking-wide text-sm mb-3">
-                        Get Detailed Information
+                    <div className="mt-3 bg-vscode-sidebar border border-vscode-border rounded-sm p-3">
+                      <h4 className="text-vscode-function font-bold tracking-wide text-xs mb-3">
+                        submitContactInfo()
                       </h4>
-                      <div className="space-y-3">
+                      <div className="space-y-2">
                         <div className="grid grid-cols-2 gap-2">
                           <input
                             type="text"
-                            placeholder="First Name *"
+                            placeholder="firstName *"
                             value={contactInfo.firstName}
                             onChange={(e) => setContactInfo({...contactInfo, firstName: e.target.value})}
-                            className="bg-gunmetal-900 text-white border border-gunmetal-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                            className="bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-vscode-type placeholder:text-vscode-comment"
                           />
                           <input
                             type="text"
-                            placeholder="Last Name *"
+                            placeholder="lastName *"
                             value={contactInfo.lastName}
                             onChange={(e) => setContactInfo({...contactInfo, lastName: e.target.value})}
-                            className="bg-gunmetal-900 text-white border border-gunmetal-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                            className="bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-vscode-type placeholder:text-vscode-comment"
                           />
                         </div>
                         <input
                           type="email"
-                          placeholder="Email Address *"
+                          placeholder="email *"
                           value={contactInfo.email}
                           onChange={(e) => setContactInfo({...contactInfo, email: e.target.value})}
-                          className="w-full bg-gunmetal-900 text-white border border-gunmetal-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                          className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-vscode-type placeholder:text-vscode-comment"
                         />
                         <input
                           type="text"
-                          placeholder="Company Name *"
+                          placeholder="company *"
                           value={contactInfo.company}
                           onChange={(e) => setContactInfo({...contactInfo, company: e.target.value})}
-                          className="w-full bg-gunmetal-900 text-white border border-gunmetal-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                          className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-vscode-type placeholder:text-vscode-comment"
                         />
                         <input
                           type="text"
-                          placeholder="Country *"
+                          placeholder="country *"
                           value={contactInfo.country}
                           onChange={(e) => setContactInfo({...contactInfo, country: e.target.value})}
-                          className="w-full bg-gunmetal-900 text-white border border-gunmetal-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                          className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-vscode-type placeholder:text-vscode-comment"
                         />
                         <button
                           onClick={handleSubmitContactInfo}
-                          className="w-full bg-tactical-700 hover:bg-tactical-600 text-white font-bold uppercase tracking-wide py-2 rounded text-sm transition-colors"
+                          className="w-full bg-vscode-keyword hover:bg-vscode-selection text-white font-bold tracking-wide py-1.5 rounded-sm text-xs transition-colors"
                         >
-                          Submit Information
+                          $ submit
                         </button>
-                        <p className="text-xs text-gray-400 text-center">
-                          Your information is secure and will only be used to send you relevant materials.
+                        <p className="text-xs text-vscode-comment text-center">
+                          // secure • private • encrypted
                         </p>
                       </div>
                     </div>
@@ -293,11 +293,11 @@ export default function Chatbot({ isOpen, onClose, topic }: ChatbotProps) {
               
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-gunmetal-800 border border-gunmetal-700 rounded-lg p-3">
-                    <div className="flex space-x-2">
-                      <div className="w-2 h-2 bg-tactical-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                      <div className="w-2 h-2 bg-tactical-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                      <div className="w-2 h-2 bg-tactical-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                  <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-2">
+                    <div className="flex space-x-1.5">
+                      <div className="w-1.5 h-1.5 bg-vscode-type rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-1.5 h-1.5 bg-vscode-type rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-1.5 h-1.5 bg-vscode-type rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                     </div>
                   </div>
                 </div>
@@ -305,27 +305,30 @@ export default function Chatbot({ isOpen, onClose, topic }: ChatbotProps) {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input */}
-            <div className="p-4 bg-gunmetal-950 border-t border-gunmetal-800">
+            {/* Input - Terminal Style */}
+            <div className="p-3 bg-vscode-sidebar border-t border-vscode-border">
               <div className="flex space-x-2">
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Type your question..."
-                  className="flex-1 bg-gunmetal-800 text-white border border-gunmetal-700 rounded-sm px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-tactical-600"
-                />
+                <div className="flex-1 flex items-center bg-vscode-bg border border-vscode-border rounded-sm px-2">
+                  <span className="text-vscode-type text-xs mr-1">$</span>
+                  <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder="type.your.question()"
+                    className="flex-1 bg-transparent text-vscode-variable text-xs py-1.5 focus:outline-none placeholder:text-vscode-comment"
+                  />
+                </div>
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim()}
-                  className="bg-tactical-700 hover:bg-tactical-600 disabled:bg-gunmetal-700 disabled:cursor-not-allowed text-white px-4 py-2 rounded-sm transition-colors"
+                  className="bg-vscode-keyword hover:bg-vscode-selection disabled:bg-vscode-bg disabled:cursor-not-allowed text-white px-3 py-1.5 rounded-sm transition-colors"
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-3.5 h-3.5" />
                 </button>
               </div>
-              <p className="text-xs text-gray-500 mt-2 text-center">
-                Secure • Private • On-Premises
+              <p className="text-xs text-vscode-comment mt-2 text-center">
+                // secure • private • on-premises
               </p>
             </div>
           </div>
