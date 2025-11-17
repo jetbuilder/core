@@ -20,7 +20,7 @@ export default function StartBuildingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gunmetal-950 pt-24">
+    <div className="min-h-screen bg-vscode-bg pt-24">
       <div className="container mx-auto px-4 py-16">
         {/* Header Section */}
         <motion.div
@@ -29,9 +29,9 @@ export default function StartBuildingPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-6 border border-tactical-700">
-            <Zap className="w-5 h-5 text-tactical-400" />
-            <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Start Building</span>
+          <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+            <Zap className="w-5 h-5 text-vscode-type" />
+            <span className="text-xs font-bold text-vscode-type uppercase tracking-wider">Start Building</span>
           </div>
           
           <h1 className="text-5xl font-bold text-white mb-6 uppercase tracking-wide">
@@ -47,13 +47,13 @@ export default function StartBuildingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Developer Path */}
           <motion.div
-            className="bg-gradient-to-br from-tactical-900/40 to-gunmetal-800/40 border-2 border-tactical-600 rounded-lg p-8"
+            className="bg-gradient-to-br from-tactical-900/40 to-gunmetal-800/40 border-2 border-vscode-border rounded-sm p-8"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <Code className="w-10 h-10 text-tactical-400" />
+              <Code className="w-10 h-10 text-vscode-type" />
               <h2 className="text-3xl font-bold text-white uppercase tracking-wide">Free Tier</h2>
             </div>
             
@@ -63,27 +63,27 @@ export default function StartBuildingPage() {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Visual workflow builder</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">49+ pre-built components</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Multi-agent orchestration</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Local development environment</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Community support</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Deploy on your infrastructure</span>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function StartBuildingPage() {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="w-full px-4 py-3 bg-gunmetal-800 border border-tactical-700 rounded text-white placeholder-gray-500 focus:border-tactical-500 focus:outline-none"
+                className="w-full px-4 py-3 bg-vscode-sidebar border border-vscode-border rounded text-white placeholder-gray-500 focus:border-vscode-type focus:outline-none"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                 required
@@ -100,7 +100,7 @@ export default function StartBuildingPage() {
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full px-4 py-3 bg-gunmetal-800 border border-tactical-700 rounded text-white placeholder-gray-500 focus:border-tactical-500 focus:outline-none"
+                className="w-full px-4 py-3 bg-vscode-sidebar border border-vscode-border rounded text-white placeholder-gray-500 focus:border-vscode-type focus:outline-none"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 required
@@ -118,13 +118,13 @@ export default function StartBuildingPage() {
 
           {/* Enterprise Path */}
           <motion.div
-            className="bg-gradient-to-br from-gunmetal-800/40 to-tactical-900/40 border-2 border-tactical-600 rounded-lg p-8"
+            className="bg-gradient-to-br from-gunmetal-800/40 to-tactical-900/40 border-2 border-vscode-border rounded-sm p-8"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <Shield className="w-10 h-10 text-tactical-400" />
+              <Shield className="w-10 h-10 text-vscode-type" />
               <h2 className="text-3xl font-bold text-white uppercase tracking-wide">Enterprise</h2>
             </div>
             
@@ -134,31 +134,31 @@ export default function StartBuildingPage() {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Everything in Free Tier</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Pre-built solution templates</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Custom workflow development</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">On-premises deployment</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Enterprise support & SLAs</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Dedicated success manager</span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-vscode-type mt-1 flex-shrink-0" />
                 <span className="text-gray-300">Priority feature requests</span>
               </div>
             </div>
@@ -167,22 +167,22 @@ export default function StartBuildingPage() {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="w-full px-4 py-3 bg-gunmetal-800 border border-tactical-700 rounded text-white placeholder-gray-500 focus:border-tactical-500 focus:outline-none"
+                className="w-full px-4 py-3 bg-vscode-sidebar border border-vscode-border rounded text-white placeholder-gray-500 focus:border-vscode-type focus:outline-none"
                 required
               />
               <input
                 type="email"
                 placeholder="Work Email"
-                className="w-full px-4 py-3 bg-gunmetal-800 border border-tactical-700 rounded text-white placeholder-gray-500 focus:border-tactical-500 focus:outline-none"
+                className="w-full px-4 py-3 bg-vscode-sidebar border border-vscode-border rounded text-white placeholder-gray-500 focus:border-vscode-type focus:outline-none"
                 required
               />
               <input
                 type="text"
                 placeholder="Company Name"
-                className="w-full px-4 py-3 bg-gunmetal-800 border border-tactical-700 rounded text-white placeholder-gray-500 focus:border-tactical-500 focus:outline-none"
+                className="w-full px-4 py-3 bg-vscode-sidebar border border-vscode-border rounded text-white placeholder-gray-500 focus:border-vscode-type focus:outline-none"
                 required
               />
-              <Button type="submit" size="lg" variant="outline" className="w-full border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 font-bold uppercase">
+              <Button type="submit" size="lg" variant="outline" className="w-full border-2 border-vscode-border text-vscode-type hover:bg-vscode-sidebar/30 font-bold uppercase">
                 Request Enterprise Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -206,9 +206,9 @@ export default function StartBuildingPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gunmetal-900 border border-tactical-700 rounded-lg p-6">
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded-full flex items-center justify-center mb-4">
-                <span className="text-2xl font-bold text-tactical-400">1</span>
+            <div className="bg-gunmetal-900 border border-vscode-border rounded-sm p-6">
+              <div className="w-12 h-12 bg-vscode-sidebar border border-vscode-border rounded-full flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-vscode-type">1</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-3 uppercase">Sign Up</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -216,9 +216,9 @@ export default function StartBuildingPage() {
               </p>
             </div>
 
-            <div className="bg-gunmetal-900 border border-tactical-700 rounded-lg p-6">
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded-full flex items-center justify-center mb-4">
-                <span className="text-2xl font-bold text-tactical-400">2</span>
+            <div className="bg-gunmetal-900 border border-vscode-border rounded-sm p-6">
+              <div className="w-12 h-12 bg-vscode-sidebar border border-vscode-border rounded-full flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-vscode-type">2</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-3 uppercase">Choose Template</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -226,9 +226,9 @@ export default function StartBuildingPage() {
               </p>
             </div>
 
-            <div className="bg-gunmetal-900 border border-tactical-700 rounded-lg p-6">
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded-full flex items-center justify-center mb-4">
-                <span className="text-2xl font-bold text-tactical-400">3</span>
+            <div className="bg-gunmetal-900 border border-vscode-border rounded-sm p-6">
+              <div className="w-12 h-12 bg-vscode-sidebar border border-vscode-border rounded-full flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-vscode-type">3</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-3 uppercase">Deploy</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -249,23 +249,23 @@ export default function StartBuildingPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a href="/contact-center" className="block bg-gunmetal-900 border border-tactical-700 hover:border-tactical-600 rounded-lg p-6 transition-all hover:scale-105">
-              <h3 className="text-lg font-bold text-tactical-400 mb-2 uppercase">Contact Center</h3>
+            <a href="/contact-center" className="block bg-gunmetal-900 border border-vscode-border hover:border-vscode-border rounded-sm p-6 transition-all hover:scale-105">
+              <h3 className="text-lg font-bold text-vscode-type mb-2 uppercase">Contact Center</h3>
               <p className="text-gray-300 text-sm">15 AI components for autonomous customer service</p>
             </a>
 
-            <a href="/financial-services" className="block bg-gunmetal-900 border border-tactical-700 hover:border-tactical-600 rounded-lg p-6 transition-all hover:scale-105">
-              <h3 className="text-lg font-bold text-tactical-400 mb-2 uppercase">Financial Services</h3>
+            <a href="/financial-services" className="block bg-gunmetal-900 border border-vscode-border hover:border-vscode-border rounded-sm p-6 transition-all hover:scale-105">
+              <h3 className="text-lg font-bold text-vscode-type mb-2 uppercase">Financial Services</h3>
               <p className="text-gray-300 text-sm">Claims, lending, KYC/KYB workflows</p>
             </a>
 
-            <a href="/intelligence-ops" className="block bg-gunmetal-900 border border-tactical-700 hover:border-tactical-600 rounded-lg p-6 transition-all hover:scale-105">
-              <h3 className="text-lg font-bold text-tactical-400 mb-2 uppercase">Intelligence Ops</h3>
+            <a href="/intelligence-ops" className="block bg-gunmetal-900 border border-vscode-border hover:border-vscode-border rounded-sm p-6 transition-all hover:scale-105">
+              <h3 className="text-lg font-bold text-vscode-type mb-2 uppercase">Intelligence Ops</h3>
               <p className="text-gray-300 text-sm">Monitoring, entity detection, web scraping</p>
             </a>
 
-            <a href="/ai-security" className="block bg-gunmetal-900 border border-tactical-700 hover:border-tactical-600 rounded-lg p-6 transition-all hover:scale-105">
-              <h3 className="text-lg font-bold text-tactical-400 mb-2 uppercase">AI Security</h3>
+            <a href="/ai-security" className="block bg-gunmetal-900 border border-vscode-border hover:border-vscode-border rounded-sm p-6 transition-all hover:scale-105">
+              <h3 className="text-lg font-bold text-vscode-type mb-2 uppercase">AI Security</h3>
               <p className="text-gray-300 text-sm">LLM security testing and monitoring</p>
             </a>
           </div>

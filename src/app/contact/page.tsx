@@ -106,10 +106,10 @@ export default function ContactPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-2xl w-full mx-auto bg-gunmetal-900 border-2 border-tactical-600 rounded-lg p-8 text-center"
+          className="max-w-2xl w-full mx-auto bg-vscode-sidebar border-2 border-tactical-600 rounded-sm p-8 text-center"
         >
           <div className="inline-flex items-center justify-center w-20 h-20 bg-tactical-900 border-2 border-tactical-600 rounded-full mb-6">
-            <CheckCircle className="w-10 h-10 text-tactical-400" />
+            <CheckCircle className="w-10 h-10 text-vscode-type" />
           </div>
           <h2 className="text-3xl font-bold text-white uppercase tracking-wide mb-4">
             Thank You, {formData.firstName}!
@@ -117,9 +117,9 @@ export default function ContactPage() {
           <p className="text-xl text-gray-300 mb-6">
             We've received your information and our team will review your requirements.
           </p>
-          <div className="bg-gunmetal-950 border border-tactical-700 rounded-lg p-6 mb-6">
+          <div className="bg-vscode-bg border border-tactical-700 rounded-sm p-6 mb-6">
             <p className="text-gray-300 mb-4">
-              A JetBuilder solutions architect will contact you within <span className="text-tactical-400 font-bold">24 hours</span> via {formData.preferredContactMethod} to discuss:
+              A JetBuilder solutions architect will contact you within <span className="text-vscode-type font-bold">24 hours</span> via {formData.preferredContactMethod} to discuss:
             </p>
             <ul className="text-left text-gray-300 space-y-2 max-w-md mx-auto">
               <li className="flex items-start space-x-2">
@@ -163,8 +163,8 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-4 border border-tactical-700">
-              <Mail className="w-5 h-5 text-tactical-400" />
-              <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Contact Our Team</span>
+              <Mail className="w-5 h-5 text-vscode-type" />
+              <span className="text-xs font-bold text-vscode-type uppercase tracking-wider">Contact Our Team</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wide mb-4">
               Let's Build Your Solution
@@ -182,14 +182,14 @@ export default function ContactPage() {
               transition={{ delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <div className="bg-gunmetal-900 border-2 border-tactical-700 rounded-lg p-6 sticky top-6">
+              <div className="bg-vscode-sidebar border-2 border-tactical-700 rounded-sm p-6 sticky top-6">
                 <h3 className="text-xl font-bold text-white uppercase tracking-wide mb-6">
                   Why Contact Us?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-8 h-8 bg-tactical-900 border border-tactical-700 rounded flex items-center justify-center flex-shrink-0">
-                      <Target className="w-4 h-4 text-tactical-400" />
+                      <Target className="w-4 h-4 text-vscode-type" />
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white uppercase">Custom Solutions</h4>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-8 h-8 bg-tactical-900 border border-tactical-700 rounded flex items-center justify-center flex-shrink-0">
-                      <Users className="w-4 h-4 text-tactical-400" />
+                      <Users className="w-4 h-4 text-vscode-type" />
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white uppercase">Expert Team</h4>
@@ -207,7 +207,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-8 h-8 bg-tactical-900 border border-tactical-700 rounded flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-tactical-400" />
+                      <CheckCircle className="w-4 h-4 text-vscode-type" />
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white uppercase">24-Hour Response</h4>
@@ -225,11 +225,11 @@ export default function ContactPage() {
               transition={{ delay: 0.3 }}
               className="lg:col-span-2"
             >
-              <form onSubmit={handleSubmit} className="bg-gunmetal-900 border-2 border-tactical-700 rounded-lg p-8">
+              <form onSubmit={handleSubmit} className="bg-vscode-sidebar border-2 border-tactical-700 rounded-sm p-8">
                 {/* Personal Information */}
                 <div className="mb-8">
                   <div className="flex items-center space-x-2 mb-4">
-                    <User className="w-5 h-5 text-tactical-400" />
+                    <User className="w-5 h-5 text-vscode-type" />
                     <h3 className="text-lg font-bold text-white uppercase tracking-wide">Personal Information</h3>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -243,7 +243,7 @@ export default function ContactPage() {
                         required
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                     <div>
@@ -256,7 +256,7 @@ export default function ContactPage() {
                         required
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                     <div>
@@ -269,7 +269,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                     <div>
@@ -281,7 +281,7 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                     <div className="md:col-span-2">
@@ -295,7 +295,7 @@ export default function ContactPage() {
                         value={formData.jobTitle}
                         onChange={handleInputChange}
                         placeholder="e.g., CTO, Security Director, IT Manager"
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                   </div>
@@ -304,7 +304,7 @@ export default function ContactPage() {
                 {/* Company Information */}
                 <div className="mb-8">
                   <div className="flex items-center space-x-2 mb-4">
-                    <Building2 className="w-5 h-5 text-tactical-400" />
+                    <Building2 className="w-5 h-5 text-vscode-type" />
                     <h3 className="text-lg font-bold text-white uppercase tracking-wide">Company Information</h3>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -318,7 +318,7 @@ export default function ContactPage() {
                         required
                         value={formData.companyName}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                     <div>
@@ -330,7 +330,7 @@ export default function ContactPage() {
                         required
                         value={formData.companySize}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       >
                         <option value="">Select size</option>
                         <option value="1-50">1-50 employees</option>
@@ -351,7 +351,7 @@ export default function ContactPage() {
                         required
                         value={formData.industry}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       >
                         <option value="">Select industry</option>
                         <option value="defense">Defense & Military</option>
@@ -379,7 +379,7 @@ export default function ContactPage() {
                         required
                         value={formData.country}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                     <div>
@@ -392,7 +392,7 @@ export default function ContactPage() {
                         value={formData.website}
                         onChange={handleInputChange}
                         placeholder="https://"
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                   </div>
@@ -401,7 +401,7 @@ export default function ContactPage() {
                 {/* Project Information */}
                 <div className="mb-8">
                   <div className="flex items-center space-x-2 mb-4">
-                    <Briefcase className="w-5 h-5 text-tactical-400" />
+                    <Briefcase className="w-5 h-5 text-vscode-type" />
                     <h3 className="text-lg font-bold text-white uppercase tracking-wide">Project Information</h3>
                   </div>
                   
@@ -427,7 +427,7 @@ export default function ContactPage() {
                             type="checkbox"
                             checked={formData.interestedIn.includes(solution)}
                             onChange={() => handleCheckboxChange(solution)}
-                            className="w-4 h-4 bg-gunmetal-950 border-gunmetal-700 text-tactical-600 focus:ring-tactical-600 rounded"
+                            className="w-4 h-4 bg-vscode-bg border-vscode-border text-tactical-600 focus:ring-tactical-600 rounded"
                           />
                           <span className="text-sm text-gray-300">{solution}</span>
                         </label>
@@ -445,7 +445,7 @@ export default function ContactPage() {
                         required
                         value={formData.projectTimeline}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       >
                         <option value="">Select timeline</option>
                         <option value="immediate">Immediate (0-1 month)</option>
@@ -465,7 +465,7 @@ export default function ContactPage() {
                         required
                         value={formData.budget}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       >
                         <option value="">Select range</option>
                         <option value="under-100k">Under $100K</option>
@@ -490,7 +490,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       rows={4}
                       placeholder="Describe the main challenges you're facing that you'd like our solution to address..."
-                      className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                      className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                     />
                   </div>
 
@@ -504,7 +504,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       rows={4}
                       placeholder="Any specific technical requirements, compliance needs, integration requirements, etc..."
-                      className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                      className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                     />
                   </div>
                 </div>
@@ -512,7 +512,7 @@ export default function ContactPage() {
                 {/* Additional Information */}
                 <div className="mb-8">
                   <div className="flex items-center space-x-2 mb-4">
-                    <MessageSquare className="w-5 h-5 text-tactical-400" />
+                    <MessageSquare className="w-5 h-5 text-vscode-type" />
                     <h3 className="text-lg font-bold text-white uppercase tracking-wide">Additional Information</h3>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -524,7 +524,7 @@ export default function ContactPage() {
                         name="howDidYouHear"
                         value={formData.howDidYouHear}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       >
                         <option value="">Select source</option>
                         <option value="web-search">Web Search</option>
@@ -545,7 +545,7 @@ export default function ContactPage() {
                         required
                         value={formData.preferredContactMethod}
                         onChange={handleInputChange}
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       >
                         <option value="email">Email</option>
                         <option value="phone">Phone</option>
@@ -562,14 +562,14 @@ export default function ContactPage() {
                         value={formData.preferredContactTime}
                         onChange={handleInputChange}
                         placeholder="e.g., Weekdays 9am-5pm EST"
-                        className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
                       />
                     </div>
                   </div>
                 </div>
 
                 {/* Privacy Notice */}
-                <div className="mb-6 p-4 bg-gunmetal-950 border border-tactical-700 rounded">
+                <div className="mb-6 p-4 bg-vscode-bg border border-tactical-700 rounded">
                   <p className="text-xs text-gray-400">
                     By submitting this form, you agree to be contacted by JetBuilder regarding your inquiry. 
                     Your information will be handled in accordance with our privacy policy and will never be shared 
