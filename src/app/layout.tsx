@@ -7,64 +7,102 @@ import Footer from '@/components/sections/footer'
 import ChatbotTrigger from '@/components/ui/chatbot-trigger'
 import { Analytics } from '@vercel/analytics/react'
 import { OrganizationSchema, SoftwareProductSchema } from '@/components/structured-data'
+import FAQSchema from '@/components/faq-schema'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jetbuilder.io'),
   title: {
-    default: 'JetBuilder Studio - AI Agentic Workflow Platform & Pre-Built Solutions',
-    template: '%s | JetBuilder Studio'
+    default: 'JetBuilder Studio - On-Premises AI Alternative to Azure, AWS & Google | Agentic Workflow Platform',
+    template: '%s | JetBuilder Studio - On-Premises AI Platform'
   },
-  description: 'Build AI agentic workflows with JetBuilder Studio. Visual IDE for multi-agent systems with 49+ pre-built components. Deploy enterprise-ready solutions for contact centers, financial services, intelligence ops, and AI security. Complete data sovereignty with on-premises deployment.',
+  description: 'Alternative to Azure OpenAI, AWS Bedrock & Google Vertex AI. Build AI agentic workflows on YOUR infrastructure with JetBuilder Studio. Visual IDE for multi-agent systems with 49+ pre-built components. No cloud dependency - complete data sovereignty with on-premises deployment. Small Language Models trained on your data.',
   keywords: [
+    // Alternative searches
+    'alternative to Azure OpenAI',
+    'alternative to AWS Bedrock',
+    'alternative to Google Vertex AI',
+    'OpenAI alternative on-premises',
+    'self-hosted AI platform',
+    'Azure AI alternative',
+    'AWS AI alternative',
+    'Google AI alternative',
+    'no cloud AI solution',
+    'private AI without cloud',
+    
+    // Core product
     'agentic workflow builder',
     'AI workflow IDE',
     'pre-built AI solutions',
     'multi-agent systems',
     'agentic AI platform',
+    
+    // Use cases
     'contact center AI',
     'financial services AI',
     'intelligence operations AI',
     'AI security testing',
+    'insurance claims automation',
+    'banking AI automation',
+    'healthcare AI HIPAA',
+    'government AI FedRAMP',
+    
+    // Small Language Models
+    'small language models',
+    'SLM deployment',
+    'custom AI models',
+    'domain-specific AI',
+    'custom LLM training',
+    'private LLM deployment',
+    'on-premises LLM',
+    'self-hosted LLM',
+    
+    // Data sovereignty
     'sovereign AI',
     'on-premises AI',
-    'data sovereignty',
+    'data sovereignty AI',
     'private AI infrastructure',
-    'small language models',
-    'SLM',
-    'custom AI models',
-    'enterprise AI',
     'air-gapped AI',
-    'government AI solutions',
+    'zero cloud dependency',
+    'AI independence',
+    'no vendor lock-in AI',
+    
+    // Compliance
     'HIPAA compliant AI',
     'PIPEDA compliant AI',
     'FedRAMP AI',
-    'FIPS 140-2',
+    'FIPS 140-2 AI',
+    'SOC 2 AI platform',
+    'regulated industry AI',
+    'compliance AI platform',
+    
+    // Features
     'autonomous AI agents',
     'multi-modal AI',
     'document processing AI',
     'voice transcription AI',
     'video analysis AI',
     'business intelligence AI',
+    'visual workflow builder',
+    'no-code AI platform',
+    'low-code AI platform',
+    
+    // Target markets
+    'enterprise AI',
     'Canadian AI platform',
     'US government AI',
     'banking AI solutions',
     'healthcare AI platform',
     'legal AI software',
     'telecommunications AI',
-    'insurance claims AI',
-    'compliance monitoring AI',
+    
+    // Deployment
     'on-premise deployment',
     'customer data trained AI',
-    'zero cloud dependency',
-    'AI independence',
     'private cloud AI',
     'secure AI platform',
-    'regulated industry AI',
-    'visual workflow builder',
-    'no-code AI platform',
-    'low-code AI platform',
+    'self-managed AI',
   ],
   authors: [{ name: 'JetBuilder', url: 'https://www.jetbuilder.io' }],
   creator: 'JetBuilder',
@@ -75,8 +113,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'JetBuilder Studio - Build AI Agentic Workflows | Pre-Built Solutions',
-    description: 'Visual IDE for building multi-agent systems with 49+ components. Deploy enterprise-ready solutions for contact centers, financial services, intelligence ops, and AI security. Complete data sovereignty.',
+    title: 'JetBuilder Studio - Alternative to Azure OpenAI, AWS Bedrock & Google Vertex AI',
+    description: 'Build AI workflows on YOUR infrastructure. No Azure, AWS, or Google dependency. Visual IDE for multi-agent systems with 49+ components. Complete data sovereignty. Small Language Models trained on your data.',
     url: 'https://jetbuilder.io',
     siteName: 'JetBuilder Studio',
     images: [
@@ -92,10 +130,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JetBuilder Studio - AI Agentic Workflow Platform',
-    description: 'Build custom workflows or deploy pre-built solutions. Visual IDE for multi-agent systems with complete data sovereignty.',
+    title: 'JetBuilder Studio - On-Premises AI Alternative to Azure, AWS & Google',
+    description: 'No cloud dependency. Build AI workflows on YOUR infrastructure. Small Language Models trained on your data. Complete data sovereignty.',
     images: ['/twitter-image.jpg'],
     creator: '@jetbuilder',
+    site: '@jetbuilder',
   },
   robots: {
     index: true,
@@ -126,6 +165,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <OrganizationSchema />
         <SoftwareProductSchema />
+        <FAQSchema />
         <Header />
         <main>{children}</main>
         <Footer />
