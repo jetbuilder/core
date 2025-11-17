@@ -10,6 +10,7 @@ export default function Header() {
   const navItems = [
     { label: 'Platform', href: '/#product' },
     { label: 'Solutions', href: '/#solution-examples' },
+    { label: 'Why SLMs', href: '/#why-slms' },
     { label: 'Pricing', href: '/#pricing' },
     { label: 'Resources', href: '/#resources' },
     { label: 'Enterprise', href: '/#enterprise' },
