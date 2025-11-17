@@ -6,7 +6,7 @@ import Button from '@/components/ui/button'
 
 export default function FinancialServicesPage() {
   return (
-    <div className="min-h-screen bg-[#1e1e1e] pt-24">
+    <div className="min-h-screen bg-vscode-bg pt-24">
       <div className="container mx-auto px-4 py-16">
         {/* Header Section */}
         <motion.div
@@ -42,35 +42,35 @@ export default function FinancialServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">10x</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 text-center">
+            <div className="text-3xl font-bold text-vscode-type mb-2">10x</div>
             <div className="text-sm text-gray-400 font-mono">Faster Processing</div>
           </div>
           
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">98%</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 text-center">
+            <div className="text-3xl font-bold text-vscode-type mb-2">98%</div>
             <div className="text-sm text-gray-400 font-mono">Accuracy Rate</div>
           </div>
           
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">100%</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 text-center">
+            <div className="text-3xl font-bold text-vscode-type mb-2">100%</div>
             <div className="text-sm text-gray-400 font-mono">Compliant</div>
           </div>
           
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">24/7</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 text-center">
+            <div className="text-3xl font-bold text-vscode-type mb-2">24/7</div>
             <div className="text-sm text-gray-400 font-mono">Automated</div>
           </div>
         </motion.div>
 
         {/* Main Workflow Image Placeholder */}
         <motion.div
-          className="bg-[#252526] border border-[#3c3c3c] rounded-lg p-8 mb-12"
+          className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8 mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="bg-[#0d0d0d] rounded-lg p-12 text-center">
+          <div className="bg-[#0d0d0d] rounded-sm p-12 text-center">
             <DollarSign className="w-24 h-24 text-green-600 mx-auto mb-4" />
             <p className="text-gray-400 font-mono">Financial Services Workflow Architecture Diagram</p>
             <p className="text-sm text-gray-500 mt-2">(Workflow visualization coming soon)</p>
@@ -89,105 +89,105 @@ export default function FinancialServicesPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-green-600 rounded flex items-center justify-center">
                   <Shield className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Claims Processing</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Claims Processing</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 Automated insurance claims processing with fraud detection. AI agents analyze claims, verify documentation, detect patterns, and process approvals with human oversight.
               </p>
               <div className="space-y-2">
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Automated document extraction</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Real-time fraud detection</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Compliance validation</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-green-600 rounded flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Mortgage Approval</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Mortgage Approval</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 Autonomous mortgage application processing with credit analysis, risk assessment, and automated approval workflows while maintaining regulatory compliance.
               </p>
               <div className="space-y-2">
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Automated credit verification</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Risk assessment AI</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Regulatory compliance checks</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-green-600 rounded flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">KYC/KYB Onboarding</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">KYC/KYB Onboarding</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 Corporate customer onboarding with Know Your Customer (KYC) and Know Your Business (KYB) verification. Automated identity verification, document validation, and risk screening.
               </p>
               <div className="space-y-2">
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Identity verification</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">AML screening</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Document validation</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-green-600 rounded flex items-center justify-center">
                   <DollarSign className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Lending & CASA</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Lending & CASA</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 Corporate lending, deposits, and Current Account Savings Account (CASA) operations. Automated loan processing, deposit management, and account operations.
               </p>
               <div className="space-y-2">
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Loan application processing</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Deposit management</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-[#4ec9b0] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-vscode-type mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-300">Account automation</span>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function FinancialServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-10">
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-10">
             <h3 className="text-3xl font-bold text-white mb-4 font-mono">
               Deploy or Customize This Workflow
             </h3>
@@ -216,7 +216,7 @@ export default function FinancialServicesPage() {
               <Button size="lg" className="bg-green-600 text-white hover:bg-green-700 font-mono uppercase">
                 Deploy This Workflow
               </Button>
-              <Button size="lg" variant="outline" className="border-[#3c3c3c] text-white hover:bg-[#37373d] font-mono uppercase">
+              <Button size="lg" variant="outline" className="border-vscode-border text-white hover:bg-[#37373d] font-mono uppercase">
                 <a href="/start-building">
                   Build Your Own Workflow
                 </a>
