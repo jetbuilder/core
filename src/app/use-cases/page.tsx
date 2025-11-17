@@ -97,39 +97,39 @@ export default function UseCasesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950">
+    <div className="min-h-screen bg-vscode-bg pt-24 font-mono">
       <div className="container mx-auto px-4 py-16">
-        {/* Section Header */}
+        {/* Section Header - IDE Style */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-6 border border-tactical-700">
-              <BarChart3 className="w-5 h-5 text-tactical-400" />
-              <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Use Cases</span>
+            <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+              <BarChart3 className="w-5 h-5 text-vscode-type" />
+              <span className="text-xs font-bold text-vscode-comment">// use-cases</span>
             </div>
           </motion.div>
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wide mb-6"
+            className="text-4xl md:text-5xl font-bold text-vscode-function tracking-wide mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            AI That Works Where It Matters Most
+            useCases.workWhereMattersMost()
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-sm text-vscode-variable max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            From healthcare to finance, manufacturing to government—Sovereign AI Platform processes intelligence from any data source across mission-critical business operations
+            From healthcare to finance, manufacturing to government—build agentic workflows that process intelligence from any data source across mission-critical business operations. Deploy on YOUR infrastructure—no Azure, AWS, or Google required.
           </motion.p>
         </div>
 
-        {/* Use Cases Grid */}
+        {/* Use Cases Grid - IDE Style */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {useCases.map((useCase, index) => {
             const Icon = useCase.icon
@@ -143,43 +143,43 @@ export default function UseCasesPage() {
                 viewport={{ once: true }}
                 className="scroll-mt-20"
               >
-                <Card className="h-full bg-gunmetal-900 border-2 border-tactical-700 hover:border-tactical-600 transition-all duration-300 group cursor-pointer">
+                <Card className="h-full bg-vscode-sidebar border border-vscode-border hover:border-vscode-type transition-all duration-300 group cursor-pointer">
                   <CardHeader>
                     <div className="flex items-center space-x-3 mb-3">
-                      <div className="p-2 bg-tactical-900 border border-tactical-700 rounded">
-                        <Icon className="w-5 h-5 text-tactical-400" />
+                      <div className="p-2 bg-vscode-bg border border-vscode-border rounded-sm">
+                        <Icon className="w-5 h-5 text-vscode-type" />
                       </div>
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider">
-                        {useCase.category}
+                      <div className="text-xs font-bold text-vscode-comment tracking-wider">
+                        // {useCase.category}
                       </div>
                     </div>
-                    <CardTitle className="text-white group-hover:text-tactical-400 transition-colors text-xl uppercase tracking-wide">
+                    <CardTitle className="text-vscode-function group-hover:text-vscode-type transition-colors text-base tracking-wide">
                       {useCase.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-300 mb-4">
+                    <CardDescription className="text-vscode-variable mb-4 text-xs">
                       {useCase.description}
                     </CardDescription>
                     
                     {/* Features */}
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider mb-2">
-                        Key Features
+                      <div className="text-xs font-bold text-vscode-comment tracking-wider mb-2">
+                        // key-features
                       </div>
                       {useCase.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-tactical-500 rounded-full flex-shrink-0 mt-1.5"></div>
-                          <span className="text-sm text-gray-400">{feature}</span>
+                          <span className="text-vscode-comment text-xs">✓</span>
+                          <span className="text-xs text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* CTA */}
-                    <div className="pt-4 border-t border-gunmetal-700">
-                      <a href="/contact" className="inline-flex items-center text-sm font-bold text-tactical-400 hover:text-tactical-300 uppercase tracking-wide group">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <div className="pt-4 border-t border-vscode-border">
+                      <a href="/contact" className="inline-flex items-center text-xs font-bold text-vscode-variable hover:text-vscode-type tracking-wide group">
+                        learn-more
+                        <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
                   </CardContent>
@@ -189,42 +189,42 @@ export default function UseCasesPage() {
           })}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section - IDE Style */}
         <motion.div
-          className="bg-gradient-to-br from-tactical-600 to-tactical-700 rounded-lg p-12 text-center text-white"
+          className="bg-vscode-sidebar border border-vscode-border rounded-sm p-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold uppercase tracking-wide mb-4">
-            Ready to Transform Your Operations?
+          <h3 className="text-2xl font-bold text-vscode-function tracking-wide mb-4">
+            readyToTransform.yourOperations()
           </h3>
-          <p className="text-xl text-tactical-100 mb-8 max-w-2xl mx-auto">
-            Contact our solutions architects to discuss your specific use case and deployment requirements.
+          <p className="text-sm text-vscode-variable mb-8 max-w-2xl mx-auto">
+            Contact our solutions architects to discuss your specific use case and deployment requirements. Build on YOUR infrastructure—no cloud dependency.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-white text-tactical-600 hover:bg-gray-100 font-bold uppercase group" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="bg-vscode-keyword hover:bg-vscode-selection text-white font-mono text-xs group" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
+                $ schedule-consultation
+                <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
               </Button>
             <a href="/">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-tactical-600 font-bold uppercase"
+                className="border border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-xs"
               >
-                Explore Platform
+                explore-platform
               </Button>
             </a>
           </div>
         </motion.div>
 
-        {/* Back Link */}
+        {/* Back Link - IDE Style */}
         <div className="mt-8 text-center">
           <a 
             href="/"
-            className="text-sm text-gray-500 hover:text-tactical-400 transition-colors"
+            className="text-xs text-vscode-comment hover:text-vscode-type transition-colors"
           >
             ← Back to Home
           </a>
