@@ -64,15 +64,18 @@ Transform your operations with sovereign AI: ${url}
     window.open(whatsappUrl, '_blank')
   }
   return (
-    <section id="use-cases" className="section-padding bg-gunmetal-950">
-      <div className="container">
-        {/* Section Header */}
+    <section id="use-cases" className="section-padding bg-vscode-bg">
+      <div className="container font-mono">
+        {/* Section Header - IDE Style */}
         <div className="text-center mb-16">
-          <h2 className="heading-lg text-white mb-4">
-            AI That Works Where It Matters Most
+          <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+            <span className="text-xs font-bold text-vscode-comment">// use-cases</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-vscode-function mb-4 tracking-wide">
+            useCases.deploy()
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            From customer service to claims processing, our platform delivers enterprise-grade AI with complete data sovereignty and industry-leading security for Canadian and US markets
+          <p className="text-sm text-vscode-variable max-w-3xl mx-auto">
+            Build agentic workflows that work where it matters most—no Azure, AWS, or Google required. Complete data sovereignty on YOUR infrastructure.
           </p>
         </div>
 
@@ -88,81 +91,81 @@ Transform your operations with sovereign AI: ${url}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card id={`usecase-${useCase.id}`} className="h-full bg-gunmetal-900 hover:bg-gunmetal-800 transition-all duration-300 group cursor-pointer border-2 border-gunmetal-700 hover:border-tactical-700 scroll-mt-24">
+                <Card id={`usecase-${useCase.id}`} className="h-full bg-vscode-sidebar hover:bg-vscode-hover transition-all duration-300 group cursor-pointer border border-vscode-border hover:border-vscode-type scroll-mt-24">
                   <CardHeader>
                     {/* Icon */}
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gunmetal-800 border border-tactical-700 rounded-sm mb-4 group-hover:bg-tactical-900 transition-colors">
-                      <Icon className="w-6 h-6 text-tactical-400 group-hover:text-tactical-300 transition-colors" />
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm mb-3 group-hover:bg-vscode-bg transition-colors">
+                      <Icon className="w-5 h-5 text-vscode-type group-hover:text-vscode-function transition-colors" />
                     </div>
 
                     {/* Subtitle */}
-                    <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider mb-2">
-                      {useCase.subtitle}
+                    <div className="text-xs font-bold text-vscode-comment tracking-wider mb-2">
+                      // {useCase.subtitle}
                     </div>
 
                     {/* Title */}
-                    <CardTitle className="text-white group-hover:text-tactical-400 transition-colors uppercase tracking-wide">
+                    <CardTitle className="text-vscode-function group-hover:text-vscode-type transition-colors tracking-wide text-base">
                       {useCase.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base mb-4 text-gray-300">
+                    <CardDescription className="text-xs mb-4 text-vscode-variable">
                       {useCase.description}
                     </CardDescription>
-                    <div className="flex items-center gap-3 mb-4">
-                      <a
-                        href="#"
-                        className="inline-flex items-center text-tactical-400 font-bold hover:text-tactical-300 group uppercase text-sm tracking-wide"
-                      >
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </a>
-                      <div className="relative group/deploy">
-                        <button
-                          disabled
-                          className="px-3 py-1.5 bg-gunmetal-700 text-gray-500 text-xs font-bold uppercase tracking-wide rounded cursor-not-allowed opacity-60"
-                        >
-                          Deploy
-                        </button>
-                        <div className="absolute bottom-full left-0 mb-2 hidden group-hover/deploy:block w-48 bg-gunmetal-800 text-white text-xs p-2 rounded shadow-lg border border-tactical-700 z-10">
-                          Will be active after contact with our deployment team
-                        </div>
-                      </div>
+                    <div className="flex items-center gap-2 mb-3">
                       <button
                         onClick={() => {
                           setSelectedSolution(useCase.title)
                           setIsDemoModalOpen(true)
                         }}
-                        className="px-3 py-1.5 bg-tactical-600 hover:bg-tactical-700 text-white text-xs font-bold uppercase tracking-wide rounded transition-colors"
+                        className="px-2 py-1 bg-vscode-keyword hover:bg-vscode-selection text-white text-xs font-mono rounded-sm transition-colors"
                       >
-                        Request Demo
+                        $ demo
                       </button>
+                      <div className="relative group/deploy">
+                        <button
+                          disabled
+                          className="px-2 py-1 bg-vscode-bg text-gray-500 text-xs font-mono rounded-sm cursor-not-allowed opacity-60"
+                        >
+                          deploy
+                        </button>
+                        <div className="absolute bottom-full left-0 mb-2 hidden group-hover/deploy:block w-48 bg-vscode-sidebar text-white text-xs p-2 rounded-sm shadow-lg border border-vscode-border z-10">
+                          Will be active after contact with our deployment team
+                        </div>
+                      </div>
+                      <a
+                        href="#"
+                        className="inline-flex items-center text-vscode-type font-bold hover:text-vscode-function group text-xs tracking-wide"
+                      >
+                        learn-more
+                        <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                      </a>
                     </div>
 
                     {/* Share Buttons */}
-                    <div className="mt-4 pt-4 border-t border-gunmetal-700">
+                    <div className="mt-3 pt-3 border-t border-vscode-border">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-gray-500 uppercase tracking-wide mr-1">Share:</span>
+                        <span className="text-xs text-vscode-comment tracking-wide mr-1">// share:</span>
                         <button
                           onClick={() => handleShareLinkedIn(useCase)}
                           className="p-1.5 bg-[#0A66C2] hover:bg-[#004182] text-white rounded transition-colors"
                           title="Share on LinkedIn"
                         >
-                          <Linkedin className="w-3.5 h-3.5" />
+                          <Linkedin size={14} />
                         </button>
                         <button
                           onClick={() => handleCopyLink(useCase)}
-                          className="p-1.5 bg-gunmetal-700 hover:bg-gunmetal-600 text-gray-300 rounded transition-colors"
+                          className="p-1.5 bg-vscode-bg hover:bg-vscode-hover text-vscode-variable rounded transition-colors"
                           title="Copy link"
                         >
-                          {copiedId === useCase.id ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Link2 className="w-3.5 h-3.5" />}
+                          {copiedId === useCase.id ? <Check size={14} /> : <Link2 size={14} />}
                         </button>
                         <button
                           onClick={() => handleShareWhatsApp(useCase)}
                           className="p-1.5 bg-[#25D366] hover:bg-[#128C7E] text-white rounded transition-colors"
                           title="Share on WhatsApp"
                         >
-                          <MessageCircle className="w-3.5 h-3.5" />
+                          <MessageCircle size={14} />
                         </button>
                       </div>
                     </div>
