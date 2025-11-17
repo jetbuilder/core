@@ -81,35 +81,33 @@ export default function Hero() {
                     <span className="text-gray-400">{'{'}</span>
                   </div>
                   <div className="ml-4 mb-1">
-                    <span className="text-vscode-variable">name</span>
+                    <span className="text-vscode-variable">platform</span>
                     <span className="text-gray-400">:</span>{' '}
-                    <span className="text-vscode-string">'AI Agentic Workflow Platform'</span>
+                    <span className="text-vscode-string">'Agentic AI Workflow Builder'</span>
                     <span className="text-gray-400">,</span>
-                  </div>
-                  <div className="ml-4 mb-1">
-                    <span className="text-vscode-variable">type</span>
-                    <span className="text-gray-400">:</span>{' '}
-                    <span className="text-vscode-string">'Visual IDE for Multi-Agent Systems'</span>
-                    <span className="text-gray-400">,</span>
-                  </div>
-                  <div className="ml-4 mb-1">
-                    <span className="text-vscode-variable">features</span>
-                    <span className="text-gray-400">: [</span>
-                    <span className="text-vscode-string">'49+ Components'</span>
-                    <span className="text-gray-400">,</span>{' '}
-                    <span className="text-vscode-string">'Pre-Built Solutions'</span>
-                    <span className="text-gray-400">],</span>
                   </div>
                   <div className="ml-4 mb-1">
                     <span className="text-vscode-variable">deployment</span>
                     <span className="text-gray-400">:</span>{' '}
-                    <span className="text-vscode-string">'On-Premises'</span>
+                    <span className="text-vscode-string">'Your Infrastructure Only'</span>
+                    <span className="text-gray-400">,</span>
+                  </div>
+                  <div className="ml-4 mb-1">
+                    <span className="text-vscode-variable">cloudDependency</span>
+                    <span className="text-gray-400">:</span>{' '}
+                    <span className="text-vscode-keyword">false</span>
+                    <span className="text-gray-400">,</span>
+                  </div>
+                  <div className="ml-4 mb-1">
+                    <span className="text-vscode-variable">vendorLockIn</span>
+                    <span className="text-gray-400">:</span>{' '}
+                    <span className="text-vscode-keyword">null</span>
                     <span className="text-gray-400">,</span>
                   </div>
                   <div className="ml-4 mb-2">
-                    <span className="text-vscode-variable">sovereignty</span>
+                    <span className="text-vscode-variable">dataSovereignty</span>
                     <span className="text-gray-400">:</span>{' '}
-                    <span className="text-vscode-keyword">true</span>
+                    <span className="text-vscode-string">'Complete'</span>
                   </div>
                   <div>
                     <span className="text-gray-400">{'}'}</span>
@@ -121,12 +119,12 @@ export default function Hero() {
               <div className="flex items-start space-x-3 border-t border-vscode-border pt-4">
                 <div className="text-vscode-lineNumber font-mono text-xs">09</div>
                 <div className="text-vscode-comment font-mono text-xs sm:text-sm">
-                  // Build custom workflows or deploy enterprise-ready solutions with complete data sovereignty
+                  // No Azure Foundry. No AWS Bedrock. No Google Vertex AI. Deploy agentic workflows on YOUR infrastructure.
                 </div>
               </div>
           </motion.div>
 
-          {/* Value Proposition - Console Output Style */}
+          {/* Executive Value Proposition - Terminal Style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,27 +137,30 @@ export default function Hero() {
                 <div className="flex-1">
                   <span className="text-vscode-keyword">jetbuilder</span>
                   <span className="text-gray-400"> --</span>
-                  <span className="text-vscode-variable">accelerate</span>
+                  <span className="text-vscode-variable">deploy</span>
                   <span className="text-gray-400"> --</span>
-                  <span className="text-vscode-variable">speed</span>
+                  <span className="text-vscode-variable">location</span>
                   <span className="text-gray-400">=</span>
-                  <span className="text-vscode-number">100x</span>
+                  <span className="text-vscode-string">"on-premises"</span>
                 </div>
               </div>
               <div className="ml-4 text-vscode-comment">
-                {`// Transform slow manual processes into agentic-accelerated infrastructure`}
+                {`// Build AI-powered workflows without Azure, AWS, or Google dependency`}
               </div>
               <div className="ml-4 text-vscode-type">
-                ✓ Onboard existing workflows
+                ✓ Complete data sovereignty
               </div>
               <div className="ml-4 text-vscode-type">
-                ✓ Plug into existing systems
+                ✓ Zero vendor lock-in
               </div>
               <div className="ml-4 text-vscode-type">
-                ✓ Scale instantly
+                ✓ Full infrastructure control
+              </div>
+              <div className="ml-4 text-vscode-type">
+                ✓ Custom SLMs on your data
               </div>
               <div className="mt-3 pt-3 border-t border-vscode-border text-vscode-string">
-                → Output: <span className="text-vscode-number">100X</span> faster operations for SaaS providers & enterprises
+                → ROI: <span className="text-vscode-number">100X</span> faster than manual processes • <span className="text-vscode-number">Zero</span> cloud dependency
               </div>
             </div>
           </motion.div>
@@ -174,7 +175,7 @@ export default function Hero() {
               <AISearch />
             </motion.div>
 
-            {/* Key Benefits - Code Comments Style */}
+            {/* Executive Benefits - Code Comments Style */}
             <motion.div
               className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 space-y-2 font-mono text-xs sm:text-sm"
               initial={{ opacity: 0, x: -20 }}
@@ -183,19 +184,19 @@ export default function Hero() {
             >
               <div className="flex items-start space-x-2">
                 <span className="text-vscode-lineNumber select-none">10</span>
-                <span className="text-vscode-comment">// ✓ Custom Small Language Models (trained on your data, on-premises)</span>
+                <span className="text-vscode-comment">// ✓ No Azure/AWS/Google: Run entirely on your infrastructure</span>
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-vscode-lineNumber select-none">11</span>
-                <span className="text-vscode-comment">// ✓ Data Sovereignty Controls (minimal public APIs, your infrastructure)</span>
+                <span className="text-vscode-comment">// ✓ Custom SLMs: Trained on YOUR data, deployed on YOUR servers</span>
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-vscode-lineNumber select-none">12</span>
-                <span className="text-vscode-comment">// ✓ Multi-Modal Intelligence (documents, voice, video, databases unified)</span>
+                <span className="text-vscode-comment">// ✓ Full Control: Data sovereignty, compliance, air-gap capability</span>
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-vscode-lineNumber select-none">13</span>
-                <span className="text-vscode-comment">// ✓ Business Process Intelligence (automate workflows, extract insights)</span>
+                <span className="text-vscode-comment">// ✓ Executive ROI: 100X operational acceleration, zero cloud fees</span>
               </div>
             </motion.div>
 
@@ -225,22 +226,27 @@ export default function Hero() {
               </a>
           </motion.div>
 
-          {/* Trust Indicators */}
+          {/* Trust Indicators - IDE Style */}
           <motion.div
-              className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide sm:tracking-wider font-semibold leading-relaxed"
+              className="bg-vscode-sidebar border border-vscode-border rounded-sm p-3 font-mono"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.35 }}
             >
-              Trusted by insurance, banking, telecom & financial services across North America
+              <div className="text-xs text-vscode-comment text-center">
+                // independent-from: Azure Foundry | AWS Bedrock | Google Vertex AI
+              </div>
+              <div className="text-xs text-vscode-type text-center mt-2">
+                ✓ Deploy on your infrastructure • Zero cloud vendor lock-in • Complete control
+              </div>
             </motion.div>
           </div>
 
-          {/* Right Column - Stats & Visual */}
-          <div className="space-y-6">
+          {/* Right Column - Stats & Visual - IDE Style */}
+          <div className="space-y-4">
             {/* Animated Stats Grid */}
             <motion.div
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-3"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -250,64 +256,75 @@ export default function Hero() {
                 return (
                   <motion.div
                     key={stat.label}
-                    className="bg-gunmetal-800/80 border-2 border-tactical-700 rounded-lg p-6 hover:border-tactical-600 transition-colors"
+                    className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 hover:border-vscode-type transition-colors font-mono"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     whileHover={{ y: -5 }}
                   >
-                    <Icon className="w-8 h-8 text-tactical-400 mb-3" />
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-400 uppercase tracking-wide">{stat.label}</div>
+                    <Icon className="w-6 h-6 text-vscode-type mb-2" />
+                    <div className="text-2xl font-bold text-vscode-function mb-1">{stat.value}</div>
+                    <div className="text-xs text-vscode-comment tracking-wide">{stat.label}</div>
                   </motion.div>
                 )
               })}
             </motion.div>
 
-            {/* Visual Element - Dashboard Preview */}
+            {/* Executive Value Proposition - IDE Style */}
             <motion.div
-              className="bg-gunmetal-800/50 border-2 border-tactical-700 rounded-lg p-6 relative overflow-hidden"
+              className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 font-mono"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-tactical-900 rounded-full mix-blend-overlay filter blur-2xl opacity-50"></div>
-              <h3 className="text-lg font-bold text-tactical-400 mb-4 uppercase tracking-wide">Deployment Environments</h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-gunmetal-900/60 rounded border border-tactical-700/50">
-                  <span className="text-white font-semibold">FedRAMP Authorized</span>
-                  <span className="text-tactical-400 text-xs font-bold uppercase">Supported</span>
+              <h3 className="text-sm font-bold text-vscode-function mb-3 tracking-wide">cloudIndependence.complete()</h3>
+              <div className="text-xs text-vscode-comment mb-4">
+                // No dependency on Azure Foundry, AWS Bedrock, or Google Vertex AI
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between p-2 bg-vscode-bg rounded-sm border border-vscode-border">
+                  <span className="text-vscode-variable text-xs">Your Infrastructure</span>
+                  <span className="text-vscode-type text-xs font-bold">✓ 100%</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gunmetal-900/60 rounded border border-tactical-700/50">
-                  <span className="text-white font-semibold">FIPS 140-2 Certified</span>
-                  <span className="text-tactical-400 text-xs font-bold uppercase">Supported</span>
+                <div className="flex items-center justify-between p-2 bg-vscode-bg rounded-sm border border-vscode-border">
+                  <span className="text-vscode-variable text-xs">Data Sovereignty</span>
+                  <span className="text-vscode-type text-xs font-bold">✓ Full</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gunmetal-900/60 rounded border border-tactical-700/50">
-                  <span className="text-white font-semibold">Air-Gapped Systems</span>
-                  <span className="text-tactical-400 text-xs font-bold uppercase">Supported</span>
-            </div>
+                <div className="flex items-center justify-between p-2 bg-vscode-bg rounded-sm border border-vscode-border">
+                  <span className="text-vscode-variable text-xs">Cloud APIs</span>
+                  <span className="text-vscode-type text-xs font-bold">✓ Minimal</span>
+                </div>
+                <div className="flex items-center justify-between p-2 bg-vscode-bg rounded-sm border border-vscode-border">
+                  <span className="text-vscode-variable text-xs">Vendor Lock-in</span>
+                  <span className="text-vscode-type text-xs font-bold">✓ Zero</span>
+                </div>
             </div>
           </motion.div>
           </div>
         </div>
 
-        {/* Target Industries */}
+        {/* Target Industries - IDE Style */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <p className="text-sm text-gray-400 uppercase tracking-wider mb-3">Built For</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {['Government', 'Defense', 'Law Enforcement', 'Healthcare', 'Finance', 'Telecommunications'].map((industry) => (
-              <div
-                key={industry}
-                className="px-4 py-2 bg-gunmetal-800/80 border border-tactical-700 rounded-sm text-sm font-semibold text-tactical-300 hover:border-tactical-600 transition-colors"
-              >
-                {industry}
-              </div>
-            ))}
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 font-mono">
+            <p className="text-xs text-vscode-comment mb-4">// built-for: enterprises-requiring-sovereignty</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {['Government', 'Defense', 'Law Enforcement', 'Healthcare', 'Finance', 'Telecommunications'].map((industry) => (
+                <div
+                  key={industry}
+                  className="px-3 py-1.5 bg-vscode-bg border border-vscode-border rounded-sm text-xs font-semibold text-vscode-type hover:border-vscode-type transition-colors"
+                >
+                  {industry}
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 text-xs text-vscode-variable">
+              Regulatory compliance | Data privacy | Critical infrastructure | Zero cloud dependency
+            </div>
           </div>
         </motion.div>
 
@@ -402,7 +419,7 @@ export default function Hero() {
               capabilities.deploy(<span className="text-vscode-string">"your-infrastructure"</span>)
             </h2>
             <p className="text-sm text-vscode-variable max-w-3xl mx-auto">
-              Deploy autonomous AI agents to extract intelligence from voice, audio, text, and unstructured data at massive scale—on-premises deployment options with data sovereignty controls across 55+ languages.
+              Deploy autonomous AI agents on YOUR infrastructure—no Azure, AWS, or Google required. Extract intelligence from voice, audio, text, and unstructured data at massive scale with complete data sovereignty across 55+ languages.
             </p>
           </div>
 
