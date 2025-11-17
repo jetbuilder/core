@@ -88,9 +88,9 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
   }
 
   return (
-    <section id="enterprise" className="section-padding bg-gunmetal-900">
-      <div className="container">
-        {/* Section Header */}
+    <section id="enterprise" className="section-padding bg-vscode-bg">
+      <div className="container font-mono">
+        {/* Section Header - IDE Style */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,24 +98,24 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-6 border border-tactical-700">
-              <Building className="w-5 h-5 text-tactical-400" />
-              <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Enterprise Solutions</span>
+            <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+              <Building className="w-4 h-4 text-vscode-type" />
+              <span className="text-xs font-bold text-vscode-comment">// enterprise-solutions</span>
             </div>
           </motion.div>
           
           <motion.h2
-            className="heading-lg text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-vscode-function mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Industry-Specific On-Premises Deployments
+            deployments.onPremises()
           </motion.h2>
           
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-sm text-vscode-variable max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -137,25 +137,25 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <Card id={`enterprise-${offering.id}`} className="h-full bg-gunmetal-950 hover:bg-gunmetal-800 transition-all duration-300 group cursor-pointer border-2 border-gunmetal-700 hover:border-tactical-700 scroll-mt-24">
+                <Card id={`enterprise-${offering.id}`} className="h-full bg-vscode-sidebar hover:border-vscode-type transition-all duration-300 group cursor-pointer border border-vscode-border scroll-mt-24">
                   <CardHeader>
                     {/* Icon and Industry */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-gunmetal-800 border border-tactical-700 rounded-sm group-hover:bg-tactical-900 transition-colors">
-                        <Icon className="w-6 h-6 text-tactical-400 group-hover:text-tactical-300 transition-colors" />
+                      <div className="inline-flex items-center justify-center w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm">
+                        <Icon className="w-5 h-5 text-vscode-type" />
                       </div>
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider">
-                        {offering.industry}
+                      <div className="text-xs font-bold text-vscode-comment">
+                        // {offering.industry}
                       </div>
                     </div>
 
                     {/* Title */}
-                    <CardTitle className="text-white group-hover:text-tactical-400 transition-colors text-lg">
+                    <CardTitle className="text-vscode-function group-hover:text-vscode-type transition-colors text-base">
                       {offering.title}
                     </CardTitle>
 
                     {/* Description */}
-                    <CardDescription className="text-gray-300 mt-3 text-sm">
+                    <CardDescription className="text-vscode-variable mt-3 text-xs">
                       {offering.description}
                     </CardDescription>
                   </CardHeader>
@@ -163,47 +163,47 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                   <CardContent>
                     {/* Features */}
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider mb-3">
-                        Key Features
+                      <div className="text-xs font-bold text-vscode-comment mb-3">
+                        // key-features
                       </div>
                       {offering.features.slice(0, 3).map((feature, idx) => (
                         <div key={idx} className="flex items-start space-x-2">
-                          <CheckCircle className="w-3 h-3 text-tactical-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-vscode-comment text-xs">✓</span>
                           <span className="text-xs text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Compliance Badges */}
-                    <div className="pt-4 border-t border-gunmetal-700">
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider mb-2">
-                        Compliance Support*
+                    <div className="pt-4 border-t border-vscode-border">
+                      <div className="text-xs font-bold text-vscode-comment mb-2">
+                        // compliance-support*
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {offering.compliance.map((cert, idx) => (
                           <span
                             key={idx}
-                            className="inline-flex items-center px-2 py-1 bg-gunmetal-800 border border-tactical-700 rounded text-xs font-bold text-tactical-400"
+                            className="inline-flex items-center px-2 py-1 bg-vscode-bg border border-vscode-border rounded-sm text-xs font-bold text-vscode-type"
                           >
                             {cert}*
                           </span>
                         ))}
                       </div>
-                      <p className="text-xs text-gray-500 mt-2">
+                      <p className="text-xs text-vscode-comment mt-2">
                         * Platform features designed to support compliance. See disclaimer below.
                       </p>
                     </div>
 
                     {/* CTA */}
                     <div className="mt-4">
-                      <div className="flex items-center gap-3 mb-3">
+                      <div className="flex items-center gap-2 mb-3">
                         <button
                           onClick={() => handleLearnMore(offering.title)}
-                          className="text-xs font-bold text-tactical-400 hover:text-tactical-300 uppercase tracking-wide inline-flex items-center group"
+                          className="text-xs font-bold text-vscode-variable hover:text-vscode-type inline-flex items-center group"
                         >
-                          Learn More
+                          learn-more
                           <svg
-                            className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform"
+                            className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -219,11 +219,11 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                         <div className="relative group/deploy">
                           <button
                             disabled
-                            className="px-3 py-1.5 bg-gunmetal-700 text-gray-500 text-xs font-bold uppercase tracking-wide rounded cursor-not-allowed opacity-60"
+                            className="px-2 py-1 bg-vscode-bg text-gray-500 text-xs font-mono rounded-sm cursor-not-allowed opacity-60"
                           >
-                            Deploy
+                            deploy
                           </button>
-                          <div className="absolute bottom-full left-0 mb-2 hidden group-hover/deploy:block w-48 bg-gunmetal-800 text-white text-xs p-2 rounded shadow-lg border border-tactical-700 z-10">
+                          <div className="absolute bottom-full left-0 mb-2 hidden group-hover/deploy:block w-48 bg-vscode-sidebar text-white text-xs p-2 rounded-sm shadow-lg border border-vscode-border z-10">
                             Will be active after contact with our deployment team
                           </div>
                         </div>
@@ -232,15 +232,15 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                             setSelectedSolution(offering.title)
                             setIsDemoModalOpen(true)
                           }}
-                          className="px-3 py-1.5 bg-tactical-600 hover:bg-tactical-700 text-white text-xs font-bold uppercase tracking-wide rounded transition-colors"
+                          className="px-2 py-1 bg-vscode-keyword hover:bg-vscode-selection text-white text-xs font-mono rounded-sm transition-colors"
                         >
-                          Request Demo
+                          $ demo
                         </button>
                       </div>
                       
                       {/* Share Buttons */}
-                      <div className="flex items-center gap-2 pt-3 border-t border-gunmetal-700">
-                        <span className="text-xs text-gray-500 uppercase tracking-wide mr-1">Share:</span>
+                      <div className="flex items-center gap-2 pt-3 border-t border-vscode-border">
+                        <span className="text-xs text-vscode-comment mr-1">// share:</span>
                         <button
                           onClick={() => handleShareLinkedIn(offering)}
                           className="p-1.5 bg-[#0A66C2] hover:bg-[#004182] text-white rounded transition-colors"
@@ -279,40 +279,40 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-gunmetal-950 to-gunmetal-800 border-2 border-tactical-700 rounded-sm p-8">
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gunmetal-800 border-2 border-tactical-700 rounded-sm mb-4">
-                  <Lock className="w-8 h-8 text-tactical-400" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-vscode-bg border border-vscode-border rounded-sm mb-4">
+                  <Lock className="w-6 h-6 text-vscode-type" />
                 </div>
-                <h4 className="text-lg font-bold text-white uppercase tracking-wide mb-2">
-                  On-Premises Only
+                <h4 className="text-base font-bold text-vscode-function tracking-wide mb-2">
+                  onPremises.only()
                 </h4>
-                <p className="text-sm text-gray-300">
+                <p className="text-xs text-vscode-variable">
                   Deploy exclusively on your infrastructure. Air-gapped options available for maximum security.
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gunmetal-800 border-2 border-tactical-700 rounded-sm mb-4">
-                  <Award className="w-8 h-8 text-tactical-400" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-vscode-bg border border-vscode-border rounded-sm mb-4">
+                  <Award className="w-6 h-6 text-vscode-type" />
                 </div>
-                <h4 className="text-lg font-bold text-white uppercase tracking-wide mb-2">
-                  Compliance Support
+                <h4 className="text-base font-bold text-vscode-function tracking-wide mb-2">
+                  compliance.support()
                 </h4>
-                <p className="text-sm text-gray-300">
+                <p className="text-xs text-vscode-variable">
                   Designed to support industry-specific regulatory requirements with comprehensive audit logging and documentation.
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gunmetal-800 border-2 border-tactical-700 rounded-sm mb-4">
-                  <Shield className="w-8 h-8 text-tactical-400" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-vscode-bg border border-vscode-border rounded-sm mb-4">
+                  <Shield className="w-6 h-6 text-vscode-type" />
                 </div>
-                <h4 className="text-lg font-bold text-white uppercase tracking-wide mb-2">
-                  Data Sovereignty
+                <h4 className="text-base font-bold text-vscode-function tracking-wide mb-2">
+                  dataSovereignty()
                 </h4>
-                <p className="text-sm text-gray-300">
+                <p className="text-xs text-vscode-variable">
                   Your data is designed to remain within your environment. Data sovereignty controls and ownership of voice intelligence.
                 </p>
               </div>
