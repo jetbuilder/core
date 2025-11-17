@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ArrowRight, PlayCircle, Shield, Zap, Globe, Database, Lock, TrendingUp } from 'lucide-react'
+import { ArrowRight, PlayCircle, Shield, Zap, Globe, Database, Lock, TrendingUp, Code, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import Chatbot from '@/components/ui/chatbot'
@@ -37,56 +37,130 @@ export default function Hero() {
   ]
 
   return (
-    <section className="relative bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950 overflow-hidden">
+    <section className="relative bg-vscode-bg overflow-hidden">
+      {/* IDE-style top bar */}
+      <div className="bg-vscode-sidebar border-b border-vscode-border px-4 py-2">
+        <div className="container flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <span className="text-vscode-lineNumber text-xs font-mono ml-4">jetbuilder-studio.tsx</span>
+          </div>
+          <div className="flex items-center space-x-4 text-xs text-vscode-lineNumber">
+            <span>UTF-8</span>
+            <span>TypeScript JSX</span>
+            <span>Ln 1, Col 1</span>
+          </div>
+        </div>
+      </div>
       <div className="container px-4 py-8 sm:py-12 md:py-16">
         {/* Hero Grid Layout */}
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center mb-8 sm:mb-12 md:mb-16">
-          {/* Left Column - Main Content */}
+          {/* Left Column - Main Content with Line Numbers */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
-          {/* Main Heading */}
+          {/* Main Heading - IDE Code Style */}
           <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 sm:p-6"
             >
-              <div className="inline-flex items-center space-x-1.5 sm:space-x-2 bg-tactical-900 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-sm mb-3 sm:mb-4 border border-tactical-700">
-                <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-tactical-400" />
-                <span className="text-xs font-bold text-tactical-400 uppercase tracking-wide sm:tracking-wider">Powered by JetBuilder</span>
+              {/* Code-style badge */}
+              <div className="flex items-start space-x-3 mb-4">
+                <div className="text-vscode-lineNumber font-mono text-xs leading-relaxed select-none pt-1">
+                  01<br/>02<br/>03<br/>04<br/>05<br/>06<br/>07<br/>08
+                </div>
+                <div className="flex-1 font-mono text-sm sm:text-base leading-relaxed">
+                  <div className="mb-2">
+                    <span className="text-vscode-keyword">const</span>{' '}
+                    <span className="text-vscode-function">JetBuilderStudio</span>{' '}
+                    <span className="text-gray-400">=</span>{' '}
+                    <span className="text-gray-400">{'{'}</span>
+                  </div>
+                  <div className="ml-4 mb-1">
+                    <span className="text-vscode-variable">name</span>
+                    <span className="text-gray-400">:</span>{' '}
+                    <span className="text-vscode-string">'AI Agentic Workflow Platform'</span>
+                    <span className="text-gray-400">,</span>
+                  </div>
+                  <div className="ml-4 mb-1">
+                    <span className="text-vscode-variable">type</span>
+                    <span className="text-gray-400">:</span>{' '}
+                    <span className="text-vscode-string">'Visual IDE for Multi-Agent Systems'</span>
+                    <span className="text-gray-400">,</span>
+                  </div>
+                  <div className="ml-4 mb-1">
+                    <span className="text-vscode-variable">features</span>
+                    <span className="text-gray-400">: [</span>
+                    <span className="text-vscode-string">'49+ Components'</span>
+                    <span className="text-gray-400">,</span>{' '}
+                    <span className="text-vscode-string">'Pre-Built Solutions'</span>
+                    <span className="text-gray-400">],</span>
+                  </div>
+                  <div className="ml-4 mb-1">
+                    <span className="text-vscode-variable">deployment</span>
+                    <span className="text-gray-400">:</span>{' '}
+                    <span className="text-vscode-string">'On-Premises'</span>
+                    <span className="text-gray-400">,</span>
+                  </div>
+                  <div className="ml-4 mb-2">
+                    <span className="text-vscode-variable">sovereignty</span>
+                    <span className="text-gray-400">:</span>{' '}
+                    <span className="text-vscode-keyword">true</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">{'}'}</span>
+                  </div>
+                </div>
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight uppercase tracking-tight">
-                <span className="text-tactical-400">Sovereign AI</span> Platform
-              </h1>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-tactical-300 font-bold mb-2 sm:mb-3 uppercase tracking-wide leading-snug">
-                Customer Data-Trained Small Language Models On-Premises
-              </p>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 font-medium mb-4 sm:mb-6 leading-relaxed">
-                Complete Data Sovereignty with Custom SLMs Trained on Your Corporate Data - Deploy AI on Your Infrastructure with Zero Cloud Dependency
-            </p>
+              
+              {/* Comment-style description */}
+              <div className="flex items-start space-x-3 border-t border-vscode-border pt-4">
+                <div className="text-vscode-lineNumber font-mono text-xs">09</div>
+                <div className="text-vscode-comment font-mono text-xs sm:text-sm">
+                  // Build custom workflows or deploy enterprise-ready solutions with complete data sovereignty
+                </div>
+              </div>
           </motion.div>
 
-          {/* Value Proposition Highlight */}
+          {/* Value Proposition - Console Output Style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-r from-tactical-900/40 to-tactical-800/40 border-2 border-tactical-600/50 rounded-lg p-4 sm:p-5 md:p-6 backdrop-blur-sm"
+            className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 sm:p-5 md:p-6 font-mono"
           >
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-tactical-400" />
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white uppercase tracking-wide">
-                  Transform Your Operations
-                </h3>
+            <div className="space-y-2 text-xs sm:text-sm">
+              <div className="flex items-start space-x-2">
+                <span className="text-vscode-lineNumber select-none">$</span>
+                <div className="flex-1">
+                  <span className="text-vscode-keyword">jetbuilder</span>
+                  <span className="text-gray-400"> --</span>
+                  <span className="text-vscode-variable">accelerate</span>
+                  <span className="text-gray-400"> --</span>
+                  <span className="text-vscode-variable">speed</span>
+                  <span className="text-gray-400">=</span>
+                  <span className="text-vscode-number">100x</span>
+                </div>
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed">
-                <span className="text-tactical-400 font-bold">JetBuilder</span> helps onboard existing slow and manual processes into 
-                <span className="text-tactical-300 font-semibold"> agentic-accelerated infrastructure</span> and make your processes 
-                <span className="text-tactical-400 font-bold text-lg sm:text-xl md:text-2xl"> 100X faster</span>.
-              </p>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                <span className="font-semibold text-white">SaaS providers</span> can add new AI capabilities without reinventing entire infrastructure—
-                plug into your existing systems and scale instantly.
-              </p>
+              <div className="ml-4 text-vscode-comment">
+                {`// Transform slow manual processes into agentic-accelerated infrastructure`}
+              </div>
+              <div className="ml-4 text-vscode-type">
+                ✓ Onboard existing workflows
+              </div>
+              <div className="ml-4 text-vscode-type">
+                ✓ Plug into existing systems
+              </div>
+              <div className="ml-4 text-vscode-type">
+                ✓ Scale instantly
+              </div>
+              <div className="mt-3 pt-3 border-t border-vscode-border text-vscode-string">
+                → Output: <span className="text-vscode-number">100X</span> faster operations for SaaS providers & enterprises
+              </div>
             </div>
           </motion.div>
 
@@ -100,66 +174,55 @@ export default function Hero() {
               <AISearch />
             </motion.div>
 
-            {/* Key Benefits */}
+            {/* Key Benefits - Code Comments Style */}
             <motion.div
-              className="space-y-2.5 sm:space-y-3 md:space-y-4"
+              className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 space-y-2 font-mono text-xs sm:text-sm"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <div className="flex items-start space-x-2 sm:space-x-3">
-                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
-                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
-                </div>
-                <div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Custom Small Language Models</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Trained on your data, deployed on-premises.</p>
-                </div>
+              <div className="flex items-start space-x-2">
+                <span className="text-vscode-lineNumber select-none">10</span>
+                <span className="text-vscode-comment">// ✓ Custom Small Language Models (trained on your data, on-premises)</span>
               </div>
-              <div className="flex items-start space-x-2 sm:space-x-3">
-                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
-                  <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
-                </div>
-                <div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Data Sovereignty Controls</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Minimal public APIs. Your infrastructure.</p>
-                </div>
+              <div className="flex items-start space-x-2">
+                <span className="text-vscode-lineNumber select-none">11</span>
+                <span className="text-vscode-comment">// ✓ Data Sovereignty Controls (minimal public APIs, your infrastructure)</span>
               </div>
-              <div className="flex items-start space-x-2 sm:space-x-3">
-                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
-                  <Database className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
-                </div>
-                <div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Multi-Modal Intelligence</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Documents, voice, video, databases unified.</p>
-                </div>
+              <div className="flex items-start space-x-2">
+                <span className="text-vscode-lineNumber select-none">12</span>
+                <span className="text-vscode-comment">// ✓ Multi-Modal Intelligence (documents, voice, video, databases unified)</span>
               </div>
-              <div className="flex items-start space-x-2 sm:space-x-3">
-                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mt-0.5">
-                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-tactical-400" />
-                </div>
-                <div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Business Process Intelligence</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-0.5">Automate workflows and extract insights.</p>
-                </div>
+              <div className="flex items-start space-x-2">
+                <span className="text-vscode-lineNumber select-none">13</span>
+                <span className="text-vscode-comment">// ✓ Business Process Intelligence (automate workflows, extract insights)</span>
               </div>
             </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Terminal Style */}
           <motion.div
               className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2.5 sm:gap-3 md:gap-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              <Button size="lg" className="group text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto" onClick={handleRequestBriefing}>
-              Request Briefing
-                <ArrowRight className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-              <Button size="lg" variant="outline" className="group text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto" onClick={handleViewDemo}>
-              <PlayCircle className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-              View Demo
-            </Button>
+              <a href="/start-building" className="w-full sm:w-auto">
+                <Button size="lg" className="group text-xs sm:text-sm md:text-base px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 w-full whitespace-nowrap bg-vscode-keyword hover:bg-vscode-selection border border-vscode-border font-mono">
+                  $ start-building --free
+                  <ArrowRight className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <a href="#solution-examples" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="group text-xs sm:text-sm md:text-base px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 w-full border-2 border-vscode-border text-vscode-variable hover:bg-vscode-hover whitespace-nowrap font-mono">
+                  <PlayCircle className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                  explore-solutions
+                </Button>
+              </a>
+              <a href="/contact" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="text-xs sm:text-sm md:text-base px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 w-full border-2 border-vscode-warning text-vscode-warning hover:bg-vscode-warning/10 whitespace-nowrap font-mono">
+                  book-demo --enterprise
+                </Button>
+              </a>
           </motion.div>
 
           {/* Trust Indicators */}
@@ -245,6 +308,82 @@ export default function Hero() {
                 {industry}
               </div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Platform + Solutions Split */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+        >
+          {/* For Developers */}
+          <div className="bg-gradient-to-br from-tactical-900/40 to-gunmetal-800/40 border-2 border-tactical-600 rounded-lg p-8">
+            <div className="flex items-center space-x-3 mb-4">
+              <Code className="w-8 h-8 text-tactical-400" />
+              <h3 className="text-2xl font-bold text-white uppercase tracking-wide">For Developers</h3>
+            </div>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Build custom AI agentic workflows with our visual IDE. No-code/low-code platform with 49+ pre-built components.
+            </p>
+            <ul className="space-y-3 mb-6">
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Visual workflow builder</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Multi-agent orchestration</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Deploy on your infrastructure</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Free tier available</span>
+              </li>
+            </ul>
+            <a href="/start-building">
+              <Button className="w-full bg-tactical-600 hover:bg-tactical-700 text-white font-bold uppercase">
+                Start Building Free
+              </Button>
+            </a>
+          </div>
+
+          {/* For Enterprises */}
+          <div className="bg-gradient-to-br from-gunmetal-800/40 to-tactical-900/40 border-2 border-tactical-600 rounded-lg p-8">
+            <div className="flex items-center space-x-3 mb-4">
+              <Shield className="w-8 h-8 text-tactical-400" />
+              <h3 className="text-2xl font-bold text-white uppercase tracking-wide">For Enterprises</h3>
+            </div>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Deploy pre-built solutions for contact centers, financial services, intelligence ops, and AI security.
+            </p>
+            <ul className="space-y-3 mb-6">
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Pre-built agentic workflows</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Fully customizable solutions</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">Enterprise support & SLAs</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">On-premises deployment</span>
+              </li>
+            </ul>
+            <a href="/contact">
+              <Button variant="outline" className="w-full border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 font-bold uppercase">
+                Book Enterprise Demo
+              </Button>
+            </a>
           </div>
         </motion.div>
 

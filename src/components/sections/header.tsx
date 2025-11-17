@@ -8,61 +8,64 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { label: 'Product', href: '/#product' },
-    { label: 'Solutions', href: '/#solutions' },
-    { label: 'Compare', href: '/compare' },
-    { label: 'Resources', href: '/#resources' },
-    { label: 'Developers', href: '/#developers' },
-    { label: 'Enterprise', href: '/#enterprise' },
-    { label: 'Government', href: '/#government' },
+    { label: 'Platform', href: '/#product' },
+    { label: 'Solutions', href: '/#solution-examples' },
     { label: 'Pricing', href: '/#pricing' },
+    { label: 'Resources', href: '/#resources' },
+    { label: 'Enterprise', href: '/#enterprise' },
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-gunmetal-950 border-b border-gunmetal-800 shadow-lg">
+    <header className="sticky top-0 z-50 bg-vscode-sidebar border-b border-vscode-border shadow-lg font-mono">
       <div className="container">
-        <div className="flex items-center py-4 gap-12">
-          {/* Logo */}
+        <div className="flex items-center py-3 gap-12">
+          {/* Logo - IDE Style */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex flex-col">
-              <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">JetBuilder</span>
-              <span className="text-xl font-bold text-tactical-400 hover:text-tactical-300 transition-colors uppercase tracking-wider whitespace-nowrap">
-                SOVEREIGN AI PLATFORM
-              </span>
-              <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide -mt-1">Complete AI Independence</span>
+            <a href="/" className="flex items-center space-x-3">
+              <div className="bg-vscode-keyword px-2 py-1 rounded text-xs font-bold">
+                <span className="text-white">JB</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-vscode-function whitespace-nowrap">
+                  JetBuilder.studio
+                </span>
+                <span className="text-xs text-vscode-comment -mt-0.5">
+                  // agentic-workflow-platform
+                </span>
+              </div>
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center flex-grow gap-6">
+          {/* Desktop Navigation - IDE Tabs Style */}
+          <nav className="hidden lg:flex items-center justify-center flex-grow gap-1">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-tactical-400 font-bold transition-colors uppercase text-sm tracking-wide px-1"
+                className="px-4 py-2 text-vscode-variable hover:text-vscode-function hover:bg-vscode-hover transition-colors text-xs border-r border-vscode-border last:border-r-0 whitespace-nowrap"
               >
-                {item.label}
+                {item.label.toLowerCase().replace(' ', '-')}
               </a>
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-10 flex-shrink-0">
+          {/* CTA Buttons - Terminal Style */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a href="/signin">
-              <Button variant="outline" size="default" className="bg-transparent border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 hover:text-tactical-300 font-bold uppercase transition-all whitespace-nowrap">
-                Sign In
+              <Button variant="outline" size="sm" className="bg-transparent border border-vscode-border text-vscode-variable hover:bg-vscode-hover hover:text-vscode-function font-mono text-xs transition-all whitespace-nowrap">
+                ./sign-in
               </Button>
             </a>
             <a href="/contact">
-              <Button variant="outline" size="default" className="bg-transparent border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 hover:text-tactical-300 font-bold uppercase transition-all">
-                Contact
+              <Button variant="outline" size="sm" className="bg-vscode-keyword text-white hover:bg-vscode-selection border border-vscode-border font-mono text-xs transition-all">
+                $ contact
               </Button>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-gray-300 hover:text-tactical-400 transition-colors"
+            className="lg:hidden p-2 text-vscode-variable hover:text-vscode-function transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -70,29 +73,29 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - IDE Style */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gunmetal-800 animate-fade-in">
-            <nav className="flex flex-col space-y-4">
+          <div className="lg:hidden py-4 border-t border-vscode-border animate-fade-in bg-vscode-sidebar">
+            <nav className="flex flex-col space-y-2 font-mono">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-300 hover:text-tactical-400 font-bold transition-colors py-2 uppercase text-sm tracking-wide"
+                  className="text-vscode-variable hover:text-vscode-function hover:bg-vscode-hover transition-colors py-2 px-4 text-xs border-b border-vscode-border"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  {item.label.toLowerCase().replace(' ', '-')}
                 </a>
               ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gunmetal-800">
+              <div className="flex flex-col space-y-2 pt-3 px-4">
                 <a href="/signin" className="w-full">
-                  <Button variant="outline" className="w-full bg-transparent border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 hover:text-tactical-300 font-bold uppercase whitespace-nowrap">
-                    Sign In
+                  <Button variant="outline" className="w-full bg-transparent border border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-xs whitespace-nowrap">
+                    ./sign-in
                   </Button>
                 </a>
                 <a href="/contact" className="w-full">
-                  <Button variant="outline" className="w-full bg-transparent border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 hover:text-tactical-300 font-bold uppercase">
-                    Contact
+                  <Button variant="outline" className="w-full bg-vscode-keyword text-white hover:bg-vscode-selection border border-vscode-border font-mono text-xs">
+                    $ contact
                   </Button>
                 </a>
               </div>

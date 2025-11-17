@@ -8,6 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // VS Code IDE Theme Colors
+        vscode: {
+          bg: '#1e1e1e',
+          sidebar: '#252526',
+          border: '#3c3c3c',
+          hover: '#2a2d2e',
+          selection: '#264f78',
+          lineNumber: '#858585',
+          comment: '#6a9955',
+          string: '#ce9178',
+          number: '#b5cea8',
+          keyword: '#569cd6',
+          function: '#dcdcaa',
+          variable: '#9cdcfe',
+          type: '#4ec9b0',
+          error: '#f48771',
+          warning: '#cca700',
+        },
         primary: {
           50: '#f8f9fa',
           100: '#e9ecef',
@@ -49,6 +67,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
+        code: ['Fira Code', 'JetBrains Mono', 'Consolas', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

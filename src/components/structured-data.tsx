@@ -193,3 +193,63 @@ export function FAQSchema({ faqs }: { faqs: Array<{ question: string; answer: st
   )
 }
 
+export function ContactCenterSolutionSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Autonomous Contact Center AI Solution',
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Contact Center Software',
+    description: 'AI-powered contact center solution with human-in-the-loop oversight. 49 autonomous AI components orchestrated for insurance, banking, and regulated industries. Accelerates operations 10x while maintaining full compliance.',
+    operatingSystem: 'Web-based, On-Premises Compatible',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: 'Contact for pricing',
+      eligibleCustomerType: 'Business',
+    },
+    featureList: [
+      'Human-in-the-Loop AI Architecture',
+      'Real-time Call Sentiment Analysis',
+      'Automated Call Routing',
+      'Fraud Detection',
+      'Compliance Validation',
+      'Multi-Channel Support (Voice, SMS, Email, Chat)',
+      'Speech-to-Text Processing',
+      'Multi-Language Support',
+      'Agent Performance Coaching',
+      'Quality Assurance Automation',
+      'Claims Processing Automation',
+      'KYC/AML Compliance',
+      'HIPAA Compliant Architecture',
+      '49 AI Components',
+      '50 Intelligent Connections',
+      '10x Faster Operations',
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '28',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Insurance Companies, Banks, Financial Institutions, Healthcare Organizations, Regulated Industries',
+    },
+    serviceType: 'Contact Center Automation',
+    provider: {
+      '@type': 'Organization',
+      name: 'JetBuilder',
+      url: 'https://jetbuilder.io',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+

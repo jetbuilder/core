@@ -210,13 +210,13 @@ export default function Product() {
                   <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
                     <div className="flex items-center space-x-2 mb-4">
                       <Terminal className="w-5 h-5 text-[#3794ff]" />
-                      <h3 className="text-[#cccccc] font-mono text-lg font-bold">Overview</h3>
+                      <h3 className="text-[#cccccc] font-mono text-lg font-bold">Build Your Own or Start with Pre-Built</h3>
                     </div>
                     <p className="text-[#cccccc] text-sm leading-relaxed mb-4">
-                      <span className="text-[#4ec9b0] font-semibold">JetBuilder Studio</span> is an integrated development and deployment platform that empowers your teams to build, train, and deploy custom Small Language Models (SLMs) entirely on your private infrastructure.
+                      <span className="text-[#4ec9b0] font-semibold">JetBuilder Studio</span> is a visual IDE for building AI agentic workflows. Build custom multi-agent systems with 49+ pre-built components or deploy enterprise-ready solutions.
                     </p>
                     <p className="text-[#cccccc] text-sm leading-relaxed">
-                      It combines intuitive visual tools with powerful APIs to deliver complete control over your AI capabilities—without cloud dependencies.
+                      Build, train, and deploy workflows entirely on your infrastructure with complete data sovereignty—no cloud dependencies.
                     </p>
                   </div>
 

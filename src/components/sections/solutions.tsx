@@ -130,8 +130,13 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
+                onClick={() => {
+                  if (solution.id === 'contact-center') {
+                    window.location.href = '/contact-center'
+                  }
+                }}
               >
-                <Card id={`solution-${solution.id}`} className="h-full bg-gunmetal-900 hover:bg-gunmetal-800 transition-all duration-300 group cursor-pointer border-2 border-gunmetal-700 hover:border-tactical-700 scroll-mt-24">
+                <Card id={`solution-${solution.id}`} className={`h-full bg-gunmetal-900 hover:bg-gunmetal-800 transition-all duration-300 group cursor-pointer border-2 border-gunmetal-700 hover:border-tactical-700 scroll-mt-24 ${solution.id === 'contact-center' ? 'ring-2 ring-tactical-500' : ''}`}>
                   <CardHeader>
                     {/* Icon and Category */}
                     <div className="flex items-center justify-between mb-4">
@@ -146,6 +151,9 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
                     {/* Title */}
                     <CardTitle className="text-white group-hover:text-tactical-400 transition-colors text-xl">
                       {solution.title}
+                      {solution.id === 'contact-center' && (
+                        <span className="ml-2 text-xs bg-tactical-600 text-white px-2 py-1 rounded uppercase">View Architecture</span>
+                      )}
                     </CardTitle>
 
                     {/* Description */}

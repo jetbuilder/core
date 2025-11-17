@@ -13,11 +13,20 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://jetbuilder.io'),
   title: {
-    default: 'Sovereign AI Platform by JetBuilder - On-Premises AI Infrastructure',
-    template: '%s | JetBuilder Sovereign AI'
+    default: 'JetBuilder Studio - AI Agentic Workflow Platform & Pre-Built Solutions',
+    template: '%s | JetBuilder Studio'
   },
-  description: 'Deploy autonomous AI agents on your private infrastructure with customer data-trained Small Language Models (SLMs). Complete data sovereignty with on-premises deployment for government, healthcare, banking, and enterprise. Process documents, voice, video, and databases with zero cloud dependency. FedRAMP authorization in progress.',
+  description: 'Build AI agentic workflows with JetBuilder Studio. Visual IDE for multi-agent systems with 49+ pre-built components. Deploy enterprise-ready solutions for contact centers, financial services, intelligence ops, and AI security. Complete data sovereignty with on-premises deployment.',
   keywords: [
+    'agentic workflow builder',
+    'AI workflow IDE',
+    'pre-built AI solutions',
+    'multi-agent systems',
+    'agentic AI platform',
+    'contact center AI',
+    'financial services AI',
+    'intelligence operations AI',
+    'AI security testing',
     'sovereign AI',
     'on-premises AI',
     'data sovereignty',
@@ -53,6 +62,9 @@ export const metadata: Metadata = {
     'private cloud AI',
     'secure AI platform',
     'regulated industry AI',
+    'visual workflow builder',
+    'no-code AI platform',
+    'low-code AI platform',
   ],
   authors: [{ name: 'JetBuilder', url: 'https://www.jetbuilder.io' }],
   creator: 'JetBuilder',
@@ -63,16 +75,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Sovereign AI Platform - Deploy AI on Your Infrastructure | JetBuilder',
-    description: 'Customer data-trained Small Language Models with complete data sovereignty. On-premises deployment for government, healthcare, finance, and enterprise with FedRAMP authorization in progress.',
+    title: 'JetBuilder Studio - Build AI Agentic Workflows | Pre-Built Solutions',
+    description: 'Visual IDE for building multi-agent systems with 49+ components. Deploy enterprise-ready solutions for contact centers, financial services, intelligence ops, and AI security. Complete data sovereignty.',
     url: 'https://jetbuilder.io',
-    siteName: 'JetBuilder Sovereign AI Platform',
+    siteName: 'JetBuilder Studio',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'JetBuilder Sovereign AI Platform - On-Premises AI Infrastructure',
+        alt: 'JetBuilder Studio - AI Agentic Workflow Platform',
       },
     ],
     locale: 'en_US',
@@ -80,8 +92,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sovereign AI Platform by JetBuilder',
-    description: 'Deploy AI agents on your infrastructure with complete data sovereignty. Customer-trained SLMs for government and enterprise.',
+    title: 'JetBuilder Studio - AI Agentic Workflow Platform',
+    description: 'Build custom workflows or deploy pre-built solutions. Visual IDE for multi-agent systems with complete data sovereignty.',
     images: ['/twitter-image.jpg'],
     creator: '@jetbuilder',
   },
