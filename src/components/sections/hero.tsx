@@ -311,7 +311,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Platform + Solutions Split */}
+        {/* Platform + Solutions Split - IDE Style */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -319,69 +319,69 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.55 }}
         >
           {/* For Developers */}
-          <div className="bg-gradient-to-br from-tactical-900/40 to-gunmetal-800/40 border-2 border-tactical-600 rounded-lg p-8">
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8 font-mono">
             <div className="flex items-center space-x-3 mb-4">
-              <Code className="w-8 h-8 text-tactical-400" />
-              <h3 className="text-2xl font-bold text-white uppercase tracking-wide">For Developers</h3>
+              <Code className="w-8 h-8 text-vscode-type" />
+              <h3 className="text-xl font-bold text-vscode-function tracking-wide">for.developers()</h3>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-vscode-variable text-sm mb-6 leading-relaxed">
               Build custom AI agentic workflows with our visual IDE. No-code/low-code platform with 49+ pre-built components.
             </p>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-2 mb-6 text-xs">
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Visual workflow builder</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Visual workflow builder</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Multi-agent orchestration</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Multi-agent orchestration</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Deploy on your infrastructure</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Deploy on your infrastructure</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Free tier available</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Free tier available</span>
               </li>
             </ul>
             <a href="/start-building">
-              <Button className="w-full bg-tactical-600 hover:bg-tactical-700 text-white font-bold uppercase">
-                Start Building Free
+              <Button className="w-full bg-vscode-keyword hover:bg-vscode-selection text-white font-mono text-xs">
+                $ start-building --free
               </Button>
             </a>
           </div>
 
           {/* For Enterprises */}
-          <div className="bg-gradient-to-br from-gunmetal-800/40 to-tactical-900/40 border-2 border-tactical-600 rounded-lg p-8">
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8 font-mono">
             <div className="flex items-center space-x-3 mb-4">
-              <Shield className="w-8 h-8 text-tactical-400" />
-              <h3 className="text-2xl font-bold text-white uppercase tracking-wide">For Enterprises</h3>
+              <Shield className="w-8 h-8 text-vscode-type" />
+              <h3 className="text-xl font-bold text-vscode-function tracking-wide">for.enterprises()</h3>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-vscode-variable text-sm mb-6 leading-relaxed">
               Deploy pre-built solutions for contact centers, financial services, intelligence ops, and AI security.
             </p>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-2 mb-6 text-xs">
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Pre-built agentic workflows</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Pre-built agentic workflows</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Fully customizable solutions</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Fully customizable solutions</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Enterprise support & SLAs</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">Enterprise support & SLAs</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle className="w-5 h-5 text-tactical-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">On-premises deployment</span>
+                <span className="text-vscode-comment">✓</span>
+                <span className="text-gray-300">On-premises deployment</span>
               </li>
             </ul>
             <a href="/contact">
-              <Button variant="outline" className="w-full border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 font-bold uppercase">
-                Book Enterprise Demo
+              <Button variant="outline" className="w-full border border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-xs">
+                book-demo --enterprise
               </Button>
             </a>
           </div>
