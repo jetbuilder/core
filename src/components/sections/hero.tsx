@@ -387,7 +387,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Agentic AI Capabilities Section */}
+        {/* Agentic AI Capabilities Section - IDE Style */}
         <motion.div
           className="max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -395,126 +395,129 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide">
-              Agentic AI Capabilities on <span className="text-tactical-400">Your Infrastructure</span>
+            <div className="inline-block mb-4">
+              <span className="text-vscode-comment text-sm">// agentic-ai-capabilities</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-vscode-function mb-4 tracking-wide">
+              capabilities.deploy(<span className="text-vscode-string">"your-infrastructure"</span>)
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-sm text-vscode-variable max-w-3xl mx-auto">
               Deploy autonomous AI agents to extract intelligence from voice, audio, text, and unstructured data at massive scale—on-premises deployment options with data sovereignty controls across 55+ languages.
             </p>
           </div>
 
-          {/* Major Capabilities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {/* Major Capabilities Grid - IDE Style */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             <motion.div 
-              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              className="p-4 bg-vscode-sidebar rounded-sm border border-vscode-border hover:border-vscode-type transition-colors"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-tactical-400" />
+              <div className="w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center mb-3">
+                <Zap className="w-5 h-5 text-vscode-type" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Autonomous Processing</h3>
-              <p className="text-gray-400">Self-directed agents that analyze, extract, and synthesize intelligence without human intervention</p>
+              <h3 className="text-sm font-bold text-vscode-function mb-2 tracking-wide">autonomousProcessing()</h3>
+              <p className="text-vscode-variable text-xs">Self-directed agents that analyze, extract, and synthesize intelligence without human intervention</p>
             </motion.div>
             
             <motion.div 
-              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              className="p-4 bg-vscode-sidebar rounded-sm border border-vscode-border hover:border-vscode-type transition-colors"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
-                <Database className="w-6 h-6 text-tactical-400" />
+              <div className="w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center mb-3">
+                <Database className="w-5 h-5 text-vscode-type" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Multi-Modal Analysis</h3>
-              <p className="text-gray-400">Process voice, audio, text, images, and documents simultaneously for comprehensive insights</p>
+              <h3 className="text-sm font-bold text-vscode-function mb-2 tracking-wide">multiModalAnalysis()</h3>
+              <p className="text-vscode-variable text-xs">Process voice, audio, text, images, and documents simultaneously for comprehensive insights</p>
             </motion.div>
             
             <motion.div 
-              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              className="p-4 bg-vscode-sidebar rounded-sm border border-vscode-border hover:border-vscode-type transition-colors"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-tactical-400" />
+              <div className="w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center mb-3">
+                <TrendingUp className="w-5 h-5 text-vscode-type" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Real-Time Intelligence</h3>
-              <p className="text-gray-400">Continuous monitoring and instant alerting on critical events and pattern detection</p>
+              <h3 className="text-sm font-bold text-vscode-function mb-2 tracking-wide">realTimeIntelligence()</h3>
+              <p className="text-vscode-variable text-xs">Continuous monitoring and instant alerting on critical events and pattern detection</p>
             </motion.div>
             
             <motion.div 
-              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              className="p-4 bg-vscode-sidebar rounded-sm border border-vscode-border hover:border-vscode-type transition-colors"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
-                <Lock className="w-6 h-6 text-tactical-400" />
+              <div className="w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center mb-3">
+                <Lock className="w-5 h-5 text-vscode-type" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Private Deployment</h3>
-              <p className="text-gray-400">On-premises or air-gapped deployment options with data sovereignty controls</p>
+              <h3 className="text-sm font-bold text-vscode-function mb-2 tracking-wide">privateDeployment()</h3>
+              <p className="text-vscode-variable text-xs">On-premises or air-gapped deployment options with data sovereignty controls</p>
             </motion.div>
             
             <motion.div 
-              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              className="p-4 bg-vscode-sidebar rounded-sm border border-vscode-border hover:border-vscode-type transition-colors"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-tactical-400" />
+              <div className="w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center mb-3">
+                <Globe className="w-5 h-5 text-vscode-type" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Workflow Orchestration</h3>
-              <p className="text-gray-400">Multi-agent coordination for complex analytical tasks across distributed data sources</p>
+              <h3 className="text-sm font-bold text-vscode-function mb-2 tracking-wide">workflowOrchestration()</h3>
+              <p className="text-vscode-variable text-xs">Multi-agent coordination for complex analytical tasks across distributed data sources</p>
             </motion.div>
             
             <motion.div 
-              className="p-6 bg-gunmetal-800/80 rounded-lg border-2 border-tactical-700 hover:border-tactical-600 transition-colors"
+              className="p-4 bg-vscode-sidebar rounded-sm border border-vscode-border hover:border-vscode-type transition-colors"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-tactical-900 border border-tactical-600 rounded flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-tactical-400" />
+              <div className="w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center mb-3">
+                <Shield className="w-5 h-5 text-vscode-type" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Adaptive Learning</h3>
-              <p className="text-gray-400">Continuously improving models that adapt to your organization's unique patterns and requirements</p>
+              <h3 className="text-sm font-bold text-vscode-function mb-2 tracking-wide">adaptiveLearning()</h3>
+              <p className="text-vscode-variable text-xs">Continuously improving models that adapt to your organization's unique patterns and requirements</p>
             </motion.div>
           </div>
 
-          {/* Critical Infrastructure Benefits */}
+          {/* Critical Infrastructure Benefits - IDE Style */}
           <motion.div
-            className="p-8 bg-gradient-to-br from-tactical-900/40 to-gunmetal-800/40 border-2 border-tactical-500 rounded-lg"
+            className="p-6 bg-vscode-sidebar border border-vscode-border rounded-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <h3 className="text-2xl font-bold text-tactical-300 mb-6 uppercase tracking-wide text-center">Why Organizations Choose Sovereign AI Platform</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
-                  <Lock className="w-5 h-5 text-tactical-400" />
+            <h3 className="text-lg font-bold text-vscode-function mb-6 tracking-wide text-center">whyChoose.jetBuilder()</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Lock className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Minimal Public APIs</h4>
-                  <p className="text-gray-400 text-sm">Speech-to-Text, Text-to-Speech, and processing logic designed to run on your infrastructure with minimal external dependencies</p>
+                  <h4 className="text-vscode-function font-bold mb-1 text-sm">minimalPublicAPIs()</h4>
+                  <p className="text-vscode-variable text-xs">Speech-to-Text, Text-to-Speech, and processing logic designed to run on your infrastructure with minimal external dependencies</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
-                  <Database className="w-5 h-5 text-tactical-400" />
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Database className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Customer Data-Trained Small Language Models</h4>
-                  <p className="text-gray-400 text-sm">Domain-specific SLMs trained on your corporate and customer data, deployed entirely on-premises with full ownership</p>
+                  <h4 className="text-vscode-function font-bold mb-1 text-sm">customSLMs()</h4>
+                  <p className="text-vscode-variable text-xs">Domain-specific SLMs trained on your corporate and customer data, deployed entirely on-premises with full ownership</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-tactical-400" />
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Shield className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Model Ownership Options</h4>
-                  <p className="text-gray-400 text-sm">Model weights, biases, and training data can be deployed on your infrastructure with ownership controls</p>
+                  <h4 className="text-vscode-function font-bold mb-1 text-sm">modelOwnership()</h4>
+                  <p className="text-vscode-variable text-xs">Model weights, biases, and training data can be deployed on your infrastructure with ownership controls</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-tactical-900 border-2 border-tactical-600 rounded flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-tactical-400" />
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <TrendingUp className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Domain-Specific Accuracy</h4>
-                  <p className="text-gray-400 text-sm">Our custom SLMs are trained for domain-specific accuracy tailored to your operations</p>
+                  <h4 className="text-vscode-function font-bold mb-1 text-sm">domainAccuracy()</h4>
+                  <p className="text-vscode-variable text-xs">Our custom SLMs are trained for domain-specific accuracy tailored to your operations</p>
                 </div>
               </div>
             </div>
