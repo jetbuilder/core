@@ -8,9 +8,9 @@ import { pricingPlans, pricingSupport, pricingAddons, pricingComparison } from "
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 bg-gunmetal-950">
-      <div className="container mx-auto px-4">
-        {/* Header */}
+    <section id="pricing" className="py-20 bg-vscode-bg">
+      <div className="container mx-auto px-4 font-mono">
+        {/* Header - IDE Style */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,13 +18,16 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Transparent Pricing for Enterprise AI
+          <div className="inline-block mb-6">
+            <span className="text-vscode-comment text-sm">// pricing-plans</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-vscode-function">
+            pricing.transparent()
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-3">
+          <p className="text-sm text-vscode-variable max-w-3xl mx-auto mb-3">
             Cloud-hosted or on-premises deployment options with complete data sovereignty
           </p>
-          <p className="text-lg text-tactical-400 font-semibold max-w-2xl mx-auto">
+          <p className="text-xs text-vscode-type font-semibold max-w-2xl mx-auto">
             Start with managed cloud hosting or deploy on your own infrastructure. Custom Small Language Models (SLMs) trained for your industry.
           </p>
         </motion.div>
@@ -40,10 +43,10 @@ export default function Pricing() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Card
-                className={`p-6 h-full flex flex-col relative bg-gunmetal-900 ${
+                className={`p-6 h-full flex flex-col relative bg-vscode-sidebar ${
                   plan.highlight
-                    ? "border-2 border-tactical-500 shadow-xl scale-105"
-                    : "border-2 border-gunmetal-700"
+                    ? "border-2 border-vscode-type shadow-xl scale-105"
+                    : "border border-vscode-border"
                 }`}
               >
                 {plan.popular && (

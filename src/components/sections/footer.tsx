@@ -48,19 +48,19 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-vscode-sidebar text-vscode-variable font-mono border-t border-vscode-border">
       <div className="container section-padding">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-white font-semibold mb-4">{section.title}</h3>
+              <h3 className="text-vscode-function font-semibold mb-4 text-sm">{section.title}</h3>
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="hover:text-white transition-colors text-sm"
+                      className="hover:text-vscode-type transition-colors text-xs"
                     >
                       {link.label}
                     </a>

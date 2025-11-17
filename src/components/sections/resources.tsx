@@ -27,18 +27,18 @@ export default function Resources() {
     setIsChatOpen(true)
   }
   return (
-    <section id="resources" className="section-padding bg-gunmetal-950">
-      <div className="container">
-        {/* Section Header */}
+    <section id="resources" className="section-padding bg-vscode-bg">
+      <div className="container font-mono">
+        {/* Section Header - IDE Style */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-4 border border-tactical-700">
-            <BookOpen className="w-5 h-5 text-tactical-400" />
-            <span className="text-sm font-semibold text-tactical-400 uppercase tracking-wider">Resources</span>
+          <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-4 border border-vscode-border">
+            <BookOpen className="w-4 h-4 text-vscode-type" />
+            <span className="text-xs font-semibold text-vscode-comment">// resources</span>
           </div>
-          <h2 className="heading-lg text-white mb-4">
-            Latest insights and updates
+          <h2 className="text-3xl md:text-4xl font-bold text-vscode-function mb-4">
+            insights.latest()
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-sm text-vscode-variable max-w-2xl mx-auto">
             Stay informed with our latest articles, guides, and industry insights
           </p>
         </div>
