@@ -6,8 +6,8 @@ import Button from '@/components/ui/button'
 
 export default function WorkflowsPage() {
   return (
-    <div className="min-h-screen bg-[#1e1e1e] pt-24">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-vscode-bg pt-24">
+      <div className="container mx-auto px-4 py-16 font-mono">
         {/* Header Section */}
         <motion.div
           className="text-center mb-12"
@@ -16,58 +16,58 @@ export default function WorkflowsPage() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0e639c] text-white px-4 py-2 rounded-full text-sm font-mono">
+            <div className="inline-flex items-center space-x-2 bg-vscode-keyword text-white px-4 py-2 rounded-sm text-xs border border-vscode-border">
               <Network className="w-4 h-4" />
               <span>PRE-BUILT SOLUTION</span>
             </div>
-            <div className="inline-flex items-center space-x-2 bg-tactical-900 text-tactical-400 px-4 py-2 rounded-full text-sm font-mono border border-tactical-600">
+            <div className="inline-flex items-center space-x-2 bg-vscode-sidebar text-vscode-type px-4 py-2 rounded-sm text-xs border border-vscode-border">
               <Code className="w-4 h-4" />
               <span>BUILT WITH JETBUILDER STUDIO</span>
             </div>
           </div>
           
-          <h1 className="text-5xl font-bold text-white mb-6 font-mono">
-            Autonomous Contact Center AI Workflow
+          <h1 className="text-4xl md:text-5xl font-bold text-vscode-function mb-6 tracking-wide">
+            contactCenter.autonomous()
           </h1>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm text-vscode-variable max-w-3xl mx-auto leading-relaxed">
             Complete contact center solution with real-time speech-to-text transcription and autonomous AI agentic workflow architecture. 
             Build powerful contact center workflows with 49 AI components and human-in-the-loop oversight. 
-            Drastically accelerates contact center operations for insurance, banking, and regulated industries with full compliance.
+            Deploy on YOUR infrastructure—no Azure, AWS, or Google required. Drastically accelerates operations for insurance, banking, and regulated industries.
           </p>
         </motion.div>
 
         {/* Stats Bar */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">49</div>
-            <div className="text-sm text-gray-400 font-mono">AI Components</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 text-center">
+            <div className="text-2xl font-bold text-vscode-type mb-1">49</div>
+            <div className="text-xs text-vscode-comment">AI Components</div>
           </div>
           
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">50</div>
-            <div className="text-sm text-gray-400 font-mono">Connections</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 text-center">
+            <div className="text-2xl font-bold text-vscode-type mb-1">50</div>
+            <div className="text-xs text-vscode-comment">Connections</div>
           </div>
           
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">15+</div>
-            <div className="text-sm text-gray-400 font-mono">LLM Instances</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 text-center">
+            <div className="text-2xl font-bold text-vscode-type mb-1">15+</div>
+            <div className="text-xs text-vscode-comment">LLM Instances</div>
           </div>
           
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-[#4ec9b0] mb-2">10x</div>
-            <div className="text-sm text-gray-400 font-mono">Faster Operations</div>
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-4 text-center">
+            <div className="text-2xl font-bold text-vscode-type mb-1">10x</div>
+            <div className="text-xs text-vscode-comment">Faster Operations</div>
           </div>
         </motion.div>
 
         {/* Main Workflow Image */}
         <motion.div
-          className="bg-[#252526] border border-[#3c3c3c] rounded-lg p-8 mb-12"
+          className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8 mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -76,7 +76,7 @@ export default function WorkflowsPage() {
             href="/workflow-architecture.png" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="block bg-[#0d0d0d] rounded-lg overflow-hidden cursor-pointer group"
+            className="block bg-vscode-bg rounded-sm overflow-hidden cursor-pointer group"
           >
             <img 
               src="/workflow-architecture.png" 
@@ -96,7 +96,7 @@ export default function WorkflowsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
-          <div className="bg-gradient-to-r from-[#0e639c] to-[#1177bb] border border-[#3c3c3c] rounded-lg p-8">
+          <div className="bg-gradient-to-r from-[#0e639c] to-[#1177bb] border border-vscode-border rounded-sm p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-4 font-mono flex items-center">
@@ -165,72 +165,72 @@ export default function WorkflowsPage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center">
                   <Cpu className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">AI Agent Orchestration</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">AI Agent Orchestration</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Multi-agent coordination with specialized roles including reasoning, knowledge base access, RAG, reflection, and planning agents.
               </p>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center">
                   <Network className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Response Generation</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Response Generation</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Context-aware response generation with sentiment detection, prompt engineering, conversation loops, and multi-channel delivery.
               </p>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center">
                   <Shield className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Quality & Compliance</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Quality & Compliance</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Built-in eligibility checks, policy validation, risk assessment, approval gates, and comprehensive audit logging.
               </p>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center">
                   <Zap className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Speech-to-Text Transcription</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Speech-to-Text Transcription</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Real-time speech-to-text transcription with 98% accuracy. Process customer calls, extract context, and enable multi-language support with automatic translation. Enterprise-grade voice recognition for contact centers.
               </p>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center">
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Data Processing</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Data Processing</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Extract and structure data from documents, validate information, perform data reflection, and integrate with external systems.
               </p>
             </div>
 
-            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-6">
+            <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center">
                   <Network className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-[#4ec9b0] font-mono">Integration Layer</h3>
+                <h3 className="text-lg font-bold text-vscode-type font-mono">Integration Layer</h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Telephony integration, customer knowledge base, conversation memory, task planning, payment processing, and call routing.
@@ -241,7 +241,7 @@ export default function WorkflowsPage() {
 
         {/* Features List */}
         <motion.div
-          className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-8 mb-12"
+          className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-8 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -296,7 +296,7 @@ export default function WorkflowsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-10">
+          <div className="bg-[#2b2b2b] border border-vscode-border rounded-sm p-10">
             <h3 className="text-3xl font-bold text-white mb-4 font-mono">
               Deploy or Customize This Workflow
             </h3>
@@ -310,7 +310,7 @@ export default function WorkflowsPage() {
               <Button size="lg" className="bg-[#0e639c] text-white hover:bg-[#1177bb] font-mono uppercase">
                 Deploy This Workflow
               </Button>
-              <Button size="lg" variant="outline" className="border-[#3c3c3c] text-white hover:bg-[#37373d] font-mono uppercase">
+              <Button size="lg" variant="outline" className="border-vscode-border text-white hover:bg-[#37373d] font-mono uppercase">
                 <a href="/start-building" className="flex items-center">
                   Build Your Own Workflow
                 </a>
