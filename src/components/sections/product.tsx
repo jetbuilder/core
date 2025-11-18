@@ -643,6 +643,325 @@ export default function Product() {
                 </div>
               )}
 
+              {activeTab === 'deployment' && (
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-2 mb-6">
+                    <Package className="w-6 h-6 text-[#3794ff]" />
+                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Deployment Accelerator Packs</h2>
+                  </div>
+
+                  {/* Overview */}
+                  <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
+                    <h3 className="text-[#4ec9b0] font-mono text-lg font-bold mb-4">Deploy Anywhere with Confidence</h3>
+                    <p className="text-[#cccccc] text-sm leading-relaxed mb-4">
+                      JetBuilder provides pre-configured <span className="text-[#4ec9b0] font-semibold">Accelerator Packs</span> for rapid deployment on any infrastructure—public cloud, private cloud, on-premises data centers, or air-gapped environments. Each pack includes Infrastructure-as-Code (IaC) templates, configuration scripts, and deployment automation tailored to your target environment.
+                    </p>
+                    <div className="flex items-center space-x-2 p-3 bg-[#0e639c] rounded">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                      <span className="text-white font-mono text-xs">Production-Ready in Hours, Not Weeks</span>
+                    </div>
+                  </div>
+
+                  {/* Deployment Options */}
+                  <div className="space-y-4">
+                    <h3 className="text-[#4ec9b0] font-mono text-base font-bold">Supported Deployment Targets</h3>
+
+                    {/* Public Cloud Providers */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <Globe className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Public Cloud Providers</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Deploy on any major cloud provider with our pre-configured accelerator packs. Includes Terraform/Pulumi templates, Kubernetes manifests, and automated CI/CD pipelines.
+                          </p>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">AWS</div>
+                              <div className="text-[#858585] text-xs">EKS, EC2, S3</div>
+                            </div>
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">Azure</div>
+                              <div className="text-[#858585] text-xs">AKS, VMs, Blob</div>
+                            </div>
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">GCP</div>
+                              <div className="text-[#858585] text-xs">GKE, Compute, GCS</div>
+                            </div>
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">Oracle Cloud</div>
+                              <div className="text-[#858585] text-xs">OKE, Compute</div>
+                            </div>
+                          </div>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Terraform & Pulumi IaC templates included</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Managed Kubernetes (EKS, AKS, GKE) configurations</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Auto-scaling, load balancing, monitoring setup</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">GitOps workflows with ArgoCD/FluxCD</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Private Cloud & On-Premises */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <Server className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Private Cloud & On-Premises</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Deploy on your own infrastructure with full control. Accelerator packs for VMware, OpenStack, bare metal, and private Kubernetes clusters.
+                          </p>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">VMware</div>
+                              <div className="text-[#858585] text-xs">vSphere, Tanzu</div>
+                            </div>
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">OpenStack</div>
+                              <div className="text-[#858585] text-xs">Nova, Neutron</div>
+                            </div>
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">Bare Metal</div>
+                              <div className="text-[#858585] text-xs">Direct Hardware</div>
+                            </div>
+                            <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded p-3 text-center">
+                              <div className="text-[#4fc1ff] font-mono text-xs font-bold mb-1">Kubernetes</div>
+                              <div className="text-[#858585] text-xs">Self-Managed</div>
+                            </div>
+                          </div>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Ansible playbooks for automated provisioning</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Kubernetes deployment with Helm charts</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">HA configuration with multi-node clusters</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Integration with existing LDAP/AD, storage, networking</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Air-Gapped Environments */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <Lock className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Air-Gapped & Classified Environments</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Deploy in fully disconnected networks with no internet connectivity. Includes offline installation packages, local container registries, and manual update procedures.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Offline installation bundles with all dependencies</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Local container registry (Harbor) setup</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Manual model update procedures & versioning</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">FIPS 140-2 compliant configurations available</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Edge & Hybrid */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <Network className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Edge & Hybrid Deployments</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Deploy across multiple locations with centralized management. Support for edge computing, branch offices, and hybrid cloud architectures.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Lightweight edge deployments for resource-constrained environments</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Multi-cluster federation for distributed deployments</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Centralized monitoring & management console</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Hybrid cloud data synchronization strategies</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* What's Included */}
+                  <div className="bg-[#0e2f1e] border border-[#2b5b3f] rounded p-6">
+                    <h3 className="text-[#4ec9b0] font-mono text-lg font-bold mb-4">Every Accelerator Pack Includes</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Infrastructure as Code</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Terraform/Pulumi templates</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Kubernetes Helm charts</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Ansible automation playbooks</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Configuration & Setup</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Pre-configured security policies</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Network & firewall configurations</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">SSL/TLS certificate management</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Monitoring & Observability</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Prometheus & Grafana dashboards</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Log aggregation (ELK/Loki)</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Distributed tracing setup</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Documentation & Support</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Step-by-step deployment guides</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">Runbooks for common operations</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <span className="text-[#4fc1ff]">▸</span>
+                            <span className="text-[#cccccc] text-xs">24/7 deployment assistance</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Deployment Timeline */}
+                  <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
+                    <h3 className="text-[#4ec9b0] font-mono text-lg font-bold mb-4">Typical Deployment Timeline</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-16 text-[#4fc1ff] font-mono text-xs font-bold">Day 1-2</div>
+                        <div className="flex-1">
+                          <div className="text-[#cccccc] text-xs font-bold mb-1">Infrastructure Provisioning</div>
+                          <div className="text-[#858585] text-xs">Automated infrastructure setup using IaC templates</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-16 text-[#4fc1ff] font-mono text-xs font-bold">Day 3-4</div>
+                        <div className="flex-1">
+                          <div className="text-[#cccccc] text-xs font-bold mb-1">Platform Deployment</div>
+                          <div className="text-[#858585] text-xs">Deploy JetBuilder components, configure networking & security</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-16 text-[#4fc1ff] font-mono text-xs font-bold">Day 5-7</div>
+                        <div className="flex-1">
+                          <div className="text-[#cccccc] text-xs font-bold mb-1">Integration & Testing</div>
+                          <div className="text-[#858585] text-xs">Connect to enterprise systems, load models, run validation tests</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-16 text-[#4fc1ff] font-mono text-xs font-bold">Day 8+</div>
+                        <div className="flex-1">
+                          <div className="text-[#cccccc] text-xs font-bold mb-1">Production Ready</div>
+                          <div className="text-[#858585] text-xs">Go live with monitoring, support, and ongoing optimization</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'runtime' && (
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-2 mb-6">
+                    <Cpu className="w-6 h-6 text-[#3794ff]" />
+                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Runtime Engine</h2>
+                  </div>
+
+                  <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
+                    <p className="text-[#cccccc] text-sm leading-relaxed">
+                      High-performance Rust-based runtime engine for executing agentic workflows. Microsecond latency, zero-copy data processing, and predictable performance for mission-critical operations.
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {activeSidebarItem === 'rust' && (
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
