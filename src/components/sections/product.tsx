@@ -359,6 +359,290 @@ export default function Product() {
                 </div>
               )}
 
+              {activeTab === 'platform' && (
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-2 mb-6">
+                    <Boxes className="w-6 h-6 text-[#3794ff]" />
+                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Platform Architecture</h2>
+                  </div>
+
+                  {/* Architecture Overview */}
+                  <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
+                    <h3 className="text-[#4ec9b0] font-mono text-lg font-bold mb-4">Modular Multi-Layer Architecture</h3>
+                    <p className="text-[#cccccc] text-sm leading-relaxed mb-4">
+                      JetBuilder Platform is built with a modular, cloud-agnostic architecture designed for on-premises and air-gapped deployments. Each layer is independently scalable and can be deployed across your infrastructure for maximum resilience.
+                    </p>
+                  </div>
+
+                  {/* Core Layers */}
+                  <div className="space-y-4">
+                    <h3 className="text-[#4ec9b0] font-mono text-base font-bold">Core Platform Layers</h3>
+
+                    {/* Presentation Layer */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-mono font-bold">1</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Presentation Layer (Frontend)</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Visual IDE for building and managing agentic workflows. Drag-and-drop interface with real-time monitoring.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">React-based Studio UI with TypeScript</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Real-time workflow visualization & debugging</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Role-based access control (RBAC)</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Deployed as containerized app on your infrastructure</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* API Gateway Layer */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-mono font-bold">2</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">API Gateway & Authentication</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Secure API gateway with enterprise authentication, rate limiting, and request routing.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">RESTful & GraphQL API endpoints</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">OAuth 2.0, SAML, LDAP/AD integration</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">API key management & rate limiting</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">TLS 1.3 encryption for all traffic</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Orchestration Layer */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-mono font-bold">3</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Orchestration & Workflow Engine</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Rust-powered orchestration engine for multi-agent coordination, task scheduling, and workflow execution.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">DAG-based workflow execution engine</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Multi-agent coordination & message routing</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Distributed task queue with retry logic</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Horizontal scaling via Kubernetes</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* AI/ML Layer */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-mono font-bold">4</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">AI/ML Inference Layer</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Small Language Model (SLM) inference engine optimized for on-premises deployment.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">7B-13B parameter SLMs (Llama, Mistral, custom)</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Model quantization (INT8, INT4) for efficiency</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">GPU acceleration (NVIDIA, AMD) or CPU inference</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Model fine-tuning on proprietary data</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Data Layer */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-mono font-bold">5</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Data Storage & Processing Layer</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Multi-modal data storage with vector databases for semantic search and retrieval.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">PostgreSQL for structured data & metadata</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Vector DB (Qdrant/Milvus) for embeddings</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">S3-compatible object storage for documents</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Redis for caching & real-time data</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Integration Layer */}
+                    <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-5">
+                      <div className="flex items-start space-x-4 mb-3">
+                        <div className="w-10 h-10 bg-[#0e639c] rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-mono font-bold">6</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Integration & Connectors Layer</h4>
+                          <p className="text-[#cccccc] text-xs mb-3">
+                            Pre-built connectors to enterprise systems and data sources.
+                          </p>
+                          <div className="space-y-1">
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Database connectors (Oracle, SQL Server, MySQL)</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">API integrations (Salesforce, ServiceNow, SAP)</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">File system & cloud storage connectors</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <span className="text-[#4fc1ff]">▸</span>
+                              <span className="text-[#cccccc] text-xs">Custom connector SDK for proprietary systems</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Deployment Options */}
+                  <div className="bg-[#0e2f1e] border border-[#2b5b3f] rounded p-6 mt-6">
+                    <h3 className="text-[#4ec9b0] font-mono text-lg font-bold mb-4">Deployment Architecture</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">On-Premises</h4>
+                        <p className="text-[#cccccc] text-xs">
+                          Deploy on your own data center hardware. Full control over infrastructure, networking, and security.
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Private Cloud</h4>
+                        <p className="text-[#cccccc] text-xs">
+                          Deploy on your private cloud (VMware, OpenStack). Kubernetes-native for easy orchestration.
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-[#4ec9b0] font-mono text-sm font-bold mb-2">Air-Gapped</h4>
+                        <p className="text-[#cccccc] text-xs">
+                          Fully disconnected deployment for classified environments. Offline model training and updates.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
+                    <h3 className="text-[#4ec9b0] font-mono text-lg font-bold mb-4">Technology Stack</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Core Runtime</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">Rust 1.74+</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Orchestration</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">Kubernetes</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Frontend</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">React + TS</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Message Queue</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">RabbitMQ</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Database</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">PostgreSQL</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Vector DB</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">Qdrant</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">Cache</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">Redis</div>
+                      </div>
+                      <div>
+                        <div className="text-[#858585] text-xs mb-2">ML Framework</div>
+                        <div className="text-[#4fc1ff] font-mono text-sm">PyTorch</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {activeSidebarItem === 'rust' && (
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
