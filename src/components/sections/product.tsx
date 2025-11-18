@@ -248,7 +248,7 @@ export default function Product() {
                         <h4 className="text-[#4ec9b0] font-mono text-sm font-bold">Multi-Agent Orchestration</h4>
                       </div>
                       <p className="text-[#cccccc] text-xs leading-relaxed">
-                        Design and deploy autonomous agent workflows that process documents and automate business processes.
+                        Design and deploy Agentic AI workflows that process documents and automate business processes.
                       </p>
                     </div>
 
@@ -326,7 +326,7 @@ export default function Product() {
                   
                   <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6 mb-6">
                     <p className="text-[#cccccc] text-sm">
-                      Built on proven agentic AI principles with memory systems, autonomous decision-making, and multi-agent orchestration.
+                      Built on proven Agentic AI principles with memory systems, intelligent decision-making, and multi-agent orchestration.
                     </p>
                   </div>
 

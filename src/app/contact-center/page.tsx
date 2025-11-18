@@ -27,11 +27,11 @@ export default function WorkflowsPage() {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-vscode-function mb-6 tracking-wide">
-            contactCenter.autonomous()
+            contactCenter.agentic()
           </h1>
           
           <p className="text-sm text-vscode-variable max-w-3xl mx-auto leading-relaxed">
-            Complete contact center solution with real-time speech-to-text transcription and autonomous AI agentic workflow architecture. 
+            Complete contact center solution with real-time speech-to-text transcription and Agentic AI workflow architecture. 
             Build powerful contact center workflows with 49 AI components and human-in-the-loop oversight. 
             Deploy on YOUR infrastructure—no Azure, AWS, or Google required. Drastically accelerates operations for insurance, banking, and regulated industries.
           </p>

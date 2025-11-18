@@ -62,7 +62,7 @@ export const productFeatures: ProductFeature[] = [
     id: "agentic-infra",
     category: "Agentic Framework",
     title: "Agentic Infrastructure",
-    description: "Complete framework for deploying, orchestrating, and managing fleets of autonomous AI agents. Agent lifecycle management, inter-agent communication, and distributed task coordination.",
+    description: "Complete framework for deploying, orchestrating, and managing fleets of Agentic AI systems. Agent lifecycle management, inter-agent communication, and distributed task coordination.",
     capabilities: [
       "Agent lifecycle management (spawn, pause, terminate)",
       "Inter-agent communication protocols",
@@ -90,7 +90,7 @@ export const productFeatures: ProductFeature[] = [
     id: "tool-orchestration",
     category: "Agentic Framework",
     title: "Tool & Function Orchestration",
-    description: "AI agents autonomously select, chain, and execute tools and functions. Dynamic tool discovery, parameter optimization, and error recovery for complex multi-tool workflows.",
+    description: "Agentic AI automatically selects, chains, and executes tools and functions. Dynamic tool discovery, parameter optimization, and error recovery for complex multi-tool workflows.",
     capabilities: [
       "Dynamic tool selection & chaining",
       "Parameter optimization & validation",

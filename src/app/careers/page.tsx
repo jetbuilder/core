@@ -295,7 +295,7 @@ Apply now: ${url}
       location: 'Canada Major cities / US Major cities / Remote',
       type: 'Full-time',
       experience: '6+ years',
-      description: 'Own product strategy and roadmap for Sovereign AI Platform\'s core AI platform. Define features that enable autonomous agents and custom SLM deployment for enterprise customers.',
+      description: 'Own product strategy and roadmap for Sovereign AI Platform\'s core AI platform. Define features that enable Agentic AI and custom SLM deployment for enterprise customers.',
       responsibilities: [
         'Define product vision and strategy for AI agent platform',
         'Conduct customer research and gather requirements',
@@ -427,7 +427,7 @@ Apply now: ${url}
             careers.jetBuilder()
           </h1>
           <p className="text-sm text-vscode-variable max-w-3xl mx-auto mb-8">
-            Build the future of on-premises AI. Join us in developing JetBuilder Studio and its Small Language Models and autonomous agents 
+            Build the future of on-premises AI. Join us in developing JetBuilder Studio and its Small Language Models and Agentic AI 
             that protect national security and power critical infrastructure. Deploy on YOUR infrastructure—no cloud dependency.
           </p>
           

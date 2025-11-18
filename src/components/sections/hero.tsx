@@ -69,7 +69,7 @@ export default function Hero() {
               className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm"
             >
               <p className="text-slate-300 text-lg leading-relaxed mb-4">
-                Deploy autonomous AI agents entirely on your infrastructure. No Azure, AWS, or Google dependency. 
+                Deploy Agentic AI entirely on your infrastructure. No Azure, AWS, or Google dependency. 
                 Complete control, predictable costs, zero vendor lock-in.
               </p>
               <div className="flex flex-wrap gap-3">

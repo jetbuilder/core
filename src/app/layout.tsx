@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     'compliance AI platform',
     
     // Features
-    'autonomous AI agents',
+    'agentic AI',
     'multi-modal AI',
     'document processing AI',
     'voice transcription AI',

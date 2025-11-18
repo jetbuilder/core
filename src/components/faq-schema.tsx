@@ -56,7 +56,7 @@ export default function FAQSchema() {
         "name": "What is an agentic AI workflow?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Agentic AI workflows are systems where autonomous AI agents work together to complete complex tasks. JetBuilder Studio provides a visual IDE with 49+ pre-built components to build multi-agent systems that can process documents, voice, video, and business data autonomously with human-in-the-loop oversight."
+          "text": "Agentic AI workflows are systems where multiple AI agents work together to complete complex tasks. JetBuilder Studio provides a visual IDE with 49+ pre-built components to build multi-agent systems that can process documents, voice, video, and business data intelligently with human-in-the-loop oversight."
         }
       },
       {
