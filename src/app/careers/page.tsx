@@ -411,42 +411,42 @@ Apply now: ${url}
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-vscode-bg pt-24 font-mono">
+      {/* Hero Section - IDE Style */}
       <div className="container mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-6 border border-tactical-700">
-            <Briefcase className="w-5 h-5 text-tactical-400" />
-            <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Join Our Team</span>
+          <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+            <Briefcase className="w-5 h-5 text-vscode-type" />
+            <span className="text-xs font-bold text-vscode-comment">// join-our-team</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wide mb-4">
-            Careers at JetBuilder
+          <h1 className="text-4xl md:text-5xl font-bold text-vscode-function tracking-wide mb-4">
+            careers.jetBuilder()
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Build the future of on-premises AI. Join us in developing Sovereign AI Platform and its Small Language Models and autonomous agents 
-            that protect national security and power critical infrastructure.
+          <p className="text-sm text-vscode-variable max-w-3xl mx-auto mb-8">
+            Build the future of on-premises AI. Join us in developing JetBuilder Studio and its Small Language Models and autonomous agents 
+            that protect national security and power critical infrastructure. Deploy on YOUR infrastructure—no cloud dependency.
           </p>
           
-          {/* Why Join Section */}
+          {/* Why Join Section - IDE Style */}
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            <Card className="p-6 bg-gunmetal-900 border-2 border-tactical-700">
-              <Target className="w-8 h-8 text-tactical-400 mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-white uppercase mb-2">Mission-Critical Work</h3>
-              <p className="text-sm text-gray-400">Deploy AI for defense, intelligence, and critical infrastructure</p>
+            <Card className="p-6 bg-vscode-sidebar border border-vscode-border hover:border-vscode-type transition-colors">
+              <Target className="w-8 h-8 text-vscode-type mx-auto mb-3" />
+              <h3 className="text-base font-bold text-vscode-function tracking-wide mb-2">missionCriticalWork()</h3>
+              <p className="text-xs text-vscode-variable">Deploy AI for defense, intelligence, and critical infrastructure</p>
             </Card>
-            <Card className="p-6 bg-gunmetal-900 border-2 border-tactical-700">
-              <TrendingUp className="w-8 h-8 text-tactical-400 mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-white uppercase mb-2">Cutting-Edge Technology</h3>
-              <p className="text-sm text-gray-400">Work on Small Language Models and agentic AI systems</p>
+            <Card className="p-6 bg-vscode-sidebar border border-vscode-border hover:border-vscode-type transition-colors">
+              <TrendingUp className="w-8 h-8 text-vscode-type mx-auto mb-3" />
+              <h3 className="text-base font-bold text-vscode-function tracking-wide mb-2">cuttingEdgeTech()</h3>
+              <p className="text-xs text-vscode-variable">Work on Small Language Models and agentic AI systems</p>
             </Card>
-            <Card className="p-6 bg-gunmetal-900 border-2 border-tactical-700">
-              <Heart className="w-8 h-8 text-tactical-400 mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-white uppercase mb-2">Competitive Benefits</h3>
-              <p className="text-sm text-gray-400">Equity, bonuses, clearances, and work-life balance</p>
+            <Card className="p-6 bg-vscode-sidebar border border-vscode-border hover:border-vscode-type transition-colors">
+              <Heart className="w-8 h-8 text-vscode-type mx-auto mb-3" />
+              <h3 className="text-base font-bold text-vscode-function tracking-wide mb-2">competitiveBenefits()</h3>
+              <p className="text-xs text-vscode-variable">Equity, bonuses, clearances, and work-life balance</p>
             </Card>
           </div>
         </motion.div>
@@ -456,7 +456,7 @@ Apply now: ${url}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-gunmetal-900 border-2 border-tactical-700 rounded-lg p-6 mb-12 max-w-6xl mx-auto"
+          className="bg-vscode-sidebar border-2 border-vscode-border rounded-sm p-6 mb-12 max-w-6xl mx-auto"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Search */}
@@ -467,7 +467,7 @@ Apply now: ${url}
                 placeholder="Search jobs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm pl-10 pr-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-xs placeholder:text-vscode-comment"
               />
             </div>
             
@@ -476,7 +476,7 @@ Apply now: ${url}
               <select
                 value={selectedDepartment}
                 onChange={(e) => setSelectedDepartment(e.target.value)}
-                className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-xs"
               >
                 {departments.map(dept => (
                   <option key={dept} value={dept}>
@@ -491,7 +491,7 @@ Apply now: ${url}
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-xs"
               >
                 {locations.map(loc => (
                   <option key={loc} value={loc}>
@@ -503,7 +503,7 @@ Apply now: ${url}
           </div>
           
           <div className="mt-4 text-gray-400 text-sm">
-            Showing <span className="text-tactical-400 font-bold">{filteredJobs.length}</span> position{filteredJobs.length !== 1 ? 's' : ''}
+            Showing <span className="text-vscode-type font-bold">{filteredJobs.length}</span> position{filteredJobs.length !== 1 ? 's' : ''}
           </div>
         </motion.div>
 
@@ -516,12 +516,12 @@ Apply now: ${url}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + index * 0.05 }}
             >
-              <Card className="bg-gunmetal-900 border-2 border-gunmetal-700 hover:border-tactical-700 transition-all duration-300 cursor-pointer group">
+              <Card className="bg-vscode-sidebar border border-vscode-border hover:border-vscode-type transition-all duration-300 cursor-pointer group">
                 <div className="p-6">
                   {/* Header */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="flex-grow mb-4 md:mb-0">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-tactical-400 transition-colors uppercase tracking-wide mb-2">
+                      <h3 className="text-xl font-bold text-vscode-function group-hover:text-vscode-type transition-colors tracking-wide mb-2">
                         {job.title}
                       </h3>
                       <div className="flex flex-wrap gap-3 text-sm text-gray-400">
@@ -553,37 +553,37 @@ Apply now: ${url}
                         <span className="text-sm">Share</span>
                       </button>
                       <a href={`/careers/apply?jobId=${job.id}&jobTitle=${encodeURIComponent(job.title)}`}>
-                        <Button className="bg-tactical-600 hover:bg-tactical-700 whitespace-nowrap">
-                          Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                        <Button className="bg-vscode-keyword hover:bg-vscode-selection text-white font-mono text-xs whitespace-nowrap">
+                          $ apply-now <ArrowRight className="ml-2 w-3 h-3" />
                         </Button>
                       </a>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-300 mb-4">
+                  <p className="text-vscode-variable mb-4 text-xs">
                     {job.description}
                   </p>
 
                   {/* Details */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="text-sm font-bold text-tactical-400 uppercase tracking-wide mb-2">Key Responsibilities</h4>
-                      <ul className="space-y-1 text-sm text-gray-400">
+                      <h4 className="text-xs font-bold text-vscode-comment tracking-wide mb-2">// key-responsibilities</h4>
+                      <ul className="space-y-1 text-xs text-vscode-variable">
                         {job.responsibilities.slice(0, 4).map((resp, idx) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-tactical-500 mr-2">•</span>
+                            <span className="text-vscode-type mr-2">✓</span>
                             <span>{resp}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-tactical-400 uppercase tracking-wide mb-2">Requirements</h4>
-                      <ul className="space-y-1 text-sm text-gray-400">
+                      <h4 className="text-xs font-bold text-vscode-comment tracking-wide mb-2">// requirements</h4>
+                      <ul className="space-y-1 text-xs text-vscode-variable">
                         {job.requirements.slice(0, 4).map((req, idx) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-tactical-500 mr-2">•</span>
+                            <span className="text-vscode-type mr-2">✓</span>
                             <span>{req}</span>
                           </li>
                         ))}
@@ -592,10 +592,10 @@ Apply now: ${url}
                   </div>
 
                   {/* Benefits Badge */}
-                  <div className="mt-4 pt-4 border-t border-gunmetal-700">
+                  <div className="mt-4 pt-4 border-t border-vscode-border">
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="text-sm text-gray-400">
-                        <span className="text-tactical-400 font-semibold">{job.benefits[0]}</span>
+                        <span className="text-vscode-type font-semibold">{job.benefits[0]}</span>
                       </div>
                       <div className="text-xs text-gray-500">
                         Posted: Recently
@@ -634,7 +634,7 @@ Apply now: ${url}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 bg-gunmetal-900 border-2 border-tactical-700 rounded-lg p-8 text-center max-w-4xl mx-auto"
+          className="mt-16 bg-vscode-sidebar border-2 border-vscode-border rounded-sm p-8 text-center max-w-4xl mx-auto"
         >
           <h2 className="text-2xl font-bold text-white uppercase tracking-wide mb-4">
             Don't See the Right Role?
