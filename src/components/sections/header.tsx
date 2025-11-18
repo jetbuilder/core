@@ -43,7 +43,7 @@ export default function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-vscode-variable hover:text-vscode-function hover:bg-vscode-hover transition-colors text-xs border-r border-vscode-border last:border-r-0 whitespace-nowrap"
+                className="px-5 py-2.5 text-gray-200 hover:text-white hover:bg-vscode-hover transition-colors text-sm font-medium border-r border-vscode-border last:border-r-0 whitespace-nowrap tracking-wide"
               >
                 {item.label.toLowerCase().replace(' ', '-')}
               </a>
@@ -82,7 +82,7 @@ export default function Header() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-vscode-variable hover:text-vscode-function hover:bg-vscode-hover transition-colors py-2 px-4 text-xs border-b border-vscode-border"
+                  className="text-gray-200 hover:text-white hover:bg-vscode-hover transition-colors py-3 px-4 text-sm font-medium border-b border-vscode-border tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label.toLowerCase().replace(' ', '-')}
@@ -90,12 +90,12 @@ export default function Header() {
               ))}
               <div className="flex flex-col space-y-2 pt-3 px-4">
                 <a href="/signin" className="w-full">
-                  <Button variant="outline" className="w-full bg-transparent border border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-xs whitespace-nowrap">
+                  <Button variant="outline" className="w-full bg-transparent border border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-sm whitespace-nowrap">
                     ./sign-in
                   </Button>
                 </a>
                 <a href="/contact" className="w-full">
-                  <Button variant="outline" className="w-full bg-vscode-keyword text-white hover:bg-vscode-selection border border-vscode-border font-mono text-xs">
+                  <Button variant="outline" className="w-full bg-vscode-keyword text-white hover:bg-vscode-selection border border-vscode-border font-mono text-sm">
                     $ contact
                   </Button>
                 </a>
