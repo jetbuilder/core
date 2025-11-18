@@ -52,42 +52,43 @@ export default function Product() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex items-center justify-between px-6 py-3">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+          <div className="flex items-center justify-between px-3 md:px-6 py-3">
+            <div className="flex items-center space-x-2 md:space-x-3">
+              <div className="flex items-center space-x-1.5 md:space-x-2">
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ff5f56]"></div>
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27c93f]"></div>
               </div>
-              <div className="ml-4 flex items-center space-x-2">
-                <Code className="w-4 h-4 text-[#3794ff]" />
-                <span className="text-[#cccccc] font-mono text-sm font-semibold">JetBuilder Studio IDE</span>
+              <div className="ml-2 md:ml-4 flex items-center space-x-2">
+                <Code className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#3794ff]" />
+                <span className="text-[#cccccc] font-mono text-xs md:text-sm font-semibold">JetBuilder Studio IDE</span>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="px-3 py-1 bg-[#0e639c] text-white text-xs font-mono rounded">
+            <div className="flex items-center space-x-1 md:space-x-2">
+              <div className="px-2 md:px-3 py-1 bg-[#0e639c] text-white text-xs font-mono rounded">
                 <span>BETA</span>
               </div>
-              <span className="text-[#858585] text-xs font-mono">v1.0.0-beta</span>
+              <span className="text-[#858585] text-xs font-mono hidden sm:inline">v1.0.0-beta</span>
             </div>
           </div>
 
-          {/* Tab Bar */}
-          <div className="flex items-center border-t border-[#3c3c3c] bg-[#252526]">
+          {/* Tab Bar - Scrollable on Mobile */}
+          <div className="flex items-center border-t border-[#3c3c3c] bg-[#252526] overflow-x-auto scrollbar-thin scrollbar-thumb-[#3c3c3c]">
             {tabs.map((tab) => {
               const Icon = tab.icon
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2.5 text-sm font-mono border-r border-[#3c3c3c] transition-colors ${
+                  className={`flex items-center space-x-2 px-3 md:px-4 py-2.5 text-xs md:text-sm font-mono border-r border-[#3c3c3c] transition-colors whitespace-nowrap flex-shrink-0 ${
                     activeTab === tab.id
                       ? 'bg-[#1e1e1e] text-white border-t-2 border-t-[#3794ff]'
                       : 'text-[#858585] hover:text-white hover:bg-[#2d2d30]'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
+                  <Icon className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
                   {activeTab === tab.id && (
                     <span className="ml-1 text-[#858585]">●</span>
                   )}
@@ -98,10 +99,33 @@ export default function Product() {
         </motion.div>
 
         {/* IDE-style Main Layout */}
-        <div className="flex bg-[#252526] -mx-4 sm:mx-0 sm:rounded-b-lg border-x border-b border-[#3c3c3c] min-h-[800px]">
-          {/* Sidebar */}
+        <div className="flex flex-col md:flex-row bg-[#252526] -mx-4 sm:mx-0 sm:rounded-b-lg border-x border-b border-[#3c3c3c] min-h-[600px] md:min-h-[800px]">
+          {/* Mobile Sidebar - Horizontal Scroll */}
+          <div className="md:hidden border-b border-[#3c3c3c] bg-[#252526] overflow-x-auto">
+            <nav className="flex p-2 space-x-2">
+              {sidebarItems.map((item) => {
+                const Icon = item.icon
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveSidebarItem(item.id)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded text-xs font-mono transition-colors whitespace-nowrap ${
+                      activeSidebarItem === item.id
+                        ? 'bg-[#37373d] text-white'
+                        : 'text-[#cccccc] hover:bg-[#2a2d2e]'
+                    }`}
+                  >
+                    <Icon className={`w-3 h-3 ${activeSidebarItem === item.id ? 'text-[#3794ff]' : 'text-[#858585]'}`} />
+                    <span>{item.label}</span>
+                  </button>
+                )
+              })}
+            </nav>
+          </div>
+
+          {/* Desktop Sidebar */}
           <motion.div
-            className="w-64 bg-[#252526] border-r border-[#3c3c3c] flex-shrink-0"
+            className="hidden md:block w-64 bg-[#252526] border-r border-[#3c3c3c] flex-shrink-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -158,7 +182,7 @@ export default function Product() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="p-8">
+            <div className="p-4 md:p-8">
               {/* Breadcrumb */}
               <div className="flex items-center space-x-2 text-xs font-mono text-[#858585] mb-6">
                 <span>jetbuilder</span>
@@ -282,7 +306,7 @@ export default function Product() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
                     <Layers className="w-6 h-6 text-[#3794ff]" />
-                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Core Platform Features</h2>
+                    <h2 className="text-lg md:text-2xl font-mono font-bold text-[#cccccc]">Core Platform Features</h2>
                   </div>
                   
                   <div className="grid grid-cols-1 gap-4">
@@ -321,7 +345,7 @@ export default function Product() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
                     <Bot className="w-6 h-6 text-[#3794ff]" />
-                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Agentic Framework Architecture</h2>
+                    <h2 className="text-lg md:text-2xl font-mono font-bold text-[#cccccc]">Agentic Framework Architecture</h2>
                   </div>
                   
                   <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6 mb-6">
@@ -363,7 +387,7 @@ export default function Product() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
                     <Boxes className="w-6 h-6 text-[#3794ff]" />
-                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Platform Architecture</h2>
+                    <h2 className="text-lg md:text-2xl font-mono font-bold text-[#cccccc]">Platform Architecture</h2>
                   </div>
 
                   {/* Architecture Overview */}
@@ -647,7 +671,7 @@ export default function Product() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
                     <Package className="w-6 h-6 text-[#3794ff]" />
-                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Deployment Accelerator Packs</h2>
+                    <h2 className="text-lg md:text-2xl font-mono font-bold text-[#cccccc]">Deployment Accelerator Packs</h2>
                   </div>
 
                   {/* Overview */}
@@ -951,7 +975,7 @@ export default function Product() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
                     <Cpu className="w-6 h-6 text-[#3794ff]" />
-                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Runtime Engine</h2>
+                    <h2 className="text-lg md:text-2xl font-mono font-bold text-[#cccccc]">Runtime Engine</h2>
                   </div>
 
                   <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
@@ -966,7 +990,7 @@ export default function Product() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 mb-6">
                     <Terminal className="w-6 h-6 text-[#3794ff]" />
-                    <h2 className="text-2xl font-mono font-bold text-[#cccccc]">Built with Rust</h2>
+                    <h2 className="text-lg md:text-2xl font-mono font-bold text-[#cccccc]">Built with Rust</h2>
                   </div>
 
                   <div className="bg-[#1e1e1e] rounded border border-[#3c3c3c] p-6">
@@ -1071,7 +1095,7 @@ export default function Product() {
           viewport={{ once: true }}
         >
           <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-8">
-            <h3 className="text-2xl font-mono font-bold text-[#cccccc] mb-4">
+            <h3 className="text-xl md:text-2xl font-mono font-bold text-[#cccccc] mb-4">
               Start Building with JetBuilder Studio
             </h3>
             <p className="text-[#858585] mb-6 max-w-2xl mx-auto font-mono text-sm">
