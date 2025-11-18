@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { productFeatures, platformCapabilities } from '@/data/product'
-import { Brain, Database, HardDrive, Network, Lightbulb, Wrench, Bot, Eye, CheckCircle, Layers, Cpu, Terminal, Code, FileCode, Settings, Play, FolderTree, Package, Boxes } from 'lucide-react'
+import { Brain, Database, HardDrive, Network, Lightbulb, Wrench, Bot, Eye, CheckCircle, Layers, Cpu, Terminal, Code, FileCode, Settings, Play, FolderTree, Package, Boxes, Globe, Server, Lock } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/button'
 import { useState } from 'react'
