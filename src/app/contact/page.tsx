@@ -102,49 +102,52 @@ export default function ContactPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950 py-12 px-4">
+      <div className="min-h-screen bg-vscode-bg py-12 px-4 pt-24 font-mono">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-2xl w-full mx-auto bg-vscode-sidebar border-2 border-tactical-600 rounded-sm p-8 text-center"
+          className="max-w-2xl w-full mx-auto bg-vscode-sidebar border border-vscode-border rounded-sm p-8 text-center"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-tactical-900 border-2 border-tactical-600 rounded-full mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-vscode-bg border border-vscode-border rounded-sm mb-6">
             <CheckCircle className="w-10 h-10 text-vscode-type" />
           </div>
-          <h2 className="text-3xl font-bold text-white uppercase tracking-wide mb-4">
-            Thank You, {formData.firstName}!
+          <h2 className="text-2xl md:text-3xl font-bold text-vscode-function tracking-wide mb-4">
+            submitSuccess.confirmed()
           </h2>
-          <p className="text-xl text-gray-300 mb-6">
+          <div className="text-sm text-vscode-comment mb-6">
+            // Thank you, {formData.firstName}!
+          </div>
+          <p className="text-base md:text-lg text-vscode-variable mb-6">
             We've received your information and our team will review your requirements.
           </p>
-          <div className="bg-vscode-bg border border-tactical-700 rounded-sm p-6 mb-6">
-            <p className="text-gray-300 mb-4">
+          <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6 mb-6">
+            <p className="text-vscode-variable mb-4 text-sm">
               A JetBuilder solutions architect will contact you within <span className="text-vscode-type font-bold">24 hours</span> via {formData.preferredContactMethod} to discuss:
             </p>
-            <ul className="text-left text-gray-300 space-y-2 max-w-md mx-auto">
+            <ul className="text-left text-vscode-variable space-y-2 max-w-md mx-auto text-sm">
               <li className="flex items-start space-x-2">
-                <span className="text-tactical-500 mt-1">▸</span>
+                <span className="text-vscode-type mt-1">▸</span>
                 <span>Your specific requirements for {formData.companyName}</span>
               </li>
               <li className="flex items-start space-x-2">
-                <span className="text-tactical-500 mt-1">▸</span>
+                <span className="text-vscode-type mt-1">▸</span>
                 <span>Custom deployment options for your infrastructure</span>
               </li>
               <li className="flex items-start space-x-2">
-                <span className="text-tactical-500 mt-1">▸</span>
+                <span className="text-vscode-type mt-1">▸</span>
                 <span>Security and compliance for your industry</span>
               </li>
               <li className="flex items-start space-x-2">
-                <span className="text-tactical-500 mt-1">▸</span>
+                <span className="text-vscode-type mt-1">▸</span>
                 <span>Proof of concept and demonstration</span>
               </li>
             </ul>
           </div>
           <Button
             onClick={() => window.location.href = '/'}
-            className="bg-tactical-600 hover:bg-tactical-700"
+            className="bg-vscode-keyword hover:bg-vscode-selection text-white font-mono text-sm"
           >
-            Return to Home
+            $ return-home
           </Button>
         </motion.div>
       </div>
@@ -152,7 +155,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950">
+    <div className="min-h-screen bg-vscode-bg pt-24 font-mono">
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
@@ -162,14 +165,14 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-4 border border-tactical-700">
+            <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
               <Mail className="w-5 h-5 text-vscode-type" />
-              <span className="text-xs font-bold text-vscode-type uppercase tracking-wider">Contact Our Team</span>
+              <span className="text-xs font-bold text-vscode-comment tracking-wider">// contact-our-team</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wide mb-4">
-              Let's Build Your Solution
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-vscode-function tracking-wide mb-4">
+              contact.buildYourSolution()
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-vscode-variable max-w-3xl mx-auto">
               Tell us about your requirements and our solutions architects will design a custom deployment for your organization.
             </p>
           </motion.div>
@@ -182,36 +185,37 @@ export default function ContactPage() {
               transition={{ delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <div className="bg-vscode-sidebar border-2 border-tactical-700 rounded-sm p-6 sticky top-6">
-                <h3 className="text-xl font-bold text-white uppercase tracking-wide mb-6">
-                  Why Contact Us?
+              <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 sticky top-6">
+                <div className="text-xs text-vscode-comment mb-4">// why-contact-us</div>
+                <h3 className="text-lg font-bold text-vscode-function tracking-wide mb-6">
+                  whyContactUs()
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-tactical-900 border border-tactical-700 rounded flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center flex-shrink-0">
                       <Target className="w-4 h-4 text-vscode-type" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-white uppercase">Custom Solutions</h4>
-                      <p className="text-xs text-gray-400">Tailored to your exact requirements</p>
+                      <h4 className="text-sm font-bold text-vscode-variable tracking-wide">customSolutions</h4>
+                      <p className="text-xs text-vscode-comment">Tailored to your exact requirements</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-tactical-900 border border-tactical-700 rounded flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center flex-shrink-0">
                       <Users className="w-4 h-4 text-vscode-type" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-white uppercase">Expert Team</h4>
-                      <p className="text-xs text-gray-400">Direct access to solutions architects</p>
+                      <h4 className="text-sm font-bold text-vscode-variable tracking-wide">expertTeam</h4>
+                      <p className="text-xs text-vscode-comment">Direct access to solutions architects</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-tactical-900 border border-tactical-700 rounded flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center flex-shrink-0">
                       <CheckCircle className="w-4 h-4 text-vscode-type" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-white uppercase">24-Hour Response</h4>
-                      <p className="text-xs text-gray-400">Fast, professional follow-up</p>
+                      <h4 className="text-sm font-bold text-vscode-variable tracking-wide">fastResponse</h4>
+                      <p className="text-xs text-vscode-comment">24-hour professional follow-up</p>
                     </div>
                   </div>
                 </div>
@@ -225,17 +229,20 @@ export default function ContactPage() {
               transition={{ delay: 0.3 }}
               className="lg:col-span-2"
             >
-              <form onSubmit={handleSubmit} className="bg-vscode-sidebar border-2 border-tactical-700 rounded-sm p-8">
+              <form onSubmit={handleSubmit} className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 md:p-8">
                 {/* Personal Information */}
                 <div className="mb-8">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <User className="w-5 h-5 text-vscode-type" />
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wide">Personal Information</h3>
+                  <div className="mb-4">
+                    <div className="text-xs text-vscode-comment mb-2">// personal-information</div>
+                    <div className="flex items-center space-x-2">
+                      <User className="w-5 h-5 text-vscode-type" />
+                      <h3 className="text-base md:text-lg font-bold text-vscode-function tracking-wide">personalInfo()</h3>
+                    </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
-                        First Name *
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
+                        firstName *
                       </label>
                       <input
                         type="text"
@@ -243,11 +250,11 @@ export default function ContactPage() {
                         required
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Last Name *
                       </label>
                       <input
@@ -256,11 +263,11 @@ export default function ContactPage() {
                         required
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Email Address *
                       </label>
                       <input
@@ -269,11 +276,11 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Phone Number
                       </label>
                       <input
@@ -281,11 +288,11 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Job Title *
                       </label>
                       <input
@@ -295,7 +302,7 @@ export default function ContactPage() {
                         value={formData.jobTitle}
                         onChange={handleInputChange}
                         placeholder="e.g., CTO, Security Director, IT Manager"
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                   </div>
@@ -303,13 +310,16 @@ export default function ContactPage() {
 
                 {/* Company Information */}
                 <div className="mb-8">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Building2 className="w-5 h-5 text-vscode-type" />
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wide">Company Information</h3>
+                  <div className="mb-4">
+                    <div className="text-xs text-vscode-comment mb-2">// company-information</div>
+                    <div className="flex items-center space-x-2">
+                      <Building2 className="w-5 h-5 text-vscode-type" />
+                      <h3 className="text-base md:text-lg font-bold text-vscode-function tracking-wide">companyInfo()</h3>
+                    </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Company Name *
                       </label>
                       <input
@@ -318,11 +328,11 @@ export default function ContactPage() {
                         required
                         value={formData.companyName}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Company Size *
                       </label>
                       <select
@@ -330,7 +340,7 @@ export default function ContactPage() {
                         required
                         value={formData.companySize}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       >
                         <option value="">Select size</option>
                         <option value="1-50">1-50 employees</option>
@@ -343,7 +353,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Industry *
                       </label>
                       <select
@@ -351,7 +361,7 @@ export default function ContactPage() {
                         required
                         value={formData.industry}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       >
                         <option value="">Select industry</option>
                         <option value="defense">Defense & Military</option>
@@ -370,7 +380,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Country *
                       </label>
                       <input
@@ -379,11 +389,11 @@ export default function ContactPage() {
                         required
                         value={formData.country}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Company Website
                       </label>
                       <input
@@ -392,7 +402,7 @@ export default function ContactPage() {
                         value={formData.website}
                         onChange={handleInputChange}
                         placeholder="https://"
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                   </div>
@@ -400,14 +410,17 @@ export default function ContactPage() {
 
                 {/* Project Information */}
                 <div className="mb-8">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Briefcase className="w-5 h-5 text-vscode-type" />
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wide">Project Information</h3>
+                  <div className="mb-4">
+                    <div className="text-xs text-vscode-comment mb-2">// project-information</div>
+                    <div className="flex items-center space-x-2">
+                      <Briefcase className="w-5 h-5 text-vscode-type" />
+                      <h3 className="text-base md:text-lg font-bold text-vscode-function tracking-wide">projectInfo()</h3>
+                    </div>
                   </div>
                   
                   <div className="mb-4">
-                    <label className="block text-sm font-bold text-gray-300 mb-3 uppercase tracking-wide">
-                      Solutions Interested In * (Select all that apply)
+                    <label className="block text-xs font-mono font-bold text-vscode-variable mb-3 tracking-wide">
+                      solutionsInterestedIn * (select all that apply)
                     </label>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {[
@@ -427,9 +440,9 @@ export default function ContactPage() {
                             type="checkbox"
                             checked={formData.interestedIn.includes(solution)}
                             onChange={() => handleCheckboxChange(solution)}
-                            className="w-4 h-4 bg-vscode-bg border-vscode-border text-tactical-600 focus:ring-tactical-600 rounded"
+                            className="w-4 h-4 bg-vscode-bg border-vscode-border text-vscode-type focus:ring-vscode-type rounded-sm"
                           />
-                          <span className="text-sm text-gray-300">{solution}</span>
+                          <span className="text-xs text-vscode-variable font-mono">{solution}</span>
                         </label>
                       ))}
                     </div>
@@ -437,7 +450,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Project Timeline *
                       </label>
                       <select
@@ -445,7 +458,7 @@ export default function ContactPage() {
                         required
                         value={formData.projectTimeline}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       >
                         <option value="">Select timeline</option>
                         <option value="immediate">Immediate (0-1 month)</option>
@@ -457,7 +470,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Budget Range *
                       </label>
                       <select
@@ -465,7 +478,7 @@ export default function ContactPage() {
                         required
                         value={formData.budget}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       >
                         <option value="">Select range</option>
                         <option value="under-100k">Under $100K</option>
@@ -511,20 +524,23 @@ export default function ContactPage() {
 
                 {/* Additional Information */}
                 <div className="mb-8">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <MessageSquare className="w-5 h-5 text-vscode-type" />
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wide">Additional Information</h3>
+                  <div className="mb-4">
+                    <div className="text-xs text-vscode-comment mb-2">// additional-information</div>
+                    <div className="flex items-center space-x-2">
+                      <MessageSquare className="w-5 h-5 text-vscode-type" />
+                      <h3 className="text-base md:text-lg font-bold text-vscode-function tracking-wide">additionalInfo()</h3>
+                    </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         How Did You Hear About Us?
                       </label>
                       <select
                         name="howDidYouHear"
                         value={formData.howDidYouHear}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       >
                         <option value="">Select source</option>
                         <option value="web-search">Web Search</option>
@@ -537,7 +553,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Preferred Contact Method *
                       </label>
                       <select
@@ -545,7 +561,7 @@ export default function ContactPage() {
                         required
                         value={formData.preferredContactMethod}
                         onChange={handleInputChange}
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       >
                         <option value="email">Email</option>
                         <option value="phone">Phone</option>
@@ -553,7 +569,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                      <label className="block text-xs font-mono font-bold text-vscode-variable mb-2 tracking-wide">
                         Preferred Contact Time
                       </label>
                       <input
@@ -562,15 +578,16 @@ export default function ContactPage() {
                         value={formData.preferredContactTime}
                         onChange={handleInputChange}
                         placeholder="e.g., Weekdays 9am-5pm EST"
-                        className="w-full bg-vscode-bg text-white border border-vscode-border rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                        className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                       />
                     </div>
                   </div>
                 </div>
 
                 {/* Privacy Notice */}
-                <div className="mb-6 p-4 bg-vscode-bg border border-tactical-700 rounded">
-                  <p className="text-xs text-gray-400">
+                <div className="mb-6 p-4 bg-vscode-bg border border-vscode-border rounded-sm">
+                  <div className="text-xs text-vscode-comment mb-2">// privacy-notice</div>
+                  <p className="text-xs text-vscode-variable font-mono">
                     By submitting this form, you agree to be contacted by JetBuilder regarding your inquiry. 
                     Your information will be handled in accordance with our privacy policy and will never be shared 
                     with third parties. All communications are secured and confidential.
@@ -582,17 +599,17 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-tactical-600 hover:bg-tactical-700 text-white font-bold uppercase tracking-wide px-12 py-4 text-lg"
+                    className="bg-vscode-keyword hover:bg-vscode-selection text-white font-mono tracking-wide px-8 md:px-12 py-3 md:py-4 text-sm md:text-base"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="inline-block animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Submitting...
+                        <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        $ submitting...
                       </>
                     ) : (
                       <>
-                        <Send className="inline-block mr-2 w-5 h-5" />
-                        Submit Request
+                        <Send className="inline-block mr-2 w-4 h-4" />
+                        $ submit-request
                       </>
                     )}
                   </Button>
