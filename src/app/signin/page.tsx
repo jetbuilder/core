@@ -29,7 +29,7 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-vscode-bg flex items-center justify-center p-4 font-mono">
       <div className="w-full max-w-md">
         {/* Header */}
         <motion.div
@@ -38,17 +38,20 @@ export default function SignInPage() {
           className="text-center mb-8"
         >
           <a href="/" className="inline-flex flex-col mb-6">
-            <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">JetBuilder</span>
-            <span className="text-3xl font-bold text-tactical-400 hover:text-tactical-300 transition-colors uppercase tracking-wider whitespace-nowrap">
-              SOVEREIGN AI PLATFORM
+            <span className="text-xs text-vscode-comment">// jetbuilder-studio</span>
+            <span className="text-3xl font-bold text-vscode-function hover:text-vscode-type transition-colors">
+              auth.platform()
             </span>
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide -mt-1">Complete AI Independence</span>
+            <span className="text-xs text-vscode-comment -mt-1">// sovereign-ai-access</span>
           </a>
-          <h1 className="text-2xl font-bold text-white uppercase tracking-wide mb-2">
-            Platform Access
+          <div className="inline-block bg-vscode-sidebar border border-vscode-border rounded-sm px-3 py-1 mb-2">
+            <span className="text-vscode-comment text-xs">// platform-access</span>
+          </div>
+          <h1 className="text-2xl font-bold text-vscode-function mb-2">
+            signIn.authenticate()
           </h1>
-          <p className="text-gray-400">
-            Sign in to access your Sovereign AI Platform workspace
+          <p className="text-vscode-variable text-sm">
+            Access your workspace and begin building
           </p>
         </motion.div>
 
@@ -57,55 +60,55 @@ export default function SignInPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-gunmetal-900 border-2 border-tactical-700 rounded-lg p-8"
+          className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email Field */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
-                Email Address
+              <label className="block text-xs text-vscode-comment mb-2">
+                // emailAddress
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-500" />
+                  <Mail className="h-4 w-4 text-vscode-comment" />
                 </div>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600 focus:border-transparent"
-                  placeholder="emsis"
+                  className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-vscode-type focus:border-vscode-type transition-colors"
+                  placeholder="user@organization.com"
                 />
               </div>
             </div>
 
             {/* Password Field */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
-                Password
+              <label className="block text-xs text-vscode-comment mb-2">
+                // password
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-500" />
+                  <Lock className="h-4 w-4 text-vscode-comment" />
                 </div>
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded pl-10 pr-12 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600 focus:border-transparent"
-                  placeholder="passwords"
+                  className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm pl-10 pr-12 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-vscode-type focus:border-vscode-type transition-colors"
+                  placeholder="••••••••"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-tactical-400 transition-colors"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-vscode-comment hover:text-vscode-type transition-colors"
                 >
                   {showPassword ? (
-                    <EyeOff className="h-5 w-5" />
+                    <EyeOff className="h-4 w-4" />
                   ) : (
-                    <Eye className="h-5 w-5" />
+                    <Eye className="h-4 w-4" />
                   )}
                 </button>
               </div>
@@ -113,23 +116,23 @@ export default function SignInPage() {
 
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
-              <label className="flex items-center cursor-pointer">
+              <label className="flex items-center cursor-pointer group">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 bg-gunmetal-950 border-gunmetal-700 text-tactical-600 focus:ring-tactical-600 rounded"
+                  className="w-4 h-4 bg-vscode-bg border-vscode-border text-vscode-type focus:ring-vscode-type focus:ring-1 rounded-sm"
                 />
-                <span className="ml-2 text-sm text-gray-400">Remember me</span>
+                <span className="ml-2 text-xs text-vscode-comment group-hover:text-vscode-variable transition-colors">rememberMe</span>
               </label>
-              <a href="#" className="text-sm text-tactical-400 hover:text-tactical-300 transition-colors">
-                Forgot password?
+              <a href="#" className="text-xs text-vscode-type hover:text-vscode-function transition-colors">
+                forgotPassword()
               </a>
             </div>
 
             {/* Error Message */}
             {error && (
-              <div className="flex items-start space-x-2 p-3 bg-red-900/20 border border-red-700 rounded">
-                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-red-300">{error}</p>
+              <div className="flex items-start space-x-2 p-3 bg-vscode-warning/10 border border-vscode-warning rounded-sm">
+                <AlertCircle className="w-4 h-4 text-vscode-warning flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-vscode-warning">{error}</p>
               </div>
             )}
 
@@ -137,17 +140,17 @@ export default function SignInPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-tactical-600 hover:bg-tactical-700 text-white font-bold uppercase tracking-wide py-3"
+              className="w-full bg-vscode-keyword hover:bg-vscode-selection text-white border border-vscode-border rounded-sm py-3 transition-colors"
             >
               {isLoading ? (
                 <>
-                  <div className="inline-block animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Authenticating...
+                  <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  <span className="text-xs">$ authenticating...</span>
                 </>
               ) : (
                 <>
-                  <Shield className="inline-block mr-2 w-5 h-5" />
-                  Sign In
+                  <Shield className="inline-block mr-2 w-4 h-4" />
+                  <span className="text-xs">$ sign-in</span>
                 </>
               )}
             </Button>
@@ -156,10 +159,10 @@ export default function SignInPage() {
           {/* Divider */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gunmetal-700"></div>
+              <div className="w-full border-t border-vscode-border"></div>
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-gunmetal-900 text-gray-500 uppercase tracking-wider">Or</span>
+            <div className="relative flex justify-center text-xs">
+              <span className="px-2 bg-vscode-sidebar text-vscode-comment">// or</span>
             </div>
           </div>
 
@@ -167,15 +170,15 @@ export default function SignInPage() {
           <div className="space-y-3">
             <button
               type="button"
-              className="w-full bg-gunmetal-950 border border-gunmetal-700 hover:border-tactical-700 text-gray-300 hover:text-white font-semibold py-3 rounded transition-colors"
+              className="w-full bg-vscode-bg border border-vscode-border hover:border-vscode-type text-vscode-variable hover:text-vscode-function py-3 rounded-sm transition-colors text-xs"
             >
-              Sign in with SSO
+              $ sso-login
             </button>
             <button
               type="button"
-              className="w-full bg-gunmetal-950 border border-gunmetal-700 hover:border-tactical-700 text-gray-300 hover:text-white font-semibold py-3 rounded transition-colors"
+              className="w-full bg-vscode-bg border border-vscode-border hover:border-vscode-type text-vscode-variable hover:text-vscode-function py-3 rounded-sm transition-colors text-xs"
             >
-              Sign in with CAC/PIV
+              $ cac-piv-login
             </button>
           </div>
         </motion.div>
@@ -187,10 +190,10 @@ export default function SignInPage() {
           transition={{ delay: 0.2 }}
           className="mt-6 text-center"
         >
-          <p className="text-gray-400 text-sm">
-            Don't have an account?{' '}
-            <a href="/contact" className="text-tactical-400 hover:text-tactical-300 font-semibold transition-colors">
-              Request Access
+          <p className="text-vscode-variable text-xs">
+            <span className="text-vscode-comment">// no-account?</span>{' '}
+            <a href="/contact" className="text-vscode-type hover:text-vscode-function transition-colors">
+              requestAccess()
             </a>
           </p>
         </motion.div>
@@ -200,11 +203,14 @@ export default function SignInPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-8 p-4 bg-gunmetal-900/50 border border-tactical-800 rounded"
+          className="mt-8 p-4 bg-vscode-sidebar border border-vscode-border rounded-sm"
         >
+          <div className="mb-2">
+            <span className="text-vscode-comment text-xs">// security-notice</span>
+          </div>
           <div className="flex items-start space-x-2">
-            <Shield className="w-4 h-4 text-tactical-500 flex-shrink-0 mt-0.5" />
-            <p className="text-xs text-gray-500">
+            <Shield className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-vscode-comment leading-relaxed">
               Secure connection established. All authentication data is encrypted end-to-end. 
               By signing in, you agree to comply with your organization's security policies.
             </p>
@@ -215,7 +221,7 @@ export default function SignInPage() {
         <div className="mt-6 text-center">
           <a 
             href="/"
-            className="text-sm text-gray-500 hover:text-tactical-400 transition-colors"
+            className="text-xs text-vscode-comment hover:text-vscode-type transition-colors"
           >
             ← Back to Home
           </a>
