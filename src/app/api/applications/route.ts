@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     console.log('Resend API Key configured:', !!process.env.RESEND_API_KEY)
     
     const emailOptions: any = {
-      from: 'JetBuilder Careers <careers@jetbuilder.io>',
+      from: 'JetBuilder Careers <noreply@jetbuilder.io>',
       to: [recipientEmail], // Hardcoded to HRM email - do not use env var
       subject: `New Job Application - ${data.jobTitle} - ${data.firstName} ${data.lastName}`,
       html: `
@@ -118,7 +118,7 @@ export async function POST(request: NextRequest) {
     // Confirmation to applicant (don't fail if this fails)
     try {
       await resend.emails.send({
-        from: 'JetBuilder Careers <careers@jetbuilder.io>',
+        from: 'JetBuilder Careers <noreply@jetbuilder.io>',
         to: [data.email],
         subject: `Application Received - ${data.jobTitle}`,
         html: `
