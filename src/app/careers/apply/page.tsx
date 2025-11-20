@@ -134,6 +134,22 @@ function JobApplicationForm() {
     setIsSubmitting(true)
 
     try {
+      // Convert file to base64
+      let resumeData = null
+      let resumeName = 'No resume attached'
+      let resumeType = ''
+
+      if (formData.resume) {
+        resumeData = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader()
+          reader.onloadend = () => resolve(reader.result as string)
+          reader.onerror = reject
+          reader.readAsDataURL(formData.resume as File)
+        })
+        resumeName = formData.resume.name
+        resumeType = formData.resume.type
+      }
+
       const response = await fetch('/api/applications', {
         method: 'POST',
         headers: {
@@ -141,7 +157,10 @@ function JobApplicationForm() {
         },
         body: JSON.stringify({
           ...formData,
-          resume: formData.resume ? formData.resume.name : 'No resume attached'
+          resume: undefined, // Remove File object (can't be serialized)
+          resumeData,
+          resumeName,
+          resumeType
         }),
       })
 

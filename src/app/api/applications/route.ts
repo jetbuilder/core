@@ -6,8 +6,8 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json()
     
-    // Send email to admin
-    await resend.emails.send({
+    // Prepare email options
+    const emailOptions: any = {
       from: 'Sovereign AI Careers <onboarding@resend.dev>',
       to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
       subject: `New Job Application - ${data.jobTitle} - ${data.firstName} ${data.lastName}`,
@@ -30,22 +30,35 @@ export async function POST(request: NextRequest) {
         <p><strong>Current Company:</strong> ${data.currentCompany || 'Not provided'}</p>
         <p><strong>Years of Experience:</strong> ${data.yearsExperience}</p>
         <p><strong>Expected Salary:</strong> ${data.expectedSalary || 'Not provided'}</p>
-        <p><strong>Availability:</strong> ${data.availability}</p>
-        <p><strong>Security Clearance:</strong> ${data.securityClearance}</p>
-        <p><strong>Willing to Relocate:</strong> ${data.willingToRelocate}</p>
+        <p><strong>Availability:</strong> ${data.availability || 'Not provided'}</p>
+        <p><strong>Security Clearance:</strong> ${data.securityClearance || 'Not provided'}</p>
+        <p><strong>Willing to Relocate:</strong> ${data.willingToRelocate || 'Not provided'}</p>
         
         <h3>Application Details</h3>
         <p><strong>How They Heard:</strong> ${data.howHeard || 'Not provided'}</p>
         <p><strong>Cover Letter:</strong></p>
-        <p>${data.coverLetter || 'Not provided'}</p>
+        <p style="white-space: pre-wrap;">${data.coverLetter || 'Not provided'}</p>
         <p><strong>Additional Info:</strong></p>
-        <p>${data.additionalInfo || 'Not provided'}</p>
+        <p style="white-space: pre-wrap;">${data.additionalInfo || 'Not provided'}</p>
         
-        <p><strong>Resume:</strong> ${data.resume || 'File attached to application'}</p>
+        <p><strong>Resume:</strong> ${data.resumeName || 'No resume attached'} ${data.resumeData ? '(attached)' : ''}</p>
         
         <p><em>Submitted: ${new Date().toLocaleString()}</em></p>
       `
-    })
+    }
+
+    // Add attachment if resume data exists
+    if (data.resumeData && data.resumeName) {
+      // Extract base64 content (remove data:type;base64, prefix)
+      const base64Content = data.resumeData.split(',')[1]
+      emailOptions.attachments = [{
+        filename: data.resumeName,
+        content: base64Content,
+      }]
+    }
+    
+    // Send email to admin
+    await resend.emails.send(emailOptions)
     
     // Confirmation to applicant
     await resend.emails.send({
