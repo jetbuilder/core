@@ -127,6 +127,14 @@ function JobApplicationForm() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0]
+      const maxSize = 5 * 1024 * 1024 // 5MB in bytes
+      
+      if (file.size > maxSize) {
+        alert('File size exceeds 5MB. Please choose a smaller file.')
+        e.target.value = '' // Clear the input
+        return
+      }
+      
       setFormData(prev => ({ ...prev, resume: file }))
       setFileName(file.name)
     }
@@ -137,22 +145,34 @@ function JobApplicationForm() {
     setIsSubmitting(true)
 
     try {
+      console.log('Starting application submission...')
+      
       // Convert file to base64
       let resumeData = null
       let resumeName = 'No resume attached'
       let resumeType = ''
 
       if (formData.resume) {
-        resumeData = await new Promise<string>((resolve, reject) => {
-          const reader = new FileReader()
-          reader.onloadend = () => resolve(reader.result as string)
-          reader.onerror = reject
-          reader.readAsDataURL(formData.resume as File)
-        })
-        resumeName = formData.resume.name
-        resumeType = formData.resume.type
+        console.log('Converting resume file to base64...', formData.resume.name)
+        try {
+          resumeData = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader()
+            reader.onloadend = () => resolve(reader.result as string)
+            reader.onerror = reject
+            reader.readAsDataURL(formData.resume as File)
+          })
+          resumeName = formData.resume.name
+          resumeType = formData.resume.type
+          console.log('Resume converted successfully:', resumeName, 'Size:', resumeData.length, 'bytes')
+        } catch (fileError) {
+          console.error('Failed to read resume file:', fileError)
+          alert('Failed to read resume file. Please try again or choose a different file.')
+          setIsSubmitting(false)
+          return
+        }
       }
 
+      console.log('Sending application to API...')
       const response = await fetch('/api/applications', {
         method: 'POST',
         headers: {
@@ -167,16 +187,31 @@ function JobApplicationForm() {
         }),
       })
 
+      console.log('API response status:', response.status)
+      
+      if (!response.ok) {
+        console.error('API returned error status:', response.status, response.statusText)
+        const errorText = await response.text()
+        console.error('Error response:', errorText)
+        alert(`Failed to submit application (Status: ${response.status}). Please try again or contact support.`)
+        setIsSubmitting(false)
+        return
+      }
+
       const result = await response.json()
+      console.log('API response:', result)
 
       if (result.success) {
+        console.log('Application submitted successfully!')
         setIsSubmitted(true)
       } else {
-        alert('Failed to submit application. Please try again.')
+        console.error('API returned success=false:', result)
+        alert(`Failed to submit application: ${result.message || 'Unknown error'}. Please try again.`)
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting application:', error)
-      alert('An error occurred. Please try again.')
+      const errorMessage = error?.message || 'An error occurred'
+      alert(`Error: ${errorMessage}. Please try again or contact support.`)
     } finally {
       setIsSubmitting(false)
     }

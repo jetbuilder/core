@@ -15,6 +15,21 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json()
     
+    console.log('Received application data. Has resume:', !!data.resumeData)
+    if (data.resumeData) {
+      const resumeSizeKB = Math.round(data.resumeData.length / 1024)
+      console.log('Resume size:', resumeSizeKB, 'KB')
+      
+      // Vercel has a 4.5MB payload limit for serverless functions
+      if (resumeSizeKB > 4500) {
+        console.error('Resume file too large:', resumeSizeKB, 'KB')
+        return NextResponse.json(
+          { success: false, message: 'Resume file is too large. Please upload a file smaller than 4MB.' },
+          { status: 413 }
+        )
+      }
+    }
+    
     // Prepare email options - Career applications go to HRM
     const recipientEmail = 'hrm@jetbuilder.io' // Hardcoded to HRM email - do not use env var
     console.log('Sending career application email to:', recipientEmail)
