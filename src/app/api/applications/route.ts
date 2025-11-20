@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 export async function POST(request: NextRequest) {
+  // Check if Resend API key is configured
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not configured')
+    return NextResponse.json(
+      { success: false, message: 'Email service not configured. Please contact support.' },
+      { status: 500 }
+    )
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const data = await request.json()
@@ -9,6 +18,7 @@ export async function POST(request: NextRequest) {
     // Prepare email options - Career applications go to HRM
     const recipientEmail = 'hrm@jetbuilder.io' // Hardcoded to HRM email - do not use env var
     console.log('Sending career application email to:', recipientEmail)
+    console.log('Resend API Key configured:', !!process.env.RESEND_API_KEY)
     
     const emailOptions: any = {
       from: 'Sovereign AI Careers <onboarding@resend.dev>',
@@ -68,33 +78,67 @@ export async function POST(request: NextRequest) {
     })
     
     // Send email to HRM - hardcoded recipient
-    const emailResult = await resend.emails.send(emailOptions)
-    console.log('Resend API response:', emailResult)
+    try {
+      const emailResult = await resend.emails.send(emailOptions)
+      console.log('Resend API response:', JSON.stringify(emailResult, null, 2))
+      
+      if (emailResult.error) {
+        console.error('Resend API error:', emailResult.error)
+        throw new Error(`Resend API error: ${JSON.stringify(emailResult.error)}`)
+      }
+      
+      console.log('Email sent successfully to HRM. Email ID:', emailResult.data?.id)
+    } catch (emailError: any) {
+      console.error('Failed to send email to HRM:', emailError)
+      // Log detailed error information
+      if (emailError.message) {
+        console.error('Error message:', emailError.message)
+      }
+      if (emailError.response) {
+        console.error('Error response:', emailError.response)
+      }
+      throw emailError // Re-throw to be caught by outer catch
+    }
     
-    // Confirmation to applicant
-    await resend.emails.send({
-      from: 'Sovereign AI Careers <onboarding@resend.dev>',
-      to: [data.email],
-      subject: `Application Received - ${data.jobTitle}`,
-      html: `
-        <h2>Application Received</h2>
-        <p>Dear ${data.firstName},</p>
-        <p>Thank you for applying for the <strong>${data.jobTitle}</strong> position at Sovereign AI Platform.</p>
-        <p>We've successfully received your application and resume. Our talent acquisition team will review your qualifications and contact you within 5-7 business days.</p>
-        <p>If you have any questions in the meantime, please don't hesitate to reach out.</p>
-        <br>
-        <p>Best regards,<br>The Sovereign AI Talent Team</p>
-      `
-    })
+    // Confirmation to applicant (don't fail if this fails)
+    try {
+      await resend.emails.send({
+        from: 'Sovereign AI Careers <onboarding@resend.dev>',
+        to: [data.email],
+        subject: `Application Received - ${data.jobTitle}`,
+        html: `
+          <h2>Application Received</h2>
+          <p>Dear ${data.firstName},</p>
+          <p>Thank you for applying for the <strong>${data.jobTitle}</strong> position at Sovereign AI Platform.</p>
+          <p>We've successfully received your application and resume. Our talent acquisition team will review your qualifications and contact you within 5-7 business days.</p>
+          <p>If you have any questions in the meantime, please don't hesitate to reach out.</p>
+          <br>
+          <p>Best regards,<br>The Sovereign AI Talent Team</p>
+        `
+      })
+      console.log('Confirmation email sent to applicant:', data.email)
+    } catch (confirmationError) {
+      console.error('Failed to send confirmation email (non-critical):', confirmationError)
+      // Don't fail the whole request if confirmation email fails
+    }
     
     return NextResponse.json({ 
       success: true, 
       message: 'Application submitted successfully' 
     })
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error processing application:', error)
+    const errorMessage = error?.message || 'Failed to submit application'
+    const errorDetails = error?.response?.data || error?.response || error
+    
+    console.error('Full error details:', JSON.stringify(errorDetails, null, 2))
+    
     return NextResponse.json(
-      { success: false, message: 'Failed to submit application' },
+      { 
+        success: false, 
+        message: errorMessage,
+        error: process.env.NODE_ENV === 'development' ? errorDetails : undefined
+      },
       { status: 500 }
     )
   }
