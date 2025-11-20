@@ -6,10 +6,10 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json()
     
-    // Prepare email options
+    // Prepare email options - Career applications go to HRM
     const emailOptions: any = {
       from: 'Sovereign AI Careers <onboarding@resend.dev>',
-      to: ['hrm@jetbuilder.io'],
+      to: ['hrm@jetbuilder.io'], // Hardcoded to HRM email - do not use env var
       subject: `New Job Application - ${data.jobTitle} - ${data.firstName} ${data.lastName}`,
       html: `
         <h2>New Job Application</h2>
