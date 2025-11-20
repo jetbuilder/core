@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     
     // Send email notification to admin
     await resend.emails.send({
-      from: 'Sovereign AI Contact <onboarding@resend.dev>',
+      from: 'JetBuilder Contact <contact@jetbuilder.io>',
       to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
       subject: `New Contact Form Submission - ${formData.companyName}`,
       html: `
@@ -47,9 +47,9 @@ export async function POST(request: NextRequest) {
     
     // Send confirmation email to the user
     await resend.emails.send({
-      from: 'Sovereign AI Platform <onboarding@resend.dev>',
+      from: 'JetBuilder Platform <noreply@jetbuilder.io>',
       to: [formData.email],
-      subject: 'Thank You for Contacting Sovereign AI Platform',
+      subject: 'Thank You for Contacting JetBuilder',
       html: `
         <h2>Thank You for Your Interest</h2>
         <p>Dear ${formData.firstName},</p>

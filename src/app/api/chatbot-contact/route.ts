@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     
     // Send email to admin
     await resend.emails.send({
-      from: 'Sovereign AI Chatbot <onboarding@resend.dev>',
+      from: 'JetBuilder Chatbot <chatbot@jetbuilder.io>',
       to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
       subject: `New Chatbot Lead - ${contactInfo.company}`,
       html: `

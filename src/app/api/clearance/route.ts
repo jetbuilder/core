@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     
     // Send email to admin
     await resend.emails.send({
-      from: 'Sovereign AI Clearance <onboarding@resend.dev>',
+      from: 'JetBuilder Clearance <clearance@jetbuilder.io>',
       to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
       subject: `New Clearance Request - ${formData.accessTier} - ${formData.organizationName}`,
       html: `
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
     
     // Confirmation to user
     await resend.emails.send({
-      from: 'Sovereign AI Platform <onboarding@resend.dev>',
+      from: 'JetBuilder Platform <noreply@jetbuilder.io>',
       to: [formData.email],
       subject: 'Clearance Request Received',
       html: `
