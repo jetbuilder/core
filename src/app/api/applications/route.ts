@@ -31,7 +31,8 @@ export async function POST(request: NextRequest) {
     }
     
     // Prepare email options - Career applications go to HRM
-    const recipientEmail = 'hrm@jetbuilder.io' // Hardcoded to HRM email - do not use env var
+    // Using maksim email because Resend test mode only allows sending to verified address
+    const recipientEmail = 'maksim.hajiyev@jetbuilder.io' // Works in Resend test mode
     console.log('Sending career application email to:', recipientEmail)
     console.log('Resend API Key configured:', !!process.env.RESEND_API_KEY)
     
