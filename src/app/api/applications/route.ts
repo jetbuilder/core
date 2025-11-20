@@ -7,9 +7,12 @@ export async function POST(request: NextRequest) {
     const data = await request.json()
     
     // Prepare email options - Career applications go to HRM
+    const recipientEmail = 'hrm@jetbuilder.io' // Hardcoded to HRM email - do not use env var
+    console.log('Sending career application email to:', recipientEmail)
+    
     const emailOptions: any = {
       from: 'Sovereign AI Careers <onboarding@resend.dev>',
-      to: ['hrm@jetbuilder.io'], // Hardcoded to HRM email - do not use env var
+      to: [recipientEmail], // Hardcoded to HRM email - do not use env var
       subject: `New Job Application - ${data.jobTitle} - ${data.firstName} ${data.lastName}`,
       html: `
         <h2>New Job Application</h2>
@@ -57,8 +60,16 @@ export async function POST(request: NextRequest) {
       }]
     }
     
-    // Send email to admin
-    await resend.emails.send(emailOptions)
+    // Log the email options before sending
+    console.log('Email options before send:', {
+      to: emailOptions.to,
+      subject: emailOptions.subject,
+      hasAttachments: !!emailOptions.attachments
+    })
+    
+    // Send email to HRM - hardcoded recipient
+    const emailResult = await resend.emails.send(emailOptions)
+    console.log('Resend API response:', emailResult)
     
     // Confirmation to applicant
     await resend.emails.send({
