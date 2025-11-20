@@ -8,8 +8,8 @@ export async function POST(request: NextRequest) {
     
     // Send email notification to admin
     await resend.emails.send({
-      from: 'JetBuilder Contact <contact@jetbuilder.io>',
-      to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
+      from: 'JetBuilder Contact <noreply@jetbuilder.io>',
+      to: ['maksim.hajiyev@jetbuilder.io'],
       subject: `New Contact Form Submission - ${formData.companyName}`,
       html: `
         <h2>New Contact Form Submission</h2>

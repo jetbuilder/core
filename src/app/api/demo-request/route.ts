@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     // Send email to admin
     await resend.emails.send({
       from: 'Platform Demo Request <noreply@jetbuilder.io>',
-      to: process.env.ADMIN_EMAIL || 'maksim.hajiyev@jetbuilder.io',
+      to: 'maksim.hajiyev@jetbuilder.io',
       subject: `Platform Demo Request - ${company}`,
       html: `
         <h2>New Platform Demo Request</h2>

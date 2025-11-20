@@ -8,8 +8,8 @@ export async function POST(request: NextRequest) {
     
     // Send email to admin
     await resend.emails.send({
-      from: 'JetBuilder Clearance <clearance@jetbuilder.io>',
-      to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
+      from: 'JetBuilder Clearance <noreply@jetbuilder.io>',
+      to: ['maksim.hajiyev@jetbuilder.io'],
       subject: `New Clearance Request - ${formData.accessTier} - ${formData.organizationName}`,
       html: `
         <h2>New Clearance Request</h2>
