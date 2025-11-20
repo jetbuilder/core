@@ -30,44 +30,47 @@ interface ApplicationData {
 
 function SuccessScreen({ formData, fileName }: { formData: ApplicationData; fileName: string }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950 py-12 px-4">
+    <div className="min-h-screen bg-vscode-bg py-12 px-4 font-mono">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-2xl w-full mx-auto bg-gunmetal-900 border-2 border-tactical-600 rounded-lg p-8 text-center"
+        className="max-w-2xl w-full mx-auto bg-vscode-sidebar border-2 border-vscode-type rounded-sm p-8 text-center"
       >
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-tactical-900 border-2 border-tactical-600 rounded-full mb-6">
-          <CheckCircle className="w-10 h-10 text-tactical-400" />
+        <div className="inline-flex items-center justify-center w-20 h-20 bg-vscode-bg border-2 border-vscode-type rounded-sm mb-6">
+          <CheckCircle className="w-10 h-10 text-vscode-type" />
         </div>
-        <h2 className="text-3xl font-bold text-white uppercase tracking-wide mb-4">
-          Application Submitted!
+        <h2 className="text-3xl font-bold text-vscode-function tracking-wide mb-4">
+          application.submitted()
         </h2>
-        <p className="text-xl text-gray-300 mb-6">
-          Thank you for applying to the <span className="text-tactical-400 font-semibold">{formData.jobTitle}</span> position.
+        <p className="text-sm text-vscode-comment mb-2">
+          // success-confirmation
         </p>
-        <div className="bg-gunmetal-950 border border-tactical-700 rounded-lg p-6 mb-6">
-          <p className="text-gray-300 mb-4">
-            Our talent acquisition team will review your application and contact you within <span className="text-tactical-400 font-bold">5-7 business days</span>.
+        <p className="text-lg text-vscode-variable mb-6">
+          Thank you for applying to the <span className="text-vscode-type font-semibold">{formData.jobTitle}</span> position.
+        </p>
+        <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6 mb-6">
+          <p className="text-vscode-variable mb-4 text-sm">
+            Our talent acquisition team will review your application and contact you within <span className="text-vscode-type font-bold">5-7 business days</span>.
           </p>
-          <ul className="text-left text-gray-300 space-y-2 max-w-md mx-auto">
+          <ul className="text-left text-vscode-variable space-y-2 max-w-md mx-auto text-xs">
             <li className="flex items-start space-x-2">
-              <span className="text-tactical-500 mt-1">▸</span>
+              <span className="text-vscode-type mt-1">✓</span>
               <span>Application received for: {formData.jobTitle}</span>
             </li>
             <li className="flex items-start space-x-2">
-              <span className="text-tactical-500 mt-1">▸</span>
+              <span className="text-vscode-type mt-1">✓</span>
               <span>Resume: {fileName}</span>
             </li>
           </ul>
         </div>
         <div className="flex gap-4 justify-center">
           <a href="/careers">
-            <Button className="bg-tactical-600 hover:bg-tactical-700">
+            <Button className="bg-vscode-keyword hover:bg-vscode-selection text-white font-mono">
               View More Positions
             </Button>
           </a>
           <a href="/">
-            <Button variant="outline">
+            <Button variant="outline" className="border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono">
               Return to Home
             </Button>
           </a>
@@ -184,7 +187,7 @@ function JobApplicationForm() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950">
+    <div className="min-h-screen bg-vscode-bg font-mono">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -192,17 +195,17 @@ function JobApplicationForm() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-4 border border-tactical-700">
-              <Briefcase className="w-5 h-5 text-tactical-400" />
-              <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Job Application</span>
+            <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-4 border border-vscode-border">
+              <Briefcase className="w-5 h-5 text-vscode-type" />
+              <span className="text-xs font-bold text-vscode-comment tracking-wider">// job-application</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wide mb-4">
-              Apply for Position
+            <h1 className="text-4xl md:text-5xl font-bold text-vscode-function tracking-wide mb-4">
+              application.submit()
             </h1>
-            <p className="text-xl text-tactical-400 font-semibold">
+            <p className="text-xl text-vscode-type font-semibold">
               {jobTitle}
             </p>
-            <p className="text-gray-300 mt-2">
+            <p className="text-vscode-variable mt-2 text-sm">
               Join the team building the future of on-premises AI
             </p>
           </motion.div>
@@ -212,16 +215,16 @@ function JobApplicationForm() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="bg-gunmetal-900 border-2 border-tactical-700 rounded-lg p-8"
+            className="bg-vscode-sidebar border-2 border-vscode-border rounded-sm p-8"
           >
             <div className="mb-8">
               <div className="flex items-center space-x-2 mb-4">
-                <User className="w-5 h-5 text-tactical-400" />
-                <h3 className="text-lg font-bold text-white uppercase tracking-wide">Personal Information</h3>
+                <User className="w-5 h-5 text-vscode-type" />
+                <h3 className="text-base font-bold text-vscode-function tracking-wide">// personal-information</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     First Name *
                   </label>
                   <input
@@ -230,11 +233,11 @@ function JobApplicationForm() {
                     required
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     Last Name *
                   </label>
                   <input
@@ -243,11 +246,11 @@ function JobApplicationForm() {
                     required
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     Email Address *
                   </label>
                   <input
@@ -256,11 +259,11 @@ function JobApplicationForm() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     Phone Number *
                   </label>
                   <input
@@ -269,11 +272,11 @@ function JobApplicationForm() {
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     Current Location *
                   </label>
                   <input
@@ -283,11 +286,11 @@ function JobApplicationForm() {
                     value={formData.location}
                     onChange={handleInputChange}
                     placeholder="City, State/Province, Country"
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm placeholder:text-vscode-comment"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     LinkedIn Profile
                   </label>
                   <input
@@ -296,7 +299,7 @@ function JobApplicationForm() {
                     value={formData.linkedIn}
                     onChange={handleInputChange}
                     placeholder="https://linkedin.com/in/yourprofile"
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm placeholder:text-vscode-comment"
                   />
                 </div>
               </div>
@@ -304,10 +307,10 @@ function JobApplicationForm() {
 
             <div className="mb-8">
               <div className="flex items-center space-x-2 mb-4">
-                <Upload className="w-5 h-5 text-tactical-400" />
-                <h3 className="text-lg font-bold text-white uppercase tracking-wide">Resume / CV</h3>
+                <Upload className="w-5 h-5 text-vscode-type" />
+                <h3 className="text-base font-bold text-vscode-function tracking-wide">// resume-upload</h3>
               </div>
-              <div className="border-2 border-dashed border-gunmetal-700 rounded-lg p-6 text-center hover:border-tactical-600 transition-colors">
+              <div className="border-2 border-dashed border-vscode-border rounded-sm p-6 text-center hover:border-vscode-type transition-colors">
                 <input
                   type="file"
                   id="resume"
@@ -318,16 +321,16 @@ function JobApplicationForm() {
                   required
                 />
                 <label htmlFor="resume" className="cursor-pointer">
-                  <FileText className="w-12 h-12 text-tactical-400 mx-auto mb-4" />
+                  <FileText className="w-12 h-12 text-vscode-type mx-auto mb-4" />
                   {fileName ? (
                     <div>
-                      <p className="text-tactical-400 font-semibold mb-2">{fileName}</p>
-                      <p className="text-gray-500 text-sm">Click to change file</p>
+                      <p className="text-vscode-type font-semibold mb-2 text-sm">{fileName}</p>
+                      <p className="text-vscode-comment text-xs">Click to change file</p>
                     </div>
                   ) : (
                     <div>
-                      <p className="text-white font-semibold mb-2">Click to upload your resume</p>
-                      <p className="text-gray-400 text-sm">PDF, DOC, or DOCX (Max 5MB)</p>
+                      <p className="text-vscode-variable font-semibold mb-2 text-sm">Click to upload your resume</p>
+                      <p className="text-vscode-comment text-xs">PDF, DOC, or DOCX (Max 5MB)</p>
                     </div>
                   )}
                 </label>
@@ -336,12 +339,12 @@ function JobApplicationForm() {
 
             <div className="mb-8">
               <div className="flex items-center space-x-2 mb-4">
-                <Briefcase className="w-5 h-5 text-tactical-400" />
-                <h3 className="text-lg font-bold text-white uppercase tracking-wide">Professional Background</h3>
+                <Briefcase className="w-5 h-5 text-vscode-type" />
+                <h3 className="text-base font-bold text-vscode-function tracking-wide">// professional-background</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     Current/Most Recent Company
                   </label>
                   <input
@@ -349,11 +352,11 @@ function JobApplicationForm() {
                     name="currentCompany"
                     value={formData.currentCompany}
                     onChange={handleInputChange}
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-vscode-comment mb-2 tracking-wide">
                     Years of Experience *
                   </label>
                   <select
@@ -361,7 +364,7 @@ function JobApplicationForm() {
                     required
                     value={formData.yearsExperience}
                     onChange={handleInputChange}
-                    className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                    className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm"
                   >
                     <option value="">Select...</option>
                     <option value="0-2">0-2 years</option>
@@ -376,8 +379,8 @@ function JobApplicationForm() {
 
             <div className="mb-8">
               <div className="flex items-center space-x-2 mb-4">
-                <FileText className="w-5 h-5 text-tactical-400" />
-                <h3 className="text-lg font-bold text-white uppercase tracking-wide">Cover Letter</h3>
+                <FileText className="w-5 h-5 text-vscode-type" />
+                <h3 className="text-base font-bold text-vscode-function tracking-wide">// cover-letter</h3>
               </div>
               <textarea
                 name="coverLetter"
@@ -386,13 +389,13 @@ function JobApplicationForm() {
                 onChange={handleInputChange}
                 rows={6}
                 placeholder="Tell us why you're excited about this role..."
-                className="w-full bg-gunmetal-950 text-white border border-gunmetal-700 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-tactical-600"
+                className="w-full bg-vscode-bg text-vscode-variable border border-vscode-border rounded-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-vscode-type font-mono text-sm placeholder:text-vscode-comment"
               />
             </div>
 
-            <div className="mb-6 p-4 bg-gunmetal-950 border border-tactical-700 rounded">
-              <p className="text-xs text-gray-400">
-                By submitting this application, you consent to JetBuilder storing and processing your personal information for recruitment purposes.
+            <div className="mb-6 p-4 bg-vscode-bg border border-vscode-border rounded-sm">
+              <p className="text-xs text-vscode-comment">
+                // By submitting this application, you consent to JetBuilder storing and processing your personal information for recruitment purposes.
               </p>
             </div>
 
@@ -400,7 +403,7 @@ function JobApplicationForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-tactical-600 hover:bg-tactical-700 text-white font-bold uppercase tracking-wide px-12 py-4 text-lg"
+                className="bg-vscode-keyword hover:bg-vscode-selection text-white font-bold tracking-wide px-12 py-4 text-sm font-mono"
               >
                 {isSubmitting ? (
                   <>
@@ -410,12 +413,12 @@ function JobApplicationForm() {
                 ) : (
                   <>
                     <Send className="inline-block mr-2 w-5 h-5" />
-                    Submit Application
+                    $ submit-application
                   </>
                 )}
               </Button>
-              <p className="text-gray-500 text-sm mt-4">
-                <a href="/careers" className="text-tactical-400 hover:text-tactical-300">
+              <p className="text-vscode-comment text-xs mt-4">
+                <a href="/careers" className="text-vscode-type hover:text-vscode-function">
                   ← Back to Careers
                 </a>
               </p>
@@ -430,10 +433,10 @@ function JobApplicationForm() {
 export default function JobApplicationPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-gunmetal-950 via-gunmetal-900 to-primary-950 flex items-center justify-center">
+      <div className="min-h-screen bg-vscode-bg flex items-center justify-center font-mono">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-tactical-400 mb-4"></div>
-          <p className="text-white text-lg">Loading application form...</p>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-vscode-type mb-4"></div>
+          <p className="text-vscode-variable text-sm">Loading application form...</p>
         </div>
       </div>
     }>
