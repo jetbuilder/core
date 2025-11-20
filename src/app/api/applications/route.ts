@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     // Prepare email options
     const emailOptions: any = {
       from: 'Sovereign AI Careers <onboarding@resend.dev>',
-      to: [process.env.ADMIN_EMAIL || 'admin@example.com'],
+      to: ['hrm@jetbuilder.io'],
       subject: `New Job Application - ${data.jobTitle} - ${data.firstName} ${data.lastName}`,
       html: `
         <h2>New Job Application</h2>
