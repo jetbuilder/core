@@ -1086,6 +1086,194 @@ export default function Product() {
           </div>
         </motion.div>
 
+        {/* CTO-Level Business Value Section */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gradient-to-br from-[#1e3a5f] to-[#2b2b2b] border-2 border-[#0e639c] rounded-lg p-8 md:p-12">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-mono font-bold text-white mb-4">
+                forCTOs.mobileTelecom()
+              </h2>
+              <p className="text-[#b0c4de] max-w-3xl mx-auto font-mono text-sm md:text-base leading-relaxed">
+                Strategic AI infrastructure for Mobile Network Operators. Manage 10,000+ cell sites, RAN equipment, and transport networks with predictable CapEx economics and zero cloud dependencies.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-10">
+              {/* Strategic Value */}
+              <div className="bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <TrendingUp className="w-6 h-6 text-[#4fc1ff]" />
+                  <h3 className="text-lg font-mono font-bold text-white">Strategic Value</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Predictable CapEx Economics</p>
+                      <p className="text-[#858585] text-xs mt-1">Fixed annual licensing vs. unpredictable per-API costs. Budget with confidence—no surprise cloud bills.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">8-12 Month ROI</p>
+                      <p className="text-[#858585] text-xs mt-1">Reduce MTTR by 70%, prevent $5.4M in network downtime annually. Break-even in under a year.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Zero Vendor Lock-In</p>
+                      <p className="text-[#858585] text-xs mt-1">Own your AI stack completely. No dependency on Azure, AWS, or Google. Full portability and control.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Operational Excellence */}
+              <div className="bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <Settings className="w-6 h-6 text-[#4fc1ff]" />
+                  <h3 className="text-lg font-mono font-bold text-white">Operational Excellence</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Multi-Vendor RAN Management</p>
+                      <p className="text-[#858585] text-xs mt-1">Unified asset management for Ericsson, Nokia, Huawei, Samsung, ZTE equipment. Single pane of glass.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Real-Time Network Telemetry</p>
+                      <p className="text-[#858585] text-xs mt-1">Process 1M+ telemetry events/sec from RRUs, BBUs, power systems. Sub-millisecond response times.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Intelligent Field Operations</p>
+                      <p className="text-[#858585] text-xs mt-1">AI-powered work order routing. Reduce field technician dispatch time by 10x with smart scheduling.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Risk Mitigation */}
+              <div className="bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <Lock className="w-6 h-6 text-[#4fc1ff]" />
+                  <h3 className="text-lg font-mono font-bold text-white">Risk Mitigation</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Complete Data Sovereignty</p>
+                      <p className="text-[#858585] text-xs mt-1">Network infrastructure data never leaves your premises. NERC CIP and ISO 55000 compliance ready.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Air-Gap Capability</p>
+                      <p className="text-[#858585] text-xs mt-1">Deploy in fully disconnected environments. Critical infrastructure protection without cloud dependencies.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Audit Trail & Compliance</p>
+                      <p className="text-[#858585] text-xs mt-1">Comprehensive logging for regulatory compliance. Full visibility into AI decisions and asset changes.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Technical Differentiation */}
+              <div className="bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <Cpu className="w-6 h-6 text-[#4fc1ff]" />
+                  <h3 className="text-lg font-mono font-bold text-white">Technical Edge</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Rust-Powered Core</p>
+                      <p className="text-[#858585] text-xs mt-1">Memory-safe systems language. C/C++ level performance without segfaults or vulnerabilities.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Custom SLMs On-Premises</p>
+                      <p className="text-[#858585] text-xs mt-1">Trained on YOUR telecom data. Domain-specific intelligence without sending data to OpenAI/Anthropic.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#4fc1ff] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">High-Speed Database Stack</p>
+                      <p className="text-[#858585] text-xs mt-1">PostgreSQL + TimescaleDB for RF metrics, Redis for real-time cache. 7-year data retention built-in.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Equipment Coverage Highlight */}
+            <div className="bg-[#252526] border border-[#3c3c3c] rounded-lg p-6 mb-8">
+              <h4 className="text-base font-mono font-bold text-white mb-4 flex items-center space-x-2">
+                <Server className="w-5 h-5 text-[#4fc1ff]" />
+                <span>Comprehensive Telecom Equipment Coverage</span>
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div>
+                  <p className="text-[#4fc1ff] font-semibold mb-2">Radio Access Network</p>
+                  <p className="text-[#858585]">RRUs, BBUs, Massive MIMO, DU/CU (5G), Small Cells, Antenna Systems, RF Combiners</p>
+                </div>
+                <div>
+                  <p className="text-[#4fc1ff] font-semibold mb-2">Transport & Core</p>
+                  <p className="text-[#858585]">Core Routers, Aggregation Switches, OTN/DWDM, Microwave Links, Packet Core, IMS/VoLTE</p>
+                </div>
+                <div>
+                  <p className="text-[#4fc1ff] font-semibold mb-2">Site Infrastructure</p>
+                  <p className="text-[#858585]">Power Systems, Battery Banks, DG Sets, Solar/Hybrid, HVAC, UPS, Environmental Sensors</p>
+                </div>
+              </div>
+            </div>
+
+            {/* ROI Callout */}
+            <div className="bg-gradient-to-r from-[#0e639c] to-[#1e3a5f] border-2 border-[#4fc1ff] rounded-lg p-6 text-center">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">$7.5M+</div>
+                  <div className="text-sm text-[#b0c4de]">Annual savings per 1,000 cell sites</div>
+                </div>
+                <div className="hidden md:block w-px h-16 bg-[#4fc1ff]"></div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">70%</div>
+                  <div className="text-sm text-[#b0c4de]">Reduction in MTTR</div>
+                </div>
+                <div className="hidden md:block w-px h-16 bg-[#4fc1ff]"></div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">8-12 mo</div>
+                  <div className="text-sm text-[#b0c4de]">Typical ROI payback</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Action Buttons */}
         <motion.div
           className="text-center mt-16"
@@ -1096,17 +1284,17 @@ export default function Product() {
         >
           <div className="bg-[#2b2b2b] border border-[#3c3c3c] rounded-lg p-8">
             <h3 className="text-xl md:text-2xl font-mono font-bold text-[#cccccc] mb-4">
-              Start Building with JetBuilder Studio
+              Ready to Transform Network Operations?
             </h3>
             <p className="text-[#858585] mb-6 max-w-2xl mx-auto font-mono text-sm">
-              Deploy the Rust-powered Sovereign AI Platform on your infrastructure. Memory-safe architecture with microsecond latency and zero cloud dependencies.
+              Schedule a confidential briefing with our enterprise team. We'll design a custom deployment plan for your network infrastructure and provide a detailed ROI analysis.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="bg-[#0e639c] text-white hover:bg-[#1177bb] font-mono uppercase" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
-                Request Platform Demo
+                Schedule Executive Briefing
               </Button>
               <Button size="lg" variant="outline" className="border-[#3c3c3c] text-[#cccccc] hover:bg-[#37373d] font-mono uppercase">
-                Download Technical Specs
+                Download ROI Calculator
               </Button>
             </div>
           </div>
