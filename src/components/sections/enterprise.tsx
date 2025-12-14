@@ -251,10 +251,7 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                           </div>
                         </div>
                         <button
-                          onClick={() => {
-                            setSelectedSolution(offering.title)
-                            setIsDemoModalOpen(true)
-                          }}
+                          onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}
                           className="px-2 py-1 bg-vscode-keyword hover:bg-vscode-selection text-white text-xs font-mono rounded-sm transition-colors"
                         >
                           $ demo

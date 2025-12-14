@@ -114,10 +114,7 @@ Transform your operations with sovereign AI: ${url}
                     </CardDescription>
                     <div className="flex items-center gap-2 mb-3">
                       <button
-                        onClick={() => {
-                          setSelectedSolution(useCase.title)
-                          setIsDemoModalOpen(true)
-                        }}
+                        onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}
                         className="px-2 py-1 bg-vscode-keyword hover:bg-vscode-selection text-white text-xs font-mono rounded-sm transition-colors"
                       >
                         $ demo
