@@ -558,7 +558,7 @@ export default function ComparePage() {
                 Request Detailed Comparison
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
                 Schedule Demo
               </Button>
             </div>

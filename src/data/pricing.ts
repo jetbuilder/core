@@ -67,7 +67,7 @@ export const pricingPlans = [
     ],
     highlight: false,
     cta: "Schedule Demo",
-    ctaLink: "/contact"
+    ctaLink: "https://cal.com/jetbuilder-expert"
   },
   {
     id: "enterprise-professional",
@@ -91,7 +91,7 @@ export const pricingPlans = [
     highlight: true,
     popular: true,
     cta: "Schedule Demo",
-    ctaLink: "/contact"
+    ctaLink: "https://cal.com/jetbuilder-expert"
   },
   {
     id: "enterprise-unlimited",
