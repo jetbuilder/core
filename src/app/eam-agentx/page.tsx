@@ -120,7 +120,7 @@ export default function EAMAgentXPage() {
 
             <div className="mt-8 text-center">
               <p className="text-vscode-variable text-lg mb-6 leading-relaxed">
-                Next-generation Enterprise Asset Management powered by <strong className="text-vscode-function">10 specialized AI agents</strong> running on a <strong className="text-vscode-type">high-performance Rust core</strong> with <strong className="text-vscode-type">custom SLMs deployed on-premises</strong>. Manage assets, maintenance, and work orders with sub-millisecond response times—no cloud dependencies.
+                Next-generation Enterprise Asset Management for <strong className="text-vscode-function">Mobile Telecom Operators</strong> powered by <strong className="text-vscode-function">10 specialized AI agents</strong> on a <strong className="text-vscode-type">high-performance Rust core</strong>. Manage RAN equipment (RRUs, BBUs, antennas), transport networks, power systems, and 10,000+ cell sites with <strong className="text-vscode-type">sub-millisecond response times</strong>—no cloud dependencies.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -494,68 +494,68 @@ const features = [
   {
     icon: Zap,
     title: 'Rust-Powered Performance',
-    description: 'Sub-millisecond query response with memory-safe Rust core. Process 1M+ events/second with zero GC pauses'
+    description: 'Sub-millisecond query response with memory-safe Rust core. Process 1M+ telemetry events/second from RRUs, BBUs, and cell sites with zero GC pauses'
   },
   {
     icon: Database,
     title: 'High-Speed Databases',
-    description: 'PostgreSQL, TimescaleDB for time-series, ChromaDB for vectors, and Redis for in-memory caching'
+    description: 'PostgreSQL, TimescaleDB for time-series RF metrics, ChromaDB for equipment manuals, and Redis for real-time cell site health'
   },
   {
     icon: Brain,
     title: 'Conversational Interface',
-    description: 'Interact with your EAM system using natural language, like ChatGPT for asset management'
+    description: 'Ask in natural language: "Show me all RRUs with high VSWR" or "Which towers need generator maintenance this week?"'
   },
   {
     icon: Activity,
-    title: 'Real-time Telemetry',
-    description: 'Live monitoring and analysis of millions of sensor events per second with instant alerting'
+    title: 'Real-time Network Telemetry',
+    description: 'Live monitoring of RAN equipment, power systems, environmental sensors, and transport network with instant alarm correlation'
   },
   {
     icon: FileText,
     title: 'Automated Work Orders',
-    description: 'Generate work orders from natural language with automatic priority assignment'
+    description: 'Generate field technician work orders from natural language or equipment alarms with automatic site location and required skills'
   },
   {
     icon: CheckCircle,
-    title: 'AI Quality Assurance',
-    description: 'Built-in critic-verifier evaluates every response for accuracy and completeness'
+    title: 'Multi-Vendor Support',
+    description: 'Supports Ericsson, Nokia, Huawei, Samsung, ZTE, Cisco, Juniper RAN and transport equipment with unified asset management'
   }
 ]
 
 const agents = [
-  { name: 'Supervisor Agent', role: 'Orchestrates workflows and routes requests' },
-  { name: 'Asset Agent', role: 'Manages asset lifecycle, specifications, and status' },
-  { name: 'Work Order Agent', role: 'Automated work order creation and management' },
-  { name: 'Telemetry Agent', role: 'Real-time monitoring and anomaly detection' },
-  { name: 'Maintenance Planner', role: 'Predictive and preventive maintenance scheduling' },
-  { name: 'Retrieval Agent', role: 'Semantic search across documentation and SOPs' },
-  { name: 'Compliance Agent', role: 'Safety and regulatory compliance validation' },
-  { name: 'Reasoning Agent', role: 'Root cause analysis and decision support' },
-  { name: 'Plan & Execute Agent', role: 'Complex multi-step maintenance orchestration' },
-  { name: 'Critic-Verifier', role: 'Quality assurance and response evaluation' }
+  { name: 'Supervisor Agent', role: 'Orchestrates workflows and routes telecom asset queries' },
+  { name: 'Asset Agent', role: 'Manages RAN equipment, transport network, and power system lifecycle' },
+  { name: 'Work Order Agent', role: 'Automated field technician work order creation and dispatch' },
+  { name: 'Telemetry Agent', role: 'Real-time RRU/BBU monitoring and RF performance anomaly detection' },
+  { name: 'Maintenance Planner', role: 'Predictive maintenance for cell sites and network equipment' },
+  { name: 'Retrieval Agent', role: 'Semantic search across vendor manuals (Ericsson, Nokia, Huawei)' },
+  { name: 'Compliance Agent', role: 'NERC CIP, ISO 55000, and safety standard validation' },
+  { name: 'Reasoning Agent', role: 'Root cause analysis for network outages and equipment failures' },
+  { name: 'Plan & Execute Agent', role: 'Multi-site maintenance campaign orchestration' },
+  { name: 'Critic-Verifier', role: 'Quality assurance for field operations and asset data' }
 ]
 
 const useCases = [
   {
-    title: 'Asset Status Query',
-    query: '"What\'s the status of PUMP-001?"',
-    result: 'Gets real-time asset info, telemetry data, and maintenance history'
+    title: 'Cell Site Equipment Query',
+    query: '"What\'s the status of RRU-001 at site BTS-5432?"',
+    result: 'Gets real-time RRU health, RF metrics, alarms, and maintenance history'
   },
   {
-    title: 'Maintenance Scheduling',
-    query: '"What maintenance is due this week?"',
-    result: 'Lists all scheduled maintenance with priorities and assigned technicians'
+    title: 'Network Maintenance Planning',
+    query: '"What BBUs and antennas need maintenance this week?"',
+    result: 'Lists all scheduled maintenance with priorities, locations, and assigned field techs'
   },
   {
-    title: 'Anomaly Investigation',
-    query: '"Why is COMP-005 vibrating abnormally?"',
-    result: 'Analyzes telemetry, performs root cause analysis, creates work order'
+    title: 'Power System Investigation',
+    query: '"Why is the rectifier at tower-north-245 overheating?"',
+    result: 'Analyzes power telemetry, temperature sensors, performs root cause analysis, creates work order'
   },
   {
-    title: 'Work Order Creation',
-    query: '"Create a work order for unusual noise on MOTOR-12"',
-    result: 'Auto-generates work order with priority, parts needed, and assignments'
+    title: 'Automated Work Orders',
+    query: '"Create work order for high VSWR alarm on antenna ANT-3421"',
+    result: 'Auto-generates work order with priority, RF specialist assignment, and required test equipment'
   }
 ]
 

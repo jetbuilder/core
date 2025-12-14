@@ -126,6 +126,57 @@ export default function SpecSheetPage() {
           </div>
         </section>
 
+        {/* Mobile Telecom Equipment Coverage */}
+        <section className="mb-6">
+          <h2 className="text-xl font-bold text-blue-900 mb-3 border-b-2 border-blue-300 pb-1">
+            MOBILE TELECOM EQUIPMENT COVERAGE
+          </h2>
+          <div className="grid grid-cols-3 gap-3 text-xs">
+            <div>
+              <h4 className="font-bold text-gray-900 mb-2">Radio Access Network (RAN)</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Remote Radio Units (RRU/RRH)</li>
+                <li>• Baseband Units (BBU)</li>
+                <li>• Massive MIMO Antennas</li>
+                <li>• Small Cells & Femtocells</li>
+                <li>• Distributed Units (DU) - 5G</li>
+                <li>• Centralized Units (CU) - 5G</li>
+                <li>• Antenna Systems & Towers</li>
+                <li>• RF Combiners & Splitters</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-900 mb-2">Core & Transport Network</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Core Routers (P/PE)</li>
+                <li>• Aggregation Switches</li>
+                <li>• Optical Transport (OTN/DWDM)</li>
+                <li>• Microwave Radio Links</li>
+                <li>• IP/MPLS Edge Routers</li>
+                <li>• Firewalls & Security Gateway</li>
+                <li>• Packet Core (EPC/5GC)</li>
+                <li>• IMS & VoLTE Servers</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-900 mb-2">Site Infrastructure</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Rectifiers & Power Systems</li>
+                <li>• Battery Banks (VRLA/Li-ion)</li>
+                <li>• Diesel Generators (DG Sets)</li>
+                <li>• Solar Panels & Hybrid Power</li>
+                <li>• HVAC & Cooling Systems</li>
+                <li>• UPS Systems</li>
+                <li>• Environmental Sensors</li>
+                <li>• Physical Security Systems</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-3 bg-blue-50 p-2 rounded border border-blue-200 text-xs">
+            <strong>Vendor Support:</strong> Ericsson, Nokia, Huawei, Samsung, ZTE, Cisco, Juniper, Ciena, Infinera, Commscope, and 100+ equipment vendors
+          </div>
+        </section>
+
         {/* Telecom-Specific Capabilities */}
         <section className="mb-6">
           <h2 className="text-xl font-bold text-blue-900 mb-3 border-b-2 border-blue-300 pb-1">
@@ -154,7 +205,7 @@ export default function SpecSheetPage() {
             </div>
             <div className="flex items-start space-x-2">
               <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Integration Ready:</strong> APIs for OSS/BSS systems (Ericsson, Nokia, Huawei, Samsung)</span>
+              <span><strong>Integration Ready:</strong> APIs for OSS/BSS systems (Ericsson ENM, Nokia NetAct, Huawei U2000)</span>
             </div>
           </div>
         </section>
