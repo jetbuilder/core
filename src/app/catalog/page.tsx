@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { 
   Shield, DollarSign, Phone, Lock, Headphones, Heart, 
   ShoppingCart, Scale, Zap, Building, Pill, Factory,
-  Check, ArrowRight, ChevronDown, ChevronUp
+  Check, ArrowRight, ChevronDown, ChevronUp, Wrench
 } from "lucide-react";
 import { useState } from "react";
 import { solutions } from "@/data/solutions";
@@ -24,7 +24,8 @@ const iconMap: { [key: string]: any } = {
   Zap,
   Building,
   Pill,
-  Factory
+  Factory,
+  Wrench
 };
 
 export default function CatalogPage() {
@@ -53,7 +54,7 @@ export default function CatalogPage() {
   };
 
   const handleRequestDemo = (title: string) => {
-    window.location.href = `/contact?solution=${encodeURIComponent(title)}`;
+    window.open('https://cal.com/jetbuilder-expert', '_blank');
   };
 
   return (
@@ -178,6 +179,14 @@ export default function CatalogPage() {
                           )}
 
                           <div className="flex flex-wrap items-center gap-3">
+                            {solution.id === 'eam-agentx' && (
+                              <a href="/eam-agentx">
+                                <Button className="bg-tactical-500 hover:bg-tactical-600 text-white">
+                                  View Product Page
+                                  <ArrowRight className="w-4 h-4 ml-2" />
+                                </Button>
+                              </a>
+                            )}
                             <Button
                               onClick={() => handleRequestDemo(solution.title)}
                               className="bg-tactical-600 hover:bg-tactical-700 text-white"
@@ -285,6 +294,14 @@ export default function CatalogPage() {
                           )}
 
                           <div className="flex flex-wrap items-center gap-3">
+                            {offering.id === 'eam-enterprise' && (
+                              <a href="/eam-agentx">
+                                <Button className="bg-tactical-500 hover:bg-tactical-600 text-white">
+                                  View Product Page
+                                  <ArrowRight className="w-4 h-4 ml-2" />
+                                </Button>
+                              </a>
+                            )}
                             <Button
                               onClick={() => handleRequestDemo(offering.title)}
                               className="bg-tactical-600 hover:bg-tactical-700 text-white"

@@ -133,6 +133,25 @@ export const solutions: Solution[] = [
       "Regulatory compliance recording"
     ],
     icon: "Zap"
+  },
+  {
+    id: "eam-agentx",
+    category: "Enterprise Asset Management",
+    title: "EAM AgentX - Multi-Agent Asset Management",
+    description: "Deploy AI-powered Enterprise Asset Management with 10 specialized agents powered by JetGraph and JetChain (Rust-native frameworks). Uses custom Small Language Models (SLMs) deployed on-premises. Conversational interface for asset lifecycle, predictive maintenance, work order automation, and real-time monitoring—all on your infrastructure with complete data sovereignty.",
+    features: [
+      "Rust-powered core with sub-millisecond response times",
+      "Custom SLMs (Small Language Models) deployed on your infrastructure",
+      "JetGraph & JetChain for high-performance agentic orchestration",
+      "10 specialized agents: Asset, Work Order, Telemetry, Maintenance, Compliance",
+      "Predictive maintenance with anomaly detection & proactive scheduling",
+      "Real-time telemetry monitoring processing 1M+ events/second",
+      "High-speed databases: PostgreSQL, TimescaleDB, Redis, ChromaDB",
+      "Automated work order creation from natural language",
+      "Critic-verifier for quality assurance on all responses",
+      "On-premises or air-gapped deployment options"
+    ],
+    icon: "Wrench"
   }
 ]
 

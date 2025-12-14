@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { enterpriseOfferings } from '@/data/enterprise'
-import { Heart, DollarSign, Shield, Scale, Zap, Phone, Factory, Building, CheckCircle, Lock, Award, Linkedin, Link2, MessageCircle, Check } from 'lucide-react'
+import { Heart, DollarSign, Shield, Scale, Zap, Phone, Factory, Building, CheckCircle, Lock, Award, Linkedin, Link2, MessageCircle, Check, Wrench } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/button'
 import Chatbot from '@/components/ui/chatbot'
@@ -18,6 +18,7 @@ const iconMap: Record<string, any> = {
   Phone,
   Factory,
   Building,
+  Wrench,
   Pill: Heart, // Using Heart as fallback for Pill
 }
 
@@ -197,6 +198,27 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                     {/* CTA */}
                     <div className="mt-4">
                       <div className="flex items-center gap-2 mb-3">
+                        {offering.id === 'eam-enterprise' ? (
+                          <a
+                            href="/eam-agentx"
+                            className="text-xs font-bold text-vscode-variable hover:text-vscode-type inline-flex items-center group"
+                          >
+                            view-product
+                            <svg
+                              className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </a>
+                        ) : (
                         <button
                           onClick={() => handleLearnMore(offering.title)}
                           className="text-xs font-bold text-vscode-variable hover:text-vscode-type inline-flex items-center group"
@@ -216,6 +238,7 @@ Transform your ${offering.industry.toLowerCase()} operations: ${url}
                             />
                           </svg>
                         </button>
+                        )}
                         <div className="relative group/deploy">
                           <button
                             disabled

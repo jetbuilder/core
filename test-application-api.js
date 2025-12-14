@@ -74,3 +74,5 @@ fetch(API_URL, {
     console.error('4. Server error (check Vercel logs)');
   });
 
+
+

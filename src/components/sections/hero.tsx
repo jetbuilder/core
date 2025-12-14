@@ -24,13 +24,14 @@ export default function Hero() {
   ]
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-blue-500/10 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-purple-500/10 blur-[100px] rounded-full"></div>
+    <section className="relative bg-vscode-bg overflow-hidden">
+      {/* Background decoration - IDE grid */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)',
+        backgroundSize: '20px 20px'
+      }}></div>
 
-      <div className="container relative px-4 py-16 md:py-24">
+      <div className="container relative px-4 py-16 md:py-24 font-mono">
         {/* Hero Grid Layout */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left Column - Main Content */}
@@ -41,9 +42,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-lg">
-                <Building2 className="w-4 h-4 text-blue-400" />
-                <span className="text-sm font-semibold text-blue-400">For CTOs & Engineering Leaders</span>
+              <div className="inline-flex items-center space-x-2 bg-vscode-sidebar border border-vscode-border px-4 py-2 rounded-sm">
+                <Building2 className="w-4 h-4 text-vscode-type" />
+                <span className="text-xs font-bold text-vscode-comment">// for-ctos-engineering-leaders</span>
               </div>
             </motion.div>
 
@@ -53,11 +54,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                In-House Agentic AI Platform
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-vscode-function leading-tight">
+                agenticAI.inHouse()
               </h1>
-              <div className="mt-4 text-xl md:text-2xl text-slate-300">
-                Build Multi-Agent Systems on <span className="text-blue-400 font-semibold">Your Infrastructure</span>
+              <div className="mt-4 text-xl md:text-2xl text-vscode-variable">
+                Build Multi-Agent Systems on <span className="text-vscode-type font-semibold">Your Infrastructure</span>
               </div>
             </motion.div>
 
@@ -66,23 +67,23 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm"
+              className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6"
             >
-              <p className="text-slate-300 text-lg leading-relaxed mb-4">
+              <p className="text-vscode-variable text-sm leading-relaxed mb-4">
                 Deploy Agentic AI entirely on your infrastructure. No Azure, AWS, or Google dependency. 
                 Complete control, predictable costs, zero vendor lock-in.
               </p>
               <div className="flex flex-wrap gap-3">
-                <div className="flex items-center space-x-2 text-sm text-blue-400">
-                  <CheckCircle className="w-4 h-4" />
+                <div className="flex items-center space-x-2 text-xs text-vscode-type">
+                  <CheckCircle className="w-3 h-3" />
                   <span>Multi-Agent Orchestration</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-blue-400">
-                  <CheckCircle className="w-4 h-4" />
+                <div className="flex items-center space-x-2 text-xs text-vscode-type">
+                  <CheckCircle className="w-3 h-3" />
                   <span>Custom SLMs</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-blue-400">
-                  <CheckCircle className="w-4 h-4" />
+                <div className="flex items-center space-x-2 text-xs text-vscode-type">
+                  <CheckCircle className="w-3 h-3" />
                   <span>Air-Gap Ready</span>
                 </div>
               </div>
@@ -95,43 +96,43 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-lg flex items-center justify-center">
-                  <Server className="w-5 h-5 text-blue-400" />
+              <div className="flex items-start space-x-3 bg-vscode-sidebar border border-vscode-border rounded-sm p-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Server className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white mb-1">Your Infrastructure</h3>
-                  <p className="text-sm text-slate-400">Deploy on-premises or private cloud. Full control.</p>
+                  <h3 className="font-semibold text-vscode-function mb-1 text-sm">yourInfrastructure()</h3>
+                  <p className="text-xs text-vscode-comment">Deploy on-premises or private cloud. Full control.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-purple-500/10 border border-purple-500/20 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-purple-400" />
+              <div className="flex items-start space-x-3 bg-vscode-sidebar border border-vscode-border rounded-sm p-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <TrendingUp className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white mb-1">Predictable Costs</h3>
-                  <p className="text-sm text-slate-400">CapEx model. No per-token fees or cloud bills.</p>
+                  <h3 className="font-semibold text-vscode-function mb-1 text-sm">predictableCosts()</h3>
+                  <p className="text-xs text-vscode-comment">CapEx model. No per-token fees or cloud bills.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center justify-center">
-                  <Lock className="w-5 h-5 text-green-400" />
+              <div className="flex items-start space-x-3 bg-vscode-sidebar border border-vscode-border rounded-sm p-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Lock className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white mb-1">Data Sovereignty</h3>
-                  <p className="text-sm text-slate-400">All data stays within your environment.</p>
+                  <h3 className="font-semibold text-vscode-function mb-1 text-sm">dataSovereignty()</h3>
+                  <p className="text-xs text-vscode-comment">All data stays within your environment.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-orange-500/10 border border-orange-500/20 rounded-lg flex items-center justify-center">
-                  <Award className="w-5 h-5 text-orange-400" />
+              <div className="flex items-start space-x-3 bg-vscode-sidebar border border-vscode-border rounded-sm p-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-vscode-bg border border-vscode-border rounded-sm flex items-center justify-center">
+                  <Award className="w-4 h-4 text-vscode-type" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white mb-1">Zero Vendor Lock-In</h3>
-                  <p className="text-sm text-slate-400">Own your AI stack. Full portability.</p>
+                  <h3 className="font-semibold text-vscode-function mb-1 text-sm">noVendorLockIn()</h3>
+                  <p className="text-xs text-vscode-comment">Own your AI stack. Full portability.</p>
                 </div>
               </div>
             </motion.div>
@@ -143,15 +144,13 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <a href="/contact" className="flex-1 sm:flex-initial">
-                <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold group">
-                  Book Enterprise Demo
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
+              <Button size="lg" className="w-full sm:w-auto bg-vscode-keyword hover:bg-vscode-selection text-white px-8 py-4 text-sm font-mono font-semibold group uppercase" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
+                book-enterprise-demo
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
               <a href="#solution-examples" className="flex-1 sm:flex-initial">
-                <Button size="lg" variant="outline" className="w-full border-2 border-slate-600 text-slate-300 hover:bg-slate-800 px-8 py-6 text-lg font-semibold">
-                  View Solutions
+                <Button size="lg" variant="outline" className="w-full border-2 border-vscode-border text-vscode-variable hover:bg-vscode-hover px-8 py-4 text-sm font-mono font-semibold uppercase">
+                  view-solutions
                 </Button>
               </a>
             </motion.div>
@@ -161,19 +160,19 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-4 text-sm text-slate-400"
+              className="flex flex-wrap items-center gap-4 text-xs text-vscode-comment"
             >
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>No Azure/AWS/Google Required</span>
+                <CheckCircle className="w-3 h-3 text-vscode-type" />
+                <span>no-azure-aws-google</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>Compliance-Ready</span>
+                <CheckCircle className="w-3 h-3 text-vscode-type" />
+                <span>compliance-ready</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>24/7 Enterprise Support</span>
+                <CheckCircle className="w-3 h-3 text-vscode-type" />
+                <span>enterprise-support-24-7</span>
               </div>
             </motion.div>
           </div>
@@ -192,15 +191,15 @@ export default function Hero() {
                 return (
                   <motion.div
                     key={stat.label}
-                    className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:border-blue-500/50 transition-colors"
+                    className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 hover:border-vscode-type transition-colors"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     whileHover={{ y: -5 }}
                   >
-                    <Icon className="w-8 h-8 text-blue-400 mb-3" />
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-slate-400">{stat.label}</div>
+                    <Icon className="w-6 h-6 text-vscode-type mb-3" />
+                    <div className="text-3xl font-bold text-vscode-function mb-1">{stat.value}</div>
+                    <div className="text-xs text-vscode-comment">{stat.label}</div>
                   </motion.div>
                 )
               })}
@@ -208,61 +207,61 @@ export default function Hero() {
 
             {/* Key Differentiator Box */}
             <motion.div
-              className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-xl p-8 backdrop-blur-sm"
+              className="bg-vscode-sidebar border-2 border-vscode-type rounded-sm p-8"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Built for Regulated Industries</h3>
-              <div className="space-y-3 text-slate-300">
+              <h3 className="text-lg font-bold text-vscode-function mb-4">builtFor.regulatedIndustries()</h3>
+              <div className="space-y-2 text-vscode-variable text-sm">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-vscode-type rounded-full"></div>
                   <span>Financial Services & Banking</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-vscode-type rounded-full"></div>
                   <span>Healthcare & Life Sciences</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-vscode-type rounded-full"></div>
                   <span>Government & Defense</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-vscode-type rounded-full"></div>
                   <span>Insurance & Telecommunications</span>
                 </div>
               </div>
-              <div className="mt-6 pt-6 border-t border-slate-700/50">
-                <p className="text-sm text-slate-400">
-                  Designed for organizations requiring complete data sovereignty, air-gap capability, and compliance with HIPAA, PIPEDA, FedRAMP, and more.
+              <div className="mt-6 pt-6 border-t border-vscode-border">
+                <p className="text-xs text-vscode-comment">
+                  // Designed for organizations requiring complete data sovereignty, air-gap capability, and compliance with HIPAA, PIPEDA, FedRAMP, and more.
                 </p>
               </div>
             </motion.div>
 
             {/* Cost Comparison */}
             <motion.div
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm"
+              className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h4 className="text-lg font-bold text-white mb-4">Cost Structure</h4>
+              <h4 className="text-base font-bold text-vscode-function mb-4">costStructure.compare()</h4>
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-slate-400 text-sm">Cloud API Costs</span>
-                    <span className="text-red-400 font-semibold">Variable & Unpredictable</span>
+                    <span className="text-vscode-comment text-xs">cloudAPICosts</span>
+                    <span className="text-red-400 font-semibold text-xs">Variable & Unpredictable</span>
                   </div>
-                  <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div className="h-2 bg-vscode-bg rounded-sm overflow-hidden">
                     <div className="h-full bg-red-500 w-full animate-pulse"></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-slate-400 text-sm">JetBuilder On-Premises</span>
-                    <span className="text-green-400 font-semibold">Fixed CapEx</span>
+                    <span className="text-vscode-comment text-xs">jetBuilderOnPremises</span>
+                    <span className="text-green-400 font-semibold text-xs">Fixed CapEx</span>
                   </div>
-                  <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div className="h-2 bg-vscode-bg rounded-sm overflow-hidden">
                     <div className="h-full bg-green-500 w-1/3"></div>
                   </div>
                 </div>
@@ -279,71 +278,69 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           {/* For Engineering Teams */}
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 backdrop-blur-sm hover:border-blue-500/50 transition-colors">
+          <div className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8 hover:border-vscode-type transition-colors">
             <div className="flex items-center space-x-3 mb-4">
-              <Code className="w-8 h-8 text-blue-400" />
-              <h3 className="text-2xl font-bold text-white">For Engineering Teams</h3>
+              <Code className="w-6 h-6 text-vscode-type" />
+              <h3 className="text-xl font-bold text-vscode-function">forEngineering.teams()</h3>
             </div>
-            <p className="text-slate-300 mb-6 leading-relaxed">
+            <p className="text-vscode-variable mb-6 leading-relaxed text-sm">
               Visual IDE for building multi-agent systems. Deploy agentic workflows entirely on your infrastructure with 49+ pre-built components.
             </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">Multi-agent orchestration framework</span>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">Multi-agent orchestration framework</span>
               </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">On-premises Kubernetes deployment</span>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">On-premises Kubernetes deployment</span>
               </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">Custom SLM training pipeline</span>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">Custom SLM training pipeline</span>
               </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">Full API & SDK access</span>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">Full API & SDK access</span>
               </li>
             </ul>
             <a href="/start-building">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                Start Building - Free Tier
+              <Button className="w-full bg-vscode-keyword hover:bg-vscode-selection text-white font-mono text-xs uppercase">
+                start-building-free-tier
               </Button>
             </a>
           </div>
 
           {/* For CTOs */}
-          <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl p-8 backdrop-blur-sm">
+          <div className="bg-vscode-sidebar border-2 border-vscode-type rounded-sm p-8">
             <div className="flex items-center space-x-3 mb-4">
-              <Shield className="w-8 h-8 text-purple-400" />
-              <h3 className="text-2xl font-bold text-white">For CTOs & Leaders</h3>
+              <Shield className="w-6 h-6 text-vscode-type" />
+              <h3 className="text-xl font-bold text-vscode-function">forCTOs.leaders()</h3>
             </div>
-            <p className="text-slate-300 mb-6 leading-relaxed">
+            <p className="text-vscode-variable mb-6 leading-relaxed text-sm">
               Pre-built agentic solutions for regulated industries. Predictable costs, complete control, zero vendor lock-in.
             </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">Enterprise-ready agentic workflows</span>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">Enterprise-ready agentic workflows</span>
               </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">Air-gap & on-premises deployment</span>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">Air-gap & on-premises deployment</span>
               </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">CapEx pricing model (no API fees)</span>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">CapEx pricing model (no API fees)</span>
               </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">24/7 enterprise support & SLAs</span>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="w-4 h-4 text-vscode-type flex-shrink-0 mt-0.5" />
+                <span className="text-vscode-variable text-xs">24/7 enterprise support & SLAs</span>
               </li>
             </ul>
-            <a href="/contact">
-              <Button variant="outline" className="w-full border-2 border-purple-400 text-purple-300 hover:bg-purple-500/10">
-                Book Enterprise Demo
-              </Button>
-            </a>
+            <Button variant="outline" className="w-full border-2 border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-xs uppercase" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
+              book-enterprise-demo
+            </Button>
           </div>
         </motion.div>
       </div>

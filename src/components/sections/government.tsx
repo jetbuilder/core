@@ -230,10 +230,7 @@ Learn more: ${url}
                         </div>
                       </div>
                       <button
-                        onClick={() => {
-                          setSelectedSolution(offering.title)
-                          setIsDemoModalOpen(true)
-                        }}
+                        onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}
                         className="px-3 py-1.5 bg-tactical-600 hover:bg-tactical-700 text-white text-xs font-bold uppercase tracking-wide rounded transition-colors"
                       >
                         Request Demo

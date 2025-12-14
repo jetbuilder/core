@@ -221,10 +221,8 @@ export default function AISecurityPage() {
                   Build Your Own Workflow
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 font-mono uppercase">
-                <a href="/contact">
-                  Request Demo
-                </a>
+              <Button size="lg" variant="outline" className="border-tactical-600 text-tactical-400 hover:bg-tactical-900/30 font-mono uppercase" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
+                Request Demo
               </Button>
             </div>
           </div>

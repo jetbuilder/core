@@ -121,7 +121,7 @@ export default function StatusPage() {
   const allOperational = services.every(s => s.status === 'operational')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 px-4">
+    <div className="min-h-screen bg-vscode-bg py-16 px-4 font-mono">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
@@ -129,14 +129,14 @@ export default function StatusPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-blue-100 px-5 py-2.5 rounded-full mb-6 border border-blue-200 shadow-sm">
-            <Activity className="w-5 h-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wide">System Status</span>
+          <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+            <Activity className="w-4 h-4 text-vscode-type" />
+            <span className="text-xs font-bold text-vscode-comment">// system-status</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Sovereign AI Platform Service Status
+          <h1 className="text-3xl md:text-4xl font-bold text-vscode-function mb-4">
+            status.sovereignAIPlatform()
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-vscode-variable text-sm">
             Real-time operational status of Sovereign AI Platform core services and APIs
           </p>
         </motion.div>
@@ -146,24 +146,24 @@ export default function StatusPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className={`mb-12 p-8 rounded-2xl border shadow-sm ${
+          className={`mb-12 p-8 rounded-sm border ${
             allOperational
-              ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-200'
-              : 'bg-gradient-to-r from-yellow-50 to-amber-50 border-yellow-200'
+              ? 'bg-vscode-sidebar border-green-600'
+              : 'bg-vscode-sidebar border-yellow-600'
           }`}
         >
           <div className="flex items-center justify-between flex-wrap gap-6">
             <div className="flex items-center space-x-4">
               {allOperational ? (
-                <CheckCircle className="w-10 h-10 text-green-600" />
+                <CheckCircle className="w-8 h-8 text-green-400" />
               ) : (
-                <AlertCircle className="w-10 h-10 text-yellow-600" />
+                <AlertCircle className="w-8 h-8 text-yellow-400" />
               )}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-1">
-                  {allOperational ? 'All Systems Operational' : 'Some Systems Experiencing Issues'}
+                <h2 className="text-xl font-bold text-vscode-function mb-1">
+                  {allOperational ? 'allSystems.operational()' : 'systems.issues()'}
                 </h2>
-                <p className="text-gray-600 text-base">
+                <p className="text-vscode-variable text-xs">
                   {allOperational
                     ? 'All Sovereign AI Platform services are running normally'
                     : 'We are actively monitoring and resolving any issues'}
@@ -171,8 +171,8 @@ export default function StatusPage() {
               </div>
             </div>
             <div className="text-right">
-              <div className="flex items-center space-x-2 text-gray-500 text-sm">
-                <Clock className="w-4 h-4" />
+              <div className="flex items-center space-x-2 text-vscode-comment text-xs">
+                <Clock className="w-3 h-3" />
                 <span>
                   Last updated: {mounted && lastUpdated ? lastUpdated.toLocaleTimeString() : 'Loading...'}
                 </span>
@@ -182,7 +182,7 @@ export default function StatusPage() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -191,39 +191,39 @@ export default function StatusPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + index * 0.05 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-blue-300 transition-all"
+                className="bg-vscode-sidebar border border-vscode-border rounded-sm p-6 hover:border-vscode-type transition-all"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-blue-50 border border-blue-100 rounded-xl">
-                      <Icon className="w-6 h-6 text-blue-600" />
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="p-2 bg-vscode-bg border border-vscode-border rounded-sm">
+                      <Icon className="w-5 h-5 text-vscode-type" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      <h3 className="text-base font-bold text-vscode-function mb-1">
                         {service.name}
                       </h3>
-                      <p className="text-sm text-gray-500">{service.description}</p>
+                      <p className="text-xs text-vscode-variable">{service.description}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Status Badge */}
-                <div className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full border shadow-sm ${getStatusColor(service.status)} mb-6`}>
+                <div className={`inline-flex items-center space-x-2 px-3 py-1.5 rounded-sm border mb-4 ${getStatusColor(service.status)}`}>
                   {getStatusIcon(service.status)}
-                  <span className="text-sm font-semibold">
+                  <span className="text-xs font-semibold">
                     {getStatusText(service.status)}
                   </span>
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
-                    <div className="text-xs text-gray-600 font-medium mb-1">Uptime (30d)</div>
-                    <div className="text-xl font-bold text-blue-600">{service.uptime}</div>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div className="bg-vscode-bg border border-vscode-border rounded-sm p-3">
+                    <div className="text-xs text-vscode-comment font-medium mb-1">Uptime (30d)</div>
+                    <div className="text-lg font-bold text-vscode-type">{service.uptime}</div>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
-                    <div className="text-xs text-gray-600 font-medium mb-1">Avg Response</div>
-                    <div className="text-xl font-bold text-blue-600">{service.responseTime}</div>
+                  <div className="bg-vscode-bg border border-vscode-border rounded-sm p-3">
+                    <div className="text-xs text-vscode-comment font-medium mb-1">Avg Response</div>
+                    <div className="text-lg font-bold text-vscode-type">{service.responseTime}</div>
                   </div>
                 </div>
               </motion.div>
@@ -236,30 +236,30 @@ export default function StatusPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 mb-12 shadow-sm"
+          className="bg-vscode-sidebar border border-vscode-border rounded-sm p-8 mb-12"
         >
           <div className="flex items-start space-x-4">
-            <Shield className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+            <Shield className="w-6 h-6 text-vscode-type flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Infrastructure Information
+              <h3 className="text-lg font-bold text-vscode-function mb-3">
+                infrastructure.information()
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-vscode-variable mb-6 leading-relaxed text-xs">
                 Sovereign AI Platform services are deployed on private infrastructure with redundant systems across multiple secure locations. 
                 All data remains within your designated security perimeter with no public cloud dependencies.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-sm text-gray-700 font-medium">99.9% SLA Target</span>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-vscode-type" />
+                  <span className="text-xs text-vscode-variable font-medium">99.9% SLA Target</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-sm text-gray-700 font-medium">24/7 Monitoring</span>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-vscode-type" />
+                  <span className="text-xs text-vscode-variable font-medium">24/7 Monitoring</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-sm text-gray-700 font-medium">Auto-Failover Enabled</span>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-vscode-type" />
+                  <span className="text-xs text-vscode-variable font-medium">Auto-Failover Enabled</span>
                 </div>
               </div>
             </div>
@@ -273,17 +273,17 @@ export default function StatusPage() {
           transition={{ delay: 0.6 }}
           className="text-center space-y-4"
         >
-          <p className="text-gray-600 text-sm">
+          <p className="text-vscode-variable text-xs">
             For technical support or to report issues, contact your account administrator or{' '}
-            <a href="/contact" className="text-blue-600 hover:text-blue-700 font-semibold underline decoration-blue-300 hover:decoration-blue-500 transition-colors">
+            <a href="/contact" className="text-vscode-type hover:text-vscode-function font-semibold underline transition-colors">
               contact our support team
             </a>
           </p>
           <a 
             href="/"
-            className="inline-block text-sm text-gray-500 hover:text-blue-600 transition-colors font-medium"
+            className="inline-block text-xs text-vscode-comment hover:text-vscode-type transition-colors font-medium"
           >
-            ← Back to Home
+            // back-to-home
           </a>
         </motion.div>
       </div>

@@ -143,6 +143,26 @@ export const enterpriseOfferings: EnterpriseOffering[] = [
     ],
     compliance: ["Protected B (Canada)", "FedRAMP (US)", "PBMM Cloud (Canada)", "FISMA", "NIST 800-53", "CIS Controls"],
     icon: "Building"
+  },
+  {
+    id: "eam-enterprise",
+    industry: "Enterprise Asset Management",
+    title: "EAM AgentX - Multi-Agent Asset Management Platform",
+    description: "Next-generation Enterprise Asset Management powered by 10 specialized AI agents built with JetGraph and JetChain (Rust-native frameworks). Uses custom Small Language Models (SLMs) deployed entirely on your infrastructure. Deploy on-premises or air-gapped for complete data sovereignty. Sub-millisecond response times with conversational interface for asset lifecycle, predictive maintenance, work order automation, and real-time telemetry monitoring—all within your secure infrastructure.",
+    features: [
+      "Rust-powered core with sub-millisecond query response times",
+      "Custom SLMs (Small Language Models) running on-premises—no cloud dependencies",
+      "JetGraph & JetChain for high-performance multi-agent orchestration",
+      "10 specialized agents: Supervisor, Asset, Work Order, Telemetry, Maintenance Planner, Retrieval, Compliance, Reasoning, Plan & Execute, Critic-Verifier",
+      "Real-time telemetry monitoring processing 1M+ events/second",
+      "High-speed databases: PostgreSQL, TimescaleDB, Redis, ChromaDB",
+      "Predictive maintenance with AI-powered anomaly detection",
+      "Automated work order generation from natural language inputs",
+      "RAG-based knowledge system for technical documentation",
+      "Production-ready: Docker, Kubernetes, Helm charts, CI/CD pipelines"
+    ],
+    compliance: ["ISO 55000 (Asset Management)", "ISO 14224 (Reliability Data)", "SAE JA1011 (RCM)", "CMMS Integration", "Industry 4.0 Standards", "Audit Trail Logging"],
+    icon: "Wrench"
   }
 ]
 

@@ -82,8 +82,8 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
   }
 
   return (
-    <section id="solutions" className="section-padding bg-gunmetal-950">
-      <div className="container">
+    <section id="solutions" className="section-padding bg-vscode-bg">
+      <div className="container font-mono">
         {/* Section Header */}
         <div className="text-center mb-16">
           <motion.div
@@ -92,24 +92,24 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center space-x-2 bg-tactical-900 px-4 py-2 rounded-sm mb-6 border border-tactical-700">
-              <Target className="w-5 h-5 text-tactical-400" />
-              <span className="text-xs font-bold text-tactical-400 uppercase tracking-wider">Solutions Portfolio</span>
+            <div className="inline-flex items-center space-x-2 bg-vscode-sidebar px-4 py-2 rounded-sm mb-6 border border-vscode-border">
+              <Target className="w-4 h-4 text-vscode-type" />
+              <span className="text-xs font-bold text-vscode-comment">// solutions-portfolio</span>
             </div>
           </motion.div>
           
           <motion.h2
-            className="heading-lg text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-vscode-function mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Industry-Specific AI Solutions
+            solutions.industrySpecific()
           </motion.h2>
           
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-sm text-vscode-variable max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -136,28 +136,28 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
                   }
                 }}
               >
-                <Card id={`solution-${solution.id}`} className={`h-full bg-gunmetal-900 hover:bg-gunmetal-800 transition-all duration-300 group cursor-pointer border-2 border-gunmetal-700 hover:border-tactical-700 scroll-mt-24 ${solution.id === 'contact-center' ? 'ring-2 ring-tactical-500' : ''}`}>
+                <Card id={`solution-${solution.id}`} className={`h-full bg-vscode-sidebar hover:bg-vscode-hover transition-all duration-300 group cursor-pointer border border-vscode-border hover:border-vscode-type scroll-mt-24 ${solution.id === 'contact-center' ? 'ring-2 ring-vscode-type' : ''}`}>
                   <CardHeader>
                     {/* Icon and Category */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-gunmetal-800 border border-tactical-700 rounded-sm group-hover:bg-tactical-900 transition-colors">
-                        <Icon className="w-6 h-6 text-tactical-400 group-hover:text-tactical-300 transition-colors" />
+                      <div className="inline-flex items-center justify-center w-10 h-10 bg-vscode-bg border border-vscode-border rounded-sm group-hover:bg-vscode-bg transition-colors">
+                        <Icon className="w-5 h-5 text-vscode-type group-hover:text-vscode-type transition-colors" />
                       </div>
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider">
+                      <div className="text-xs font-bold text-vscode-comment">
                         {solution.category}
                       </div>
                     </div>
 
                     {/* Title */}
-                    <CardTitle className="text-white group-hover:text-tactical-400 transition-colors text-xl">
+                    <CardTitle className="text-vscode-function group-hover:text-vscode-type transition-colors text-base">
                       {solution.title}
                       {solution.id === 'contact-center' && (
-                        <span className="ml-2 text-xs bg-tactical-600 text-white px-2 py-1 rounded uppercase">View Architecture</span>
+                        <span className="ml-2 text-xs bg-vscode-keyword text-white px-2 py-1 rounded-sm">View Architecture</span>
                       )}
                     </CardTitle>
 
                     {/* Description */}
-                    <CardDescription className="text-gray-300 mt-3">
+                    <CardDescription className="text-vscode-variable mt-3 text-xs">
                       {solution.description}
                     </CardDescription>
                   </CardHeader>
@@ -165,27 +165,27 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
                   <CardContent>
                     {/* Features List */}
                     <div className="space-y-2">
-                      <div className="text-xs font-bold text-tactical-500 uppercase tracking-wider mb-3">
-                        Key Capabilities
+                      <div className="text-xs font-bold text-vscode-comment mb-3">
+                        // key-capabilities
                       </div>
                       {solution.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-tactical-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-gray-300">{feature}</span>
+                          <CheckCircle className="w-3 h-3 text-vscode-type mt-0.5 flex-shrink-0" />
+                          <span className="text-xs text-vscode-variable">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* CTA */}
-                    <div className="mt-6 pt-4 border-t border-gunmetal-700">
+                    <div className="mt-6 pt-4 border-t border-vscode-border">
                       <div className="flex items-center gap-3 mb-4">
                         <button
                           onClick={handleRequestBriefing}
-                          className="text-sm font-bold text-tactical-400 hover:text-tactical-300 uppercase tracking-wide inline-flex items-center group"
+                          className="text-xs font-bold text-vscode-variable hover:text-vscode-type inline-flex items-center group"
                         >
-                          Request Briefing
+                          request-briefing
                           <svg
-                            className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                            className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -201,45 +201,42 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
                         <div className="relative group/deploy">
                           <button
                             disabled
-                            className="px-3 py-1.5 bg-gunmetal-700 text-gray-500 text-xs font-bold uppercase tracking-wide rounded cursor-not-allowed opacity-60"
+                            className="px-3 py-1.5 bg-vscode-bg text-vscode-comment text-xs font-mono rounded-sm cursor-not-allowed opacity-60"
                           >
-                            Deploy
+                            deploy
                           </button>
-                          <div className="absolute bottom-full left-0 mb-2 hidden group-hover/deploy:block w-48 bg-gunmetal-800 text-white text-xs p-2 rounded shadow-lg border border-tactical-700 z-10">
+                          <div className="absolute bottom-full left-0 mb-2 hidden group-hover/deploy:block w-48 bg-vscode-sidebar text-vscode-variable text-xs p-2 rounded-sm shadow-lg border border-vscode-border z-10">
                             Will be active after contact with our deployment team
                           </div>
                         </div>
                         <button
-                          onClick={() => {
-                            setSelectedSolution(solution.title)
-                            setIsDemoModalOpen(true)
-                          }}
-                          className="px-3 py-1.5 bg-tactical-600 hover:bg-tactical-700 text-white text-xs font-bold uppercase tracking-wide rounded transition-colors"
+                          onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}
+                          className="px-3 py-1.5 bg-vscode-keyword hover:bg-vscode-selection text-white text-xs font-mono rounded-sm transition-colors"
                         >
-                          Request Demo
+                          request-demo
                         </button>
                       </div>
                       
                       {/* Share Buttons */}
-                      <div className="flex items-center gap-2 pt-3 border-t border-gunmetal-700">
-                        <span className="text-xs text-gray-500 uppercase tracking-wide mr-1">Share:</span>
+                      <div className="flex items-center gap-2 pt-3 border-t border-vscode-border">
+                        <span className="text-xs text-vscode-comment mr-1">// share:</span>
                         <button
                           onClick={() => handleShareLinkedIn(solution)}
-                          className="p-1.5 bg-[#0A66C2] hover:bg-[#004182] text-white rounded transition-colors"
+                          className="p-1.5 bg-[#0A66C2] hover:bg-[#004182] text-white rounded-sm transition-colors"
                           title="Share on LinkedIn"
                         >
                           <Linkedin className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => handleCopyLink(solution)}
-                          className="p-1.5 bg-gunmetal-700 hover:bg-gunmetal-600 text-gray-300 rounded transition-colors"
+                          className="p-1.5 bg-vscode-bg hover:bg-vscode-hover text-vscode-variable rounded-sm transition-colors"
                           title="Copy link"
                         >
                           {copiedId === solution.id ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Link2 className="w-3.5 h-3.5" />}
                         </button>
                         <button
                           onClick={() => handleShareWhatsApp(solution)}
-                          className="p-1.5 bg-[#25D366] hover:bg-[#128C7E] text-white rounded transition-colors"
+                          className="p-1.5 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-sm transition-colors"
                           title="Share on WhatsApp"
                         >
                           <MessageCircle className="w-3.5 h-3.5" />
@@ -261,26 +258,26 @@ Discover how we're transforming ${solution.category.toLowerCase()}: ${url}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-gunmetal-900 to-gunmetal-800 border-2 border-tactical-700 rounded-sm p-8">
-            <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wide">
-              Need Custom AI Solutions for Your Industry?
+          <div className="bg-vscode-sidebar border-2 border-vscode-type rounded-sm p-8">
+            <h3 className="text-2xl font-bold text-vscode-function mb-4">
+              customAI.forYourIndustry()
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-vscode-variable mb-6 max-w-2xl mx-auto text-sm">
               Our team designs and deploys custom AI agent systems tailored to your specific business requirements. 
               Autonomous agents that learn, adapt, and make decisions at any scale with complete data sovereignty on your private infrastructure.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={handleScheduleConsultation}
-                className="px-8 py-3 bg-tactical-600 hover:bg-tactical-700 text-white font-bold uppercase tracking-wide rounded-sm transition-colors inline-flex items-center"
+                className="px-8 py-3 bg-vscode-keyword hover:bg-vscode-selection text-white font-mono text-xs font-bold rounded-sm transition-colors inline-flex items-center uppercase"
               >
-                Schedule Consultation
+                schedule-consultation
               </button>
               <button
                 onClick={handleDownloadBrochure}
-                className="px-8 py-3 border-2 border-tactical-600 text-tactical-400 hover:bg-tactical-900 font-bold uppercase tracking-wide rounded-sm transition-colors inline-flex items-center"
+                className="px-8 py-3 border-2 border-vscode-border text-vscode-variable hover:bg-vscode-hover font-mono text-xs font-bold rounded-sm transition-colors inline-flex items-center uppercase"
               >
-                Download Brochure
+                download-brochure
               </button>
             </div>
           </div>

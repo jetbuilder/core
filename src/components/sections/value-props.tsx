@@ -26,14 +26,14 @@ export default function ValueProps() {
   ]
 
   return (
-    <section className="section-padding bg-gunmetal-900">
-      <div className="container">
+    <section className="section-padding bg-vscode-bg">
+      <div className="container font-mono">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-lg text-white mb-4">
-            Voice Intelligence. Unstructured Data. Multi-Modal Analysis.
+          <h2 className="text-3xl md:text-4xl font-bold text-vscode-function mb-4">
+            intelligence.multiModal()
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm text-vscode-variable max-w-3xl mx-auto">
             Extract actionable intelligence from voice, audio, text, documents, and all forms of unstructured data. Autonomous AI agents correlate insights across multiple data sources on your private infrastructure.
           </p>
         </div>
@@ -52,22 +52,22 @@ export default function ValueProps() {
                 viewport={{ once: true }}
               >
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gunmetal-800 border-2 border-tactical-700 rounded-sm mb-6">
-                  <Icon className="w-8 h-8 text-tactical-400" />
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-vscode-sidebar border-2 border-vscode-type rounded-sm mb-6">
+                  <Icon className="w-7 h-7 text-vscode-type" />
                 </div>
 
                 {/* Title */}
-                <h3 className="heading-sm text-white mb-2 uppercase tracking-wide">
+                <h3 className="text-lg font-bold text-vscode-function mb-2">
                   {value.title}
                 </h3>
 
                 {/* Subtitle */}
-                <div className="text-tactical-400 font-bold mb-4 uppercase text-sm tracking-wider">
-                  {value.subtitle}
+                <div className="text-vscode-type font-bold mb-4 text-xs">
+                  // {value.subtitle}
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-vscode-variable leading-relaxed text-sm">
                   {value.description}
                 </p>
               </motion.div>

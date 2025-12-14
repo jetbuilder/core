@@ -1102,7 +1102,7 @@ export default function Product() {
               Deploy the Rust-powered Sovereign AI Platform on your infrastructure. Memory-safe architecture with microsecond latency and zero cloud dependencies.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="bg-[#0e639c] text-white hover:bg-[#1177bb] font-mono uppercase">
+              <Button size="lg" className="bg-[#0e639c] text-white hover:bg-[#1177bb] font-mono uppercase" onClick={() => window.open('https://cal.com/jetbuilder-expert', '_blank')}>
                 Request Platform Demo
               </Button>
               <Button size="lg" variant="outline" className="border-[#3c3c3c] text-[#cccccc] hover:bg-[#37373d] font-mono uppercase">
