@@ -437,6 +437,201 @@ export default function EAMAgentXPage() {
         </div>
       </section>
 
+      {/* CTO Executive Value Proposition */}
+      <section className="section-padding bg-gradient-to-br from-vscode-bg via-[#1e3a5f] to-vscode-bg">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-vscode-sidebar border-2 border-vscode-type rounded-sm p-8 md:p-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center space-x-2 bg-vscode-keyword px-4 py-2 rounded-sm mb-6">
+                  <Shield className="w-4 h-4 text-white" />
+                  <span className="text-xs font-bold text-white">// for-cto-decision-makers</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-vscode-function mb-4">
+                  executiveValue.mobileTelecom()
+                </h2>
+                <p className="text-vscode-variable max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+                  Strategic AI asset management for Mobile Network Operators. Transform network operations with predictable CapEx economics, complete data sovereignty, and measurable ROI.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-10">
+                {/* Strategic Business Value */}
+                <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <TrendingUp className="w-6 h-6 text-vscode-type" />
+                    <h3 className="text-lg font-bold text-vscode-function">Strategic Business Value</h3>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Predictable CapEx Model</p>
+                        <p className="text-vscode-comment text-xs mt-1">Fixed annual licensing eliminates unpredictable per-API costs. Budget with confidence—no surprise cloud bills from Azure, AWS, or Google.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Rapid ROI: 8-12 Months</p>
+                        <p className="text-vscode-comment text-xs mt-1">Save $7.5M+ annually per 1,000 cell sites. 70% MTTR reduction prevents $5.4M in network downtime yearly.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Zero Vendor Lock-In</p>
+                        <p className="text-vscode-comment text-xs mt-1">Own your complete AI infrastructure. Full portability, no dependency on external cloud providers.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Operational Excellence */}
+                <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Settings className="w-6 h-6 text-vscode-type" />
+                    <h3 className="text-lg font-bold text-vscode-function">Operational Excellence</h3>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Unified Multi-Vendor Management</p>
+                        <p className="text-vscode-comment text-xs mt-1">Single platform for Ericsson, Nokia, Huawei, Samsung, ZTE, Cisco, Juniper equipment. Eliminate vendor silos.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Real-Time Network Intelligence</p>
+                        <p className="text-vscode-comment text-xs mt-1">Process 1M+ telemetry events/sec from RRUs, BBUs, power systems. Sub-millisecond query response times.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Intelligent Field Operations</p>
+                        <p className="text-vscode-comment text-xs mt-1">AI-powered work order routing reduces field technician dispatch time by 10x. Optimize maintenance schedules across 10,000+ sites.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Risk & Compliance */}
+                <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Lock className="w-6 h-6 text-vscode-type" />
+                    <h3 className="text-lg font-bold text-vscode-function">Risk Mitigation & Compliance</h3>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Complete Data Sovereignty</p>
+                        <p className="text-vscode-comment text-xs mt-1">Critical network infrastructure data never leaves your premises. NERC CIP and ISO 55000 compliance ready.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Air-Gap Deployment Capable</p>
+                        <p className="text-vscode-comment text-xs mt-1">Deploy in fully disconnected environments. Critical infrastructure protection without cloud dependencies.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Comprehensive Audit Trails</p>
+                        <p className="text-vscode-comment text-xs mt-1">Full regulatory compliance logging. Complete visibility into AI decisions, asset changes, and maintenance actions.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Technical Superiority */}
+                <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Code className="w-6 h-6 text-vscode-type" />
+                    <h3 className="text-lg font-bold text-vscode-function">Technical Differentiation</h3>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Rust-Powered Architecture</p>
+                        <p className="text-vscode-comment text-xs mt-1">Memory-safe systems language with C/C++ performance. Zero garbage collection pauses, no segfaults or vulnerabilities.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Custom SLMs On Your Infrastructure</p>
+                        <p className="text-vscode-comment text-xs mt-1">Trained on YOUR telecom data. Domain-specific intelligence without sending sensitive data to OpenAI or Anthropic.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-vscode-type rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-white font-semibold">Enterprise-Grade Database Stack</p>
+                        <p className="text-vscode-comment text-xs mt-1">PostgreSQL + TimescaleDB for RF time-series, ChromaDB for vector search, Redis for real-time cache. 7-year retention built-in.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* ROI Highlight Banner */}
+              <div className="bg-gradient-to-r from-vscode-keyword to-[#1e3a5f] border-2 border-vscode-type rounded-sm p-6 text-center mb-8">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">$7.5M+</div>
+                    <div className="text-xs text-gray-300">Annual savings / 1,000 cell sites</div>
+                  </div>
+                  <div className="hidden md:block w-px h-16 bg-vscode-type"></div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">70%</div>
+                    <div className="text-xs text-gray-300">MTTR reduction</div>
+                  </div>
+                  <div className="hidden md:block w-px h-16 bg-vscode-type"></div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">8-12 mo</div>
+                    <div className="text-xs text-gray-300">ROI payback period</div>
+                  </div>
+                  <div className="hidden md:block w-px h-16 bg-vscode-type"></div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">10,000+</div>
+                    <div className="text-xs text-gray-300">Cell sites managed</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Equipment Coverage */}
+              <div className="bg-vscode-bg border border-vscode-border rounded-sm p-6">
+                <h4 className="text-base font-bold text-vscode-function mb-4 flex items-center space-x-2">
+                  <Server className="w-5 h-5 text-vscode-type" />
+                  <span>Comprehensive Equipment Coverage</span>
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                  <div>
+                    <p className="text-vscode-type font-semibold mb-2">Radio Access Network</p>
+                    <p className="text-vscode-comment">RRUs, BBUs, Massive MIMO, DU/CU (5G), Small Cells, Antenna Systems, RF Combiners</p>
+                  </div>
+                  <div>
+                    <p className="text-vscode-type font-semibold mb-2">Transport & Core Network</p>
+                    <p className="text-vscode-comment">Core Routers, Switches, OTN/DWDM, Microwave Links, Packet Core (EPC/5GC), IMS/VoLTE</p>
+                  </div>
+                  <div>
+                    <p className="text-vscode-type font-semibold mb-2">Site Infrastructure</p>
+                    <p className="text-vscode-comment">Power Systems, Battery Banks, DG Sets, Solar/Hybrid Power, HVAC, UPS, Environmental Sensors</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section - IDE Style */}
       <section className="section-padding bg-vscode-sidebar">
         <div className="container">
