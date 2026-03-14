@@ -53,9 +53,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Multi-agent AI deployed entirely on your infrastructure.
+            Multi-agent AI and private SLMs trained on your competitive data, deployed entirely on your infrastructure.
             <br className="hidden md:block" />
-            No data leaves your network. Ever.
+            Protect your moat and IP. No data leaves your network. Ever.
           </motion.p>
 
           {/* CTA Buttons */}
